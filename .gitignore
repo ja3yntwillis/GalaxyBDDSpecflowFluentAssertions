@@ -1,4 +1,5 @@
-bin/
-/GalaxyATS/.vs/GalaxyATS/FileContentIndex
-/GalaxyATS/.vs/GalaxyATS/v17/TestStore/0/001.testlog
-/GalaxyATS/.vs/GalaxyATS/v17/TestStore/0/001.testlog
+/GalaxyATS/bin/
+/GalaxyATS/.vs/
+/GalaxyATS/GalaxyATS/bin/
+/GalaxyATS/.vs/GalaxyATS/DesignTimeBuild/.dtbcache.v2
+/GalaxyATS/.vs/GalaxyATS/DesignTimeBuild/.dtbcache.v2
