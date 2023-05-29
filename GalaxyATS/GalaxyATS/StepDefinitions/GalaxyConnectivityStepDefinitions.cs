@@ -60,6 +60,13 @@ namespace GalaxyATS.StepDefinitions
             }
         }
 
+        [Then(@"I validate the following campaignsegments of the campaign ""([^""]*)""")]
+        public void ThenIValidateTheFollowingCampaignsegmentsOfTheCampaign(string p0, Table table)
+        {
+            throw new PendingStepException();
+        }
+
+
 
     }
 }
