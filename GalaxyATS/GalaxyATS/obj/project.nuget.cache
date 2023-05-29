@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6AlnhB1BU63d4MZ/shs4ec6QcWk/fuuBIZnzGYby4QnfnU7OrzOxC6FYOkgvQ801+LFAnO2c4mwHSvRaXneceQ==",
+  "dgSpecHash": "wcYoOcpLQekZXDUOXH2fcmBbW0ALi7IJUSPzY4MTMY8C69F+2K927jj/fLMnOpp0v1KQbejer4WZngq9S8Stwg==",
   "success": true,
-  "projectFilePath": "C:\\software\\BDD\\GalaxyATS\\GalaxyATS\\GalaxyATS.csproj",
+  "projectFilePath": "C:\\software\\Test\\GalaxyBDDSpecflowFluentAssertions\\GalaxyATS\\GalaxyATS\\GalaxyATS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jayan4537\\.nuget\\packages\\bodi\\1.5.0\\bodi.1.5.0.nupkg.sha512",
     "C:\\Users\\jayan4537\\.nuget\\packages\\fluentassertions\\6.2.0\\fluentassertions.6.2.0.nupkg.sha512",

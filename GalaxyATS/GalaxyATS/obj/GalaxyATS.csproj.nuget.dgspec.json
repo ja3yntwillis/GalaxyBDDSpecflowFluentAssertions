@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\software\\BDD\\GalaxyATS\\GalaxyATS\\GalaxyATS.csproj": {}
+    "C:\\software\\Test\\GalaxyBDDSpecflowFluentAssertions\\GalaxyATS\\GalaxyATS\\GalaxyATS.csproj": {}
   },
   "projects": {
-    "C:\\software\\BDD\\GalaxyATS\\GalaxyATS\\GalaxyATS.csproj": {
+    "C:\\software\\Test\\GalaxyBDDSpecflowFluentAssertions\\GalaxyATS\\GalaxyATS\\GalaxyATS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\software\\BDD\\GalaxyATS\\GalaxyATS\\GalaxyATS.csproj",
+        "projectUniqueName": "C:\\software\\Test\\GalaxyBDDSpecflowFluentAssertions\\GalaxyATS\\GalaxyATS\\GalaxyATS.csproj",
         "projectName": "GalaxyATS",
-        "projectPath": "C:\\software\\BDD\\GalaxyATS\\GalaxyATS\\GalaxyATS.csproj",
+        "projectPath": "C:\\software\\Test\\GalaxyBDDSpecflowFluentAssertions\\GalaxyATS\\GalaxyATS\\GalaxyATS.csproj",
         "packagesPath": "C:\\Users\\jayan4537\\.nuget\\packages\\",
-        "outputPath": "C:\\software\\BDD\\GalaxyATS\\GalaxyATS\\obj\\",
+        "outputPath": "C:\\software\\Test\\GalaxyBDDSpecflowFluentAssertions\\GalaxyATS\\GalaxyATS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jayan4537\\AppData\\Roaming\\NuGet\\NuGet.Config",

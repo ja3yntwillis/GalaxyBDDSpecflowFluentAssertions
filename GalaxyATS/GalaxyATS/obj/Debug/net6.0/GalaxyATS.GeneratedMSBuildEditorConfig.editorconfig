@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = GalaxyATS
-build_property.ProjectDir = C:\software\BDD\GalaxyATS\GalaxyATS\
+build_property.ProjectDir = C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\
