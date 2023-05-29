@@ -1,5 +1,6 @@
-/GalaxyATS/bin/
+[Dd]ebug
 /GalaxyATS/.vs/
-/GalaxyATS/GalaxyATS/bin/
+/GalaxyATS/GalaxyATS/bin/Debug
 /GalaxyATS/.vs/GalaxyATS/DesignTimeBuild/.dtbcache.v2
 /GalaxyATS/.vs/GalaxyATS/DesignTimeBuild/.dtbcache.v2
+/GalaxyATS/GalaxyATS/bin/Debug/net6.0/TestExecution.json
