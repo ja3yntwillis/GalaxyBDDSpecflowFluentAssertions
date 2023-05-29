@@ -140,145 +140,145 @@ C:\software\BDD\GalaxyATS\GalaxyATS\bin\Debug\net6.0\runtimes\win\lib\netcoreapp
 C:\software\BDD\GalaxyATS\GalaxyATS\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 C:\software\BDD\GalaxyATS\GalaxyATS\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\software\BDD\GalaxyATS\GalaxyATS\bin\Debug\net6.0\specflow.json
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\testhost.exe
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\LivingDoc.Dtos.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\LivingDoc.SpecFlowPlugin.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\TechTalk.SpecFlow.NUnit.SpecFlowPlugin.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\NUnit3.TestAdapter.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\NUnit3.TestAdapter.pdb
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\nunit.engine.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\nunit.engine.api.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\nunit.engine.core.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\testcentric.engine.metadata.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\testhost.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\Microsoft.TestPlatform.PlatformAbstractions.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\specflow.json
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\GalaxyATS.deps.json
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\GalaxyATS.runtimeconfig.json
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\GalaxyATS.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\GalaxyATS.pdb
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\BoDi.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\FluentAssertions.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\Gherkin.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\Google.Protobuf.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\K4os.Compression.LZ4.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\K4os.Compression.LZ4.Streams.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\K4os.Hash.xxHash.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\Microsoft.VisualStudio.CodeCoverage.Shim.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\Microsoft.TestPlatform.CoreUtilities.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\Microsoft.TestPlatform.CommunicationUtilities.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\Microsoft.TestPlatform.CrossPlatEngine.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\Microsoft.TestPlatform.Utilities.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.Common.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\MySql.Data.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\Newtonsoft.Json.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\NuGet.Frameworks.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\nunit.framework.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\BouncyCastle.Crypto.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\TechTalk.SpecFlow.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\SpecFlow.Internal.Json.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\System.Data.SqlClient.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\System.Drawing.Common.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\System.IO.Pipelines.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\System.Security.Permissions.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\System.Text.Encodings.Web.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\System.Text.Json.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\System.Windows.Extensions.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\cs\Microsoft.TestPlatform.CoreUtilities.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\cs\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\de\Microsoft.TestPlatform.CoreUtilities.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\de\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\es\Microsoft.TestPlatform.CoreUtilities.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\es\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\fr\Microsoft.TestPlatform.CoreUtilities.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\fr\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\it\Microsoft.TestPlatform.CoreUtilities.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\it\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\ja\Microsoft.TestPlatform.CoreUtilities.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\ja\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\ko\Microsoft.TestPlatform.CoreUtilities.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\ko\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\pl\Microsoft.TestPlatform.CoreUtilities.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\pl\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\pt-BR\Microsoft.TestPlatform.CoreUtilities.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\pt-BR\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\ru\Microsoft.TestPlatform.CoreUtilities.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\ru\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\tr\Microsoft.TestPlatform.CoreUtilities.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\tr\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\zh-Hans\Microsoft.TestPlatform.CoreUtilities.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\zh-Hans\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\zh-Hant\Microsoft.TestPlatform.CoreUtilities.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\cs\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\cs\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\cs\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\de\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\de\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\de\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\es\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\es\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\es\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\fr\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\fr\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\fr\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\it\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\it\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\it\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\ja\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\ja\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\ja\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\ko\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\ko\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\ko\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\pl\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\pl\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\pl\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\pt-BR\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\pt-BR\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\pt-BR\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\ru\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\ru\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\ru\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\tr\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\tr\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\tr\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\zh-Hans\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\zh-Hans\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\zh-Hans\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\runtimes\win-x64\native\comerr64.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\runtimes\win-x64\native\gssapi64.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\runtimes\win-x64\native\k5sprt64.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\runtimes\win-x64\native\krb5_64.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\runtimes\win-x64\native\krbcc64.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\obj\Debug\net6.0\GalaxyATS.csproj.AssemblyReference.cache
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\obj\Debug\net6.0\GalaxyATS.GeneratedMSBuildEditorConfig.editorconfig
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\obj\Debug\net6.0\GalaxyATS.AssemblyInfoInputs.cache
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\obj\Debug\net6.0\GalaxyATS.AssemblyInfo.cs
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\obj\Debug\net6.0\GalaxyATS.csproj.CoreCompileInputs.cache
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\obj\Debug\net6.0\GalaxyATS.csproj.CopyComplete
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\obj\Debug\net6.0\GalaxyATS.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\obj\Debug\net6.0\refint\GalaxyATS.dll
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\obj\Debug\net6.0\GalaxyATS.pdb
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\obj\Debug\net6.0\GalaxyATS.genruntimeconfig.cache
-C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\obj\Debug\net6.0\ref\GalaxyATS.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\testhost.exe
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\LivingDoc.Dtos.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\LivingDoc.SpecFlowPlugin.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\TechTalk.SpecFlow.NUnit.SpecFlowPlugin.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\NUnit3.TestAdapter.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\NUnit3.TestAdapter.pdb
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\nunit.engine.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\nunit.engine.api.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\nunit.engine.core.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\testcentric.engine.metadata.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\specflow.json
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\testhost.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\Microsoft.TestPlatform.PlatformAbstractions.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\GalaxyATS.deps.json
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\GalaxyATS.runtimeconfig.json
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\GalaxyATS.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\GalaxyATS.pdb
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\BoDi.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\FluentAssertions.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\Gherkin.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\Google.Protobuf.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\K4os.Compression.LZ4.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\K4os.Compression.LZ4.Streams.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\K4os.Hash.xxHash.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\Microsoft.VisualStudio.CodeCoverage.Shim.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\Microsoft.TestPlatform.CoreUtilities.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\Microsoft.TestPlatform.CommunicationUtilities.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\Microsoft.TestPlatform.CrossPlatEngine.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\Microsoft.TestPlatform.Utilities.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.Common.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\MySql.Data.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\NuGet.Frameworks.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\nunit.framework.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\TechTalk.SpecFlow.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\SpecFlow.Internal.Json.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\System.Data.SqlClient.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\System.IO.Pipelines.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\System.Text.Json.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\cs\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\cs\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\de\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\de\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\es\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\es\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\fr\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\fr\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\it\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\it\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\ja\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\ja\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\ko\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\ko\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\pl\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\pl\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\pt-BR\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\pt-BR\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\ru\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\ru\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\tr\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\tr\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\zh-Hans\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\zh-Hans\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\zh-Hant\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\cs\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\cs\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\cs\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\de\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\de\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\de\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\es\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\es\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\es\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\fr\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\fr\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\fr\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\it\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\it\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\it\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\ja\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\ja\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\ja\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\ko\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\ko\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\ko\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\pl\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\pl\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\pl\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\pt-BR\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\pt-BR\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\pt-BR\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\ru\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\ru\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\ru\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\tr\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\tr\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\tr\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\zh-Hans\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\zh-Hans\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\zh-Hans\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\runtimes\win-x64\native\comerr64.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\runtimes\win-x64\native\gssapi64.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\runtimes\win-x64\native\k5sprt64.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\runtimes\win-x64\native\krb5_64.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\runtimes\win-x64\native\krbcc64.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\obj\Debug\net6.0\GalaxyATS.csproj.AssemblyReference.cache
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\obj\Debug\net6.0\GalaxyATS.GeneratedMSBuildEditorConfig.editorconfig
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\obj\Debug\net6.0\GalaxyATS.AssemblyInfoInputs.cache
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\obj\Debug\net6.0\GalaxyATS.AssemblyInfo.cs
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\obj\Debug\net6.0\GalaxyATS.csproj.CoreCompileInputs.cache
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\obj\Debug\net6.0\GalaxyATS.csproj.CopyComplete
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\obj\Debug\net6.0\GalaxyATS.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\obj\Debug\net6.0\refint\GalaxyATS.dll
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\obj\Debug\net6.0\GalaxyATS.pdb
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\obj\Debug\net6.0\GalaxyATS.genruntimeconfig.cache
+C:\software\Test\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\obj\Debug\net6.0\ref\GalaxyATS.dll

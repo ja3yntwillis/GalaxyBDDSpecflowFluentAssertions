@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Galaxy POC\\GalaxyBDDSpecflowFluentAssertions\\GalaxyATS\\GalaxyATS\\GalaxyATS.csproj": {}
+    "C:\\software\\Test\\GalaxyBDDSpecflowFluentAssertions\\GalaxyATS\\GalaxyATS\\GalaxyATS.csproj": {}
   },
   "projects": {
-    "C:\\Galaxy POC\\GalaxyBDDSpecflowFluentAssertions\\GalaxyATS\\GalaxyATS\\GalaxyATS.csproj": {
+    "C:\\software\\Test\\GalaxyBDDSpecflowFluentAssertions\\GalaxyATS\\GalaxyATS\\GalaxyATS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Galaxy POC\\GalaxyBDDSpecflowFluentAssertions\\GalaxyATS\\GalaxyATS\\GalaxyATS.csproj",
+        "projectUniqueName": "C:\\software\\Test\\GalaxyBDDSpecflowFluentAssertions\\GalaxyATS\\GalaxyATS\\GalaxyATS.csproj",
         "projectName": "GalaxyATS",
-        "projectPath": "C:\\Galaxy POC\\GalaxyBDDSpecflowFluentAssertions\\GalaxyATS\\GalaxyATS\\GalaxyATS.csproj",
-        "packagesPath": "C:\\Users\\amiya4963\\.nuget\\packages\\",
-        "outputPath": "C:\\Galaxy POC\\GalaxyBDDSpecflowFluentAssertions\\GalaxyATS\\GalaxyATS\\obj\\",
+        "projectPath": "C:\\software\\Test\\GalaxyBDDSpecflowFluentAssertions\\GalaxyATS\\GalaxyATS\\GalaxyATS.csproj",
+        "packagesPath": "C:\\Users\\jayan4537\\.nuget\\packages\\",
+        "outputPath": "C:\\software\\Test\\GalaxyBDDSpecflowFluentAssertions\\GalaxyATS\\GalaxyATS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\amiya4963\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jayan4537\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -89,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
