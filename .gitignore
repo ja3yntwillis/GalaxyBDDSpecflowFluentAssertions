@@ -20,3 +20,4 @@
 /GalaxyATS/GalaxyATS/obj/Debug/net6.0/GalaxyATS.dll
 /GalaxyATS/GalaxyATS/obj/Debug/net6.0/GalaxyATS.pdb
 /GalaxyATS/GalaxyATS/StepDefinitions/GalaxyConnectivityStepDefinitions.cs
+*.feature.cs
