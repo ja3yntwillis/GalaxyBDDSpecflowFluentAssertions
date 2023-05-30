@@ -126,7 +126,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "campaignName"});
                 table2.AddRow(new string[] {
                             "13102661",
-                            "Ford IMM"});
+                            "Ford IMMJayanta"});
                 table2.AddRow(new string[] {
                             "13107365",
                             "Ford Medicare hired after 6/1/01"});
