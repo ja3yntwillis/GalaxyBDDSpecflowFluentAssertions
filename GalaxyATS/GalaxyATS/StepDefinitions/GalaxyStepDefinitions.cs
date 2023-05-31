@@ -41,6 +41,11 @@ namespace GalaxyATS.StepDefinitions
             }
 
         }
+        [Then(@"I validate there are no campaignsegments for the campaign ""([^""]*)""")]
+        public void ThenIValidateThereAreNoCampaignsegmentsForTheCampaign(string campaignName)
+        {
+           
+        }
 
     }
 }
