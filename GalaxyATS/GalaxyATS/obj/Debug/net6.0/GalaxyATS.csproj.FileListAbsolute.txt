@@ -467,10 +467,15 @@ C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\ne
 C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\DataGeneration.Galaxy.dll
 C:\Galaxy POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\DataGeneration.Galaxy.pdb
-C:\Piyali\Automation_POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\testhost.exe
 C:\Piyali\Automation_POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\LivingDoc.Dtos.dll
 C:\Piyali\Automation_POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\LivingDoc.SpecFlowPlugin.dll
 C:\Piyali\Automation_POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\TechTalk.SpecFlow.NUnit.SpecFlowPlugin.dll
+C:\Piyali\Automation_POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\DataGeneration.Galaxy.deps.json
+C:\Piyali\Automation_POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\DataGeneration.Galaxy.runtimeconfig.json
+C:\Piyali\Automation_POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\DataGeneration.Galaxy.exe
+C:\Piyali\Automation_POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\testhost.exe
+C:\Piyali\Automation_POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\testhost.dll
+C:\Piyali\Automation_POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\Microsoft.TestPlatform.PlatformAbstractions.dll
 C:\Piyali\Automation_POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\NUnit3.TestAdapter.dll
 C:\Piyali\Automation_POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\NUnit3.TestAdapter.pdb
 C:\Piyali\Automation_POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\nunit.engine.dll
@@ -481,11 +486,6 @@ C:\Piyali\Automation_POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\b
 C:\Piyali\Automation_POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\selenium-manager\macos\selenium-manager
 C:\Piyali\Automation_POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\selenium-manager\windows\selenium-manager.exe
 C:\Piyali\Automation_POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\specflow.json
-C:\Piyali\Automation_POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\DataGeneration.Galaxy.deps.json
-C:\Piyali\Automation_POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\DataGeneration.Galaxy.runtimeconfig.json
-C:\Piyali\Automation_POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\DataGeneration.Galaxy.exe
-C:\Piyali\Automation_POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\testhost.dll
-C:\Piyali\Automation_POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\Microsoft.TestPlatform.PlatformAbstractions.dll
 C:\Piyali\Automation_POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\GalaxyATS.deps.json
 C:\Piyali\Automation_POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\GalaxyATS.runtimeconfig.json
 C:\Piyali\Automation_POC\GalaxyBDDSpecflowFluentAssertions\GalaxyATS\GalaxyATS\bin\Debug\net6.0\GalaxyATS.dll
