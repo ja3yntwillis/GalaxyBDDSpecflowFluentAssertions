@@ -2,6 +2,7 @@ using System;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
+using DataGeneration.Galaxy.DBOperation;
 using GalaxyATS.UserFunctions;
 using Google.Protobuf.WellKnownTypes;
 using NUnit.Framework;

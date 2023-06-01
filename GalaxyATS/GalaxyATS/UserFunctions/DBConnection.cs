@@ -13,7 +13,7 @@ namespace GalaxyATS.UserFunctions
         public static SqlConnection getConnectionString()
         {
             var databaseserver = "devsqlag.extendhealth.com";
-            var user = "INTERNAL/JAYAN453";
+            var user = "INTERNAL/AMIYA4963";
             var database = "DevEHGalaxy"; 
             String CS = String.Format("Data Source=" +databaseserver+ ";Initial Catalog=" + database + ";Integrated Security=SSPI;uid=" +user+ ";");
            return new SqlConnection(CS);
