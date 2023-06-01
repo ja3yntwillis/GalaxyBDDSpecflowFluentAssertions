@@ -10,7 +10,7 @@ Scenario: Validate the active campaigns and all the campaign segments of partner
 	#Then I check the existance of the "Ford Motor Company" in the "partner" table
 	#| partnerid |
 	#| 13000021  |
-	Then I check the existance of the "Ford Motor Company" in the "partner" table below
+	Then I check the existance of the "Ford Motor Company" in the Partner table below
 	| partnerid |
 	| 13000021  |
 	When I find the partner is existing in the system

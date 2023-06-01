@@ -2,6 +2,8 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
+using DataGeneration.Galaxy.Models;
+using DBOperations.Galaxy.DBModels;
 using GalaxyATS.UserFunctions;
 using Org.BouncyCastle.Asn1.Cms;
 using TechTalk.SpecFlow;
@@ -66,6 +68,20 @@ namespace GalaxyATS.StepDefinitions
 
 
         }
+        [Then(@"I check the existance of the ""([^""]*)"" in the Partner table below")]
+        public void ThenICheckTheExistanceOfTheInThePartnerTableBelow(string PartnerName, Table table)
+        {
+            int partner_Id;
+            using (var dbContext = new DevEHGalaxyContext())
+            {
+                partner_Id = dbContext.Partners.Where(x => x.PARTNERNAME.Equals(PartnerName)).First().PARTNERID;
+
+            }
+            partner_Id.Should().Be(Int32.Parse(table.Rows[0]["partnerid"]));
+            ScenarioContext.Current["partnerId"] = table.Rows[0]["partnerid"];
+        }
+
+
         [When(@"I find the partner is existing in the system")]
         public void WhenIFindThePartnerIsExistingInTheSystem()
         {
