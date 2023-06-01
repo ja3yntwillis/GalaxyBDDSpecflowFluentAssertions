@@ -9026,19 +9026,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\amiya4963\\.nuget\\packages\\": {}
+    "C:\\Users\\piyal845\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Galaxy POC\\GalaxyBDDSpecflowFluentAssertions\\GalaxyATS\\GalaxyATS\\GalaxyATS.csproj",
+      "projectUniqueName": "C:\\Piyali\\Automation_POC\\GalaxyBDDSpecflowFluentAssertions\\GalaxyATS\\GalaxyATS\\GalaxyATS.csproj",
       "projectName": "GalaxyATS",
-      "projectPath": "C:\\Galaxy POC\\GalaxyBDDSpecflowFluentAssertions\\GalaxyATS\\GalaxyATS\\GalaxyATS.csproj",
-      "packagesPath": "C:\\Users\\amiya4963\\.nuget\\packages\\",
-      "outputPath": "C:\\Galaxy POC\\GalaxyBDDSpecflowFluentAssertions\\GalaxyATS\\GalaxyATS\\obj\\",
+      "projectPath": "C:\\Piyali\\Automation_POC\\GalaxyBDDSpecflowFluentAssertions\\GalaxyATS\\GalaxyATS\\GalaxyATS.csproj",
+      "packagesPath": "C:\\Users\\piyal845\\.nuget\\packages\\",
+      "outputPath": "C:\\Piyali\\Automation_POC\\GalaxyBDDSpecflowFluentAssertions\\GalaxyATS\\GalaxyATS\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\amiya4963\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\piyal845\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9046,20 +9046,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://nuget.pkg.github.com/im-client/index.json": {},
-        "https://nuget.pkg.github.com/im-customer-engagement/index.json": {},
-        "https://nuget.pkg.github.com/im-enrollment/index.json": {},
-        "https://nuget.pkg.github.com/im-funding/index.json": {},
-        "https://nuget.pkg.github.com/im-platform/index.json": {},
-        "https://nuget.pkg.github.com/im-practices/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Galaxy POC\\GalaxyBDDSpecflowFluentAssertions\\GalaxyATS\\DataGeneration.Galaxy\\DataGeneration.Galaxy.csproj": {
-              "projectPath": "C:\\Galaxy POC\\GalaxyBDDSpecflowFluentAssertions\\GalaxyATS\\DataGeneration.Galaxy\\DataGeneration.Galaxy.csproj"
+            "C:\\Piyali\\Automation_POC\\GalaxyBDDSpecflowFluentAssertions\\GalaxyATS\\DataGeneration.Galaxy\\DataGeneration.Galaxy.csproj": {
+              "projectPath": "C:\\Piyali\\Automation_POC\\GalaxyBDDSpecflowFluentAssertions\\GalaxyATS\\DataGeneration.Galaxy\\DataGeneration.Galaxy.csproj"
             }
           }
         }

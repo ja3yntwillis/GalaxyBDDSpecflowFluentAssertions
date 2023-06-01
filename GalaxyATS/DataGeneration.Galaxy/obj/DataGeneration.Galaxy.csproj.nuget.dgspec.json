@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Galaxy POC\\GalaxyBDDSpecflowFluentAssertions\\GalaxyATS\\DataGeneration.Galaxy\\DataGeneration.Galaxy.csproj": {}
+    "C:\\Piyali\\Automation_POC\\GalaxyBDDSpecflowFluentAssertions\\GalaxyATS\\DataGeneration.Galaxy\\DataGeneration.Galaxy.csproj": {}
   },
   "projects": {
-    "C:\\Galaxy POC\\GalaxyBDDSpecflowFluentAssertions\\GalaxyATS\\DataGeneration.Galaxy\\DataGeneration.Galaxy.csproj": {
+    "C:\\Piyali\\Automation_POC\\GalaxyBDDSpecflowFluentAssertions\\GalaxyATS\\DataGeneration.Galaxy\\DataGeneration.Galaxy.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Galaxy POC\\GalaxyBDDSpecflowFluentAssertions\\GalaxyATS\\DataGeneration.Galaxy\\DataGeneration.Galaxy.csproj",
+        "projectUniqueName": "C:\\Piyali\\Automation_POC\\GalaxyBDDSpecflowFluentAssertions\\GalaxyATS\\DataGeneration.Galaxy\\DataGeneration.Galaxy.csproj",
         "projectName": "DataGeneration.Galaxy",
-        "projectPath": "C:\\Galaxy POC\\GalaxyBDDSpecflowFluentAssertions\\GalaxyATS\\DataGeneration.Galaxy\\DataGeneration.Galaxy.csproj",
-        "packagesPath": "C:\\Users\\amiya4963\\.nuget\\packages\\",
-        "outputPath": "C:\\Galaxy POC\\GalaxyBDDSpecflowFluentAssertions\\GalaxyATS\\DataGeneration.Galaxy\\obj\\",
+        "projectPath": "C:\\Piyali\\Automation_POC\\GalaxyBDDSpecflowFluentAssertions\\GalaxyATS\\DataGeneration.Galaxy\\DataGeneration.Galaxy.csproj",
+        "packagesPath": "C:\\Users\\piyal845\\.nuget\\packages\\",
+        "outputPath": "C:\\Piyali\\Automation_POC\\GalaxyBDDSpecflowFluentAssertions\\GalaxyATS\\DataGeneration.Galaxy\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\amiya4963\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\piyal845\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,13 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.pkg.github.com/im-client/index.json": {},
-          "https://nuget.pkg.github.com/im-customer-engagement/index.json": {},
-          "https://nuget.pkg.github.com/im-enrollment/index.json": {},
-          "https://nuget.pkg.github.com/im-funding/index.json": {},
-          "https://nuget.pkg.github.com/im-platform/index.json": {},
-          "https://nuget.pkg.github.com/im-practices/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
