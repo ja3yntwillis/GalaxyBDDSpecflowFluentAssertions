@@ -43,7 +43,15 @@ namespace GalaxyATS.StepDefinitions
         {
             driver.FindElement(By.XPath(fieldName)).Click();
             System.Threading.Thread.Sleep(20000);
+            //Assert.IsTrue(driver.Title.Contains("Via Benefits - Account Management"));
         }
+
+        [Then(@"I have verified ""([^""]*)"" text")]
+        public void ThenIHaveVerifiedText(string valueOfTheText)
+        {
+          var fieldName= driver.FindElement(By.XPath("//*[contains(text(),'"+ valueOfTheText +"')]")).Text;
+            fieldName.Should().Be(valueOfTheText);
+        } 
 
         [Then(@"I close the browser")]
         public void ThenICloseTheBrowser()
