@@ -49,7 +49,7 @@
           </li>
             <li class="m-r-10">
                 <a href="#">
-                    <span class="badge badge-primary">6/1/2023 3:57:25 PM</span>
+                    <span class="badge badge-primary">6/1/2023 4:30:27 PM</span>
                 </a>
             </li>
         </ul>
@@ -104,7 +104,7 @@
 						<i class="fa fa-exclamation-circle"></i>
 					</a>
 					<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a status="pass" class="dropdown-item" href="#"><span>Pass</span><span class="status success pull-right"></span></a>																																				<div class="dropdown-divider"></div>
+<a status="pass" class="dropdown-item" href="#"><span>Pass</span><span class="status success pull-right"></span></a>						<a status="fail" class="dropdown-item" href="#"><span>Fail</span><span class="status danger pull-right"></span></a>																														<div class="dropdown-divider"></div>
 						<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 					</ul>
 				</li>
@@ -112,25 +112,25 @@
         </div>
         <div class="test-list-wrapper scrollable">
             <ul class="test-list-item">
-					<li class="test-item" status="pass" author="" device="" tag="" test-id="1"> 
-						<div class="status-avatar pass-bg">
-							<i class="fa fa-check text-white"></i>
+					<li class="test-item" status="fail" author="" device="" tag="" test-id="1"> 
+						<div class="status-avatar fail-bg">
+							<i class="fa fa-times text-white"></i>
 						</div>
 						<div class="open-test">
 							<div class="test-detail"> 
-								<p class="name">Validate the active campaigns and all the campaign segments of partner Ford Motor Company are updated correctly in the database</p> 
-								<p class="duration text-sm">0h:0m:5s+349ms</p> 
-								<span class="datetime">15:57:25 PM</span>
+								<p class="name">Validate login flow</p> 
+								<p class="duration text-sm">0h:2m:16s+785ms</p> 
+								<span class="datetime">16:30:27 PM</span>
 							</div>
 						</div>
 						<div class="test-contents d-none">
 							<div class="detail-head">
 								<div class="p-v-10 d-inline-block">	
 									<div class="info">
-										<h5 class="test-status text-pass">Validate the active campaigns and all the campaign segments of partner Ford Motor Company are updated correctly in the database</h5>
-										<span class='badge badge-success'>6/1/2023 3:57:25 PM</span>
-										<span class='badge badge-danger'>6/1/2023 3:57:30 PM</span>
-										<span class='badge badge-default'>0h:0m:5s+349ms</span>
+										<h5 class="test-status text-fail">Validate login flow</h5>
+										<span class='badge badge-success'>6/1/2023 4:30:27 PM</span>
+										<span class='badge badge-danger'>6/1/2023 4:32:43 PM</span>
+										<span class='badge badge-default'>0h:2m:16s+785ms</span>
 									</div>
 																	</div>
 							</div>
@@ -140,7 +140,7 @@
 			<div class="card">
 				<div class="card-header" role="tab">
 					<h5 class="card-title">
-						<div class="node">Given I have connected to database with the necessary connection details</div>
+						<div class="node">Given I have navigated to "http://App.viabenefits.com" portal</div>
 						<div class="status-avatar float-right pass-bg">
 							<i class="fa fa-check text-white"></i>
                         </div>
@@ -154,7 +154,7 @@
 			<div class="card">
 				<div class="card-header" role="tab">
 					<h5 class="card-title">
-						<div class="node">Then I check the existance of the "Ford Motor Company" in the Partner table below</div>
+						<div class="node">Then I have entered "jayanta.dutta@wtwco.com" in the "wtw-email" field</div>
 						<div class="status-avatar float-right pass-bg">
 							<i class="fa fa-check text-white"></i>
                         </div>
@@ -168,7 +168,7 @@
 			<div class="card">
 				<div class="card-header" role="tab">
 					<h5 class="card-title">
-						<div class="node">When I find the partner is existing in the system</div>
+						<div class="node">Then I have entered "Willis@123" in the "wtw-password" field</div>
 						<div class="status-avatar float-right pass-bg">
 							<i class="fa fa-check text-white"></i>
                         </div>
@@ -182,7 +182,7 @@
 			<div class="card">
 				<div class="card-header" role="tab">
 					<h5 class="card-title">
-						<div class="node">Then I validate the following campaigns are available for the partner</div>
+						<div class="node">Then I click on the "//button[contains(text(),'Sign In')]" button</div>
 						<div class="status-avatar float-right pass-bg">
 							<i class="fa fa-check text-white"></i>
                         </div>
@@ -196,71 +196,32 @@
 			<div class="card">
 				<div class="card-header" role="tab">
 					<h5 class="card-title">
-						<div class="node">Then I validate the following campaignsegments of the campaign "Ford Medicare Salaried Retirees hired before 6/1/01"</div>
-						<div class="status-avatar float-right pass-bg">
-							<i class="fa fa-check text-white"></i>
+						<div class="node">Then I have verified "Verify Your Information" text</div>
+						<div class="status-avatar float-right fail-bg">
+							<i class="fa fa-times text-white"></i>
                         </div>
 					</h5>
 				</div>
 				<div class="collapse">
 					<div class="card-body">
-																	</div>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card-header" role="tab">
-					<h5 class="card-title">
-						<div class="node">Then I validate the following campaignsegments of the campaign "Ford Pre-Medicare hired before 6/1/01"</div>
-						<div class="status-avatar float-right pass-bg">
-							<i class="fa fa-check text-white"></i>
-                        </div>
-					</h5>
-				</div>
-				<div class="collapse">
-					<div class="card-body">
-																	</div>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card-header" role="tab">
-					<h5 class="card-title">
-						<div class="node">Then I validate the following campaignsegments of the campaign "Ford Medicare hired after 6/1/01"</div>
-						<div class="status-avatar float-right pass-bg">
-							<i class="fa fa-check text-white"></i>
-                        </div>
-					</h5>
-				</div>
-				<div class="collapse">
-					<div class="card-body">
-																	</div>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card-header" role="tab">
-					<h5 class="card-title">
-						<div class="node">Then I validate the following campaignsegments of the campaign "Ford Pre-Medicare hired after 6/1/01"</div>
-						<div class="status-avatar float-right pass-bg">
-							<i class="fa fa-check text-white"></i>
-                        </div>
-					</h5>
-				</div>
-				<div class="collapse">
-					<div class="card-body">
-																	</div>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card-header" role="tab">
-					<h5 class="card-title">
-						<div class="node">Then I validate there are no campaignsegments for the campaign "Ford IMM"</div>
-						<div class="status-avatar float-right pass-bg">
-							<i class="fa fa-check text-white"></i>
-                        </div>
-					</h5>
-				</div>
-				<div class="collapse">
-					<div class="card-body">
-																	</div>
+						
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-times text-fail"></i></td>
+				<td>16:32:43</td>
+				<td>
+no such element: Unable to locate element: {"method":"xpath","selector":"//*[contains(text(),'Verify Your Information')]"}
+  (Session info: chrome=114.0.5735.91)									</td>
+			</tr>
+	</tbody>
+</table>
+											</div>
 				</div>
 			</div>
 	</div>
@@ -299,11 +260,11 @@
 	                </div>
 	            </div>
 	            <div class="card-footer">
-	                <div><small data-tooltip='100%'>
-	                    <b>1</b> tests passed
+	                <div><small data-tooltip='0%'>
+	                    <b>0</b> tests passed
                     </small></div>
 	                <div>
-	                    <small data-tooltip='0%'><b>0</b> tests failed, 
+	                    <small data-tooltip='100%'><b>1</b> tests failed, 
 	                    <b data-tooltip='0%'>0</b> others
 	                    </small>
                     </div>
@@ -321,9 +282,9 @@
 	                </div>
 	            </div>
 	            <div class="card-footer">
-	                <div><small data-tooltip='100%'><b>9</b>  passed</small></div>
+	                <div><small data-tooltip='80%'><b>4</b>  passed</small></div>
 	                <div>
-	                    <small data-tooltip='0%'><b>0</b>  failed, 
+	                    <small data-tooltip='20%'><b>1</b>  failed, 
 	                    <b data-tooltip='0%'>0</b> others
 	                    </small>
                     </div>
@@ -341,7 +302,7 @@
 							<h2 class="font-size-28 font-weight-light">1</h2>
 							<span class="text-semibold text-success font-size-15">
 							<i class="ti-arrow-up font-size-11"></i> 
-								<span>100%</span>
+								<span>0%</span>
 							</span>
 						</div>
 						<div class="align-self-end">
@@ -357,7 +318,7 @@
 	                <div class="media justify-content-between">
 						<div>
 							<h6 class="card-title">Start</h6>
-							<h6 class="font-weight-light">6/1/2023 3:57:25 PM</h6>
+							<h6 class="font-weight-light">6/1/2023 4:30:27 PM</h6>
 							<span class="text-semibold text-success font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -373,7 +334,7 @@
 	                <div class="media justify-content-between">
 						<div>
 							<h6 class="card-title">Duration</h6>
-							<h6 class="font-weight-light">00:00:05.3803853</h6>
+							<h6 class="font-weight-light">00:02:16.8566183</h6>
 							<span class="text-semibold text-danger font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -389,7 +350,7 @@
 	                <div class="media justify-content-between">
 						<div>
 							<p class="">Duration</p>
-							<h6 class="font-weight-light">00:00:08.2541231</h6>
+							<h6 class="font-weight-light">00:02:21.9875295</h6>
 							<span class="text-semibold font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -406,13 +367,13 @@
 <script>
 	var statusGroup = {
     parentCount: 1,
-		passParent: 1,
-		failParent: 0,
+		passParent: 0,
+		failParent: 1,
 		fatalParent: 0,
 		errorParent: 0,
 		warningParent: 0,
 		skipParent: 0,
-		exceptionsParent: 0,
+		exceptionsParent: 1,
 		childCount: 0,
 		passChild: 0,
 		failChild: 0,
@@ -423,16 +384,16 @@
 		infoChild: 0,
 		debugChild: 0,
 		exceptionsChild: 0,
-		grandChildCount: 9,
-		passGrandChild: 9,
-		failGrandChild: 0,
+		grandChildCount: 5,
+		passGrandChild: 4,
+		failGrandChild: 1,
 		fatalGrandChild: 0,
 		errorGrandChild: 0,
 		warningGrandChild: 0,
 		skipGrandChild: 0,
 		infoGrandChild: 0,
 		debugGrandChild: 0,
-		exceptionsGrandChild: 0,
+		exceptionsGrandChild: 1,
 	};
 </script>
 
