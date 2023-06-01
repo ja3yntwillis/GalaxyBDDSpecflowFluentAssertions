@@ -10,17 +10,17 @@ namespace DBOperations.Galaxy.DBModels
     {
         public int PARTNERID { get; set; }
         public string PARTNERNAME { get; set; }
-        //public string? EMPLOYERIDENTIFICATIONNUMBER { get; set; }
-        //public int COMPANYTYPEID { get; set; }
-        //public string? LOGOIMAGEFILENAME { get; set; }
-        //public string? PRIMARYWEBSITEURL { get; set; }
-        //public string? EMAILADDRESS { get; set; }
-        //public int PARTNERGUID { get; set; }
-        //public DateTime LASTMODIFIEDDATE { get; set; }
-        //public string? PARTNERNAMEFORMAILING { get; set; }
-        //public int? CONTACTPHONENUMBER { get; set; }
-        //public int INCLUDEINDUPLICATECHECKVIEW { get; set; }
-        //public string? SFDCACCOUNTID { get; set; }
+        public string? EMPLOYERIDENTIFICATIONNUMBER { get; set; }
+        public int COMPANYTYPEID { get; set; }
+        public string? LOGOIMAGEFILENAME { get; set; }
+        public string? PRIMARYWEBSITEURL { get; set; }
+        public string? EMAILADDRESS { get; set; }
+        public Guid PARTNERGUID { get; set; }
+        public DateTime LASTMODIFIEDDATE { get; set; }
+        public string? PARTNERNAMEFORMAILING { get; set; }
+        public int? CONTACTPHONENUMBER { get; set; }
+        public bool INCLUDEINDUPLICATECHECKVIEW { get; set; }
+        public string? SFDCACCOUNTID { get; set; }
     }
 }
 
