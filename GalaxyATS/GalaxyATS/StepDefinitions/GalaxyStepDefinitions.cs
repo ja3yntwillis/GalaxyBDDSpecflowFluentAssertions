@@ -51,25 +51,15 @@ namespace GalaxyATS.StepDefinitions
         {
             IDictionary<string, int> campaigns = (IDictionary<string, int>)ScenarioContext.Current["campaignDict"];
             var currentCampaign = campaigns[campaignName];
+            List<CampaignSegment> campaignData;
+            using (var dbContext = new DevEHGalaxyContext())
+            {
+                campaignData = dbContext.Campaignsegments.Where(x => x.campaignId.Equals(currentCampaign)).ToList();
+            }
             Console.WriteLine(currentCampaign.ToString());
-            var query = "select campaignSegmentName from dbo.campaignsegment where campaignid = " + campaigns[campaignName];
-            DataTable dt = DBTableOps.getdatafromQuery(query);
-            dt.Rows.Count.Should().Be(0);
+            campaignData.Count.Should().Be(0);
         }
-        [Then(@"I check the existance of the ""([^""]*)"" in the ""([^""]*)"" table")]
-
-        public void ThenICheckTheExistanceOfThePartnerAtTheTable(string value, string tablename, Table tab)
-        {
-            var searchparam = "partnerId";
-            var query = "select " + searchparam + " from " + tablename + " where partnerName='" + value + "'";
-            DataTable dt = DBTableOps.getdatafromQuery(query);
-            partnerid = tab.Rows[0]["partnerid"];
-            string expected_partnerID = dt.Rows[0][searchparam].ToString();
-            expected_partnerID.Should().Be(partnerid);
-            ScenarioContext.Current["partnerId"] = expected_partnerID;
-
-
-        }
+  
         [Then(@"I check the existance of the ""([^""]*)"" in the Partner table below")]
         public void ThenICheckTheExistanceOfTheInThePartnerTableBelow(string PartnerName, Table table)
         {
