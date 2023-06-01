@@ -3,10 +3,8 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using DataGeneration.Galaxy.Models;
-using DataGeneration.Galaxy.Models.DBModels;
 using DBOperations.Galaxy.DBModels;
 using GalaxyATS.UserFunctions;
-using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using Org.BouncyCastle.Asn1.Cms;
 using TechTalk.SpecFlow;
 
@@ -49,17 +47,27 @@ namespace GalaxyATS.StepDefinitions
         [Then(@"I validate there are no campaignsegments for the campaign ""([^""]*)""")]
         public void ThenIValidateThereAreNoCampaignsegmentsForTheCampaign(string campaignName)
         {
-            IDictionary<string, int> campaigns = (IDictionary<string, int>)ScenarioContext.Current["campaignDict"];
+            IDictionary<string, string> campaigns = (IDictionary<string, string>)ScenarioContext.Current["campaignDict"];
             var currentCampaign = campaigns[campaignName];
-            List<CampaignSegment> campaignData;
-            using (var dbContext = new DevEHGalaxyContext())
-            {
-                campaignData = dbContext.Campaignsegments.Where(x => x.campaignId.Equals(currentCampaign)).ToList();
-            }
             Console.WriteLine(currentCampaign.ToString());
-            campaignData.Count.Should().Be(0);
+            var query = "select campaignSegmentName from dbo.campaignsegment where campaignid = " + campaigns[campaignName];
+            DataTable dt = DBTableOps.getdatafromQuery(query);
+            dt.Rows.Count.Should().Be(0);
         }
-  
+        [Then(@"I check the existance of the ""([^""]*)"" in the ""([^""]*)"" table")]
+
+        public void ThenICheckTheExistanceOfThePartnerAtTheTable(string value, string tablename, Table tab)
+        {
+            var searchparam = "partnerId";
+            var query = "select " + searchparam + " from " + tablename + " where partnerName='" + value + "'";
+            DataTable dt = DBTableOps.getdatafromQuery(query);
+            partnerid = tab.Rows[0]["partnerid"];
+            string expected_partnerID = dt.Rows[0][searchparam].ToString();
+            expected_partnerID.Should().Be(partnerid);
+            ScenarioContext.Current["partnerId"] = expected_partnerID;
+
+
+        }
         [Then(@"I check the existance of the ""([^""]*)"" in the Partner table below")]
         public void ThenICheckTheExistanceOfTheInThePartnerTableBelow(string PartnerName, Table table)
         {
@@ -82,43 +90,35 @@ namespace GalaxyATS.StepDefinitions
         [Then(@"I validate the following campaigns are available for the partner")]
         public void ThenIValidateTheFollowingCampaignsAreAvailableForThePartner(Table table)
         {
-            IDictionary<string, int> campaigns = new Dictionary<string, int>();
-            List<Campaign> campaignData;
-            using (var dbContext = new DevEHGalaxyContext())
+            var query = "select campaignId,campaignName from dbo.campaign where partnerid=" + ScenarioContext.Current["partnerId"];
+            IDictionary<string, string> campaigns = new Dictionary<string, string>();
+            DataTable dt = DBTableOps.getdatafromQuery(query);
+            for (int i = 0; i < dt.Rows.Count; i++)
             {
-                campaignData = dbContext.Campaigns.Where(x => x.partnerId.Equals(ScenarioContext.Current["partnerId"])).ToList();
-            }
-            for(int i = 0; i < campaignData.Count; i++)
-            {
-                var actual_campaignid = campaignData[i].campaignId;
-                var expected_campaignId = Int32.Parse(table.Rows[i]["campaignId"].ToString());
+                var actual_campaignid = dt.Rows[i]["campaignId"].ToString();
+                var expected_campaignId = table.Rows[i]["campaignId"].ToString();
                 expected_campaignId.Should().Be(actual_campaignid);
-                var actual_campaignname = campaignData[i].campaignName.ToString(); ;
+                var actual_campaignname = dt.Rows[i]["campaignName"].ToString(); ;
                 var expected_campaignname = table.Rows[i]["campaignName"].ToString(); ;
                 expected_campaignname.Should().Be(actual_campaignname);
                 campaigns.Add(actual_campaignname, expected_campaignId);
                 ScenarioContext.Current["campaignDict"] = campaigns;
+
             }
-                       
         }
         [Then(@"I validate the following campaignsegments of the campaign ""([^""]*)""")]
         public void ThenIValidateTheFollowingCampaignsegmentsOfTheCampaign(string campaignName, Table table)
         {
-            IDictionary<string, int> campaigns = (IDictionary<string, int>)ScenarioContext.Current["campaignDict"];
+            IDictionary<string, string> campaigns = (IDictionary<string, string>)ScenarioContext.Current["campaignDict"];
             var currentCampaign = campaigns[campaignName];
             Console.WriteLine(currentCampaign.ToString());
-           
-            List<CampaignSegment> campaignSegmentData;
-            using (var dbContext = new DevEHGalaxyContext())
+            var query = "select campaignSegmentName from dbo.campaignsegment where campaignid = " + campaigns[campaignName];
+            DataTable dt = DBTableOps.getdatafromQuery(query);
+            for (int i = 0; i < dt.Rows.Count; i++)
             {
-                campaignSegmentData = dbContext.Campaignsegments.Where(x => x.campaignId.Equals(currentCampaign)).ToList();
-            }
-            
-            for (int i = 0; i < campaignSegmentData.Count; i++)
-            {
-                var actual_campaignName = campaignSegmentData[i].campaignSegmentName.ToString();
-                var expected_campaignName = table.Rows[i]["CampaignSegmentName"].ToString();
-                expected_campaignName.Should().Be(actual_campaignName);
+                var actual_campaignid = dt.Rows[i]["campaignSegmentName"].ToString();
+                var expected_campaignId = table.Rows[i]["CampaignSegmentName"].ToString();
+                expected_campaignId.Should().Be(actual_campaignid);
 
             }
 

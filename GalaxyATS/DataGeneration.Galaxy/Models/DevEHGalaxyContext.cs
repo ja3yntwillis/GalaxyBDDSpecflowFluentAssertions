@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DataGeneration.Galaxy.Models.DBModels;
 using DBOperations.Galaxy.DBModels;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -30,8 +29,6 @@ namespace DataGeneration.Galaxy.Models
         //        .AddConsole();
         //});
         public DbSet<Partner> Partners { get; set; }
-        public DbSet<Campaign> Campaigns { get; set; }
-        public DbSet<CampaignSegment> Campaignsegments { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -57,25 +54,11 @@ namespace DataGeneration.Galaxy.Models
             //        .HasConstraintName("FK_Course_Teacher");
             //});
             // Map entity type with DB table
-            #region Partner Table
             modelBuilder.Entity<Partner>().ToTable("PARTNER");
 
             // Set the primary key
             modelBuilder.Entity<Partner>().HasKey(pc => new { pc.PARTNERID});
-            #endregion
-            #region Campaign Table
-            modelBuilder.Entity<Campaign>().ToTable("CAMPAIGN");
-
-            // Set the primary key
-            modelBuilder.Entity<Campaign>().HasKey(pc => new { pc.campaignId });
-            #endregion
-            #region CampaignSegemnt Table
-            modelBuilder.Entity<CampaignSegment>().ToTable("CAMPAIGNSEGMENT");
-
-            // Set the primary key
-            modelBuilder.Entity<CampaignSegment>().HasKey(pc => new { pc.campaignSegmentId });
-            #endregion
         }
 
-    }
+        }
 }
