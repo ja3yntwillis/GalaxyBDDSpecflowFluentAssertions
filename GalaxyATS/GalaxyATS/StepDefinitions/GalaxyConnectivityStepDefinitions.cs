@@ -2,6 +2,7 @@ using System;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
+using DataGeneration.Galaxy.DBOperation;
 using GalaxyATS.UserFunctions;
 using Google.Protobuf.WellKnownTypes;
 using NUnit.Framework;
@@ -38,6 +39,12 @@ namespace GalaxyATS.StepDefinitions
 
 
         }
+        [Then(@"I check the existance of the ""([^""]*)"" in the ""([^""]*)"" table below")]
+        public void ThenICheckTheExistanceOfTheInTheTableBelow(string Value, string TableName, Table table)
+        {            
+            GetPartnerId.fetchPartnerIds(Value, table.Rows[0]["partnerid"]);
+        }
+
         [When(@"I find the partner is existing in the system")]
         public void WhenIFindThePartnerIsExistingInTheSystem()
         {

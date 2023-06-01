@@ -115,10 +115,10 @@ this.ScenarioInitialize(scenarioInfo);
                             "partnerid"});
                 table1.AddRow(new string[] {
                             "13000021"});
-#line 10
- testRunner.Then("I check the existance of the \"Ford Motor Company\" in the \"partner\" table", ((string)(null)), table1, "Then ");
-#line hidden
 #line 13
+ testRunner.Then("I check the existance of the \"Ford Motor Company\" in the \"partner\" table below", ((string)(null)), table1, "Then ");
+#line hidden
+#line 16
  testRunner.When("I find the partner is existing in the system", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -139,7 +139,7 @@ this.ScenarioInitialize(scenarioInfo);
                 table2.AddRow(new string[] {
                             "13107363",
                             "Ford Pre-Medicare hired before 6/1/01"});
-#line 14
+#line 17
  testRunner.Then("I validate the following campaigns are available for the partner", ((string)(null)), table2, "Then ");
 #line hidden
             }
