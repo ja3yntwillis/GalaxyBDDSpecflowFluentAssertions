@@ -1,5 +1,8 @@
-/GalaxyATS/bin/
+[Dd]ebug
 /GalaxyATS/.vs/
-/GalaxyATS/GalaxyATS/bin/
-/GalaxyATS/.vs/GalaxyATS/DesignTimeBuild/.dtbcache.v2
-/GalaxyATS/.vs/GalaxyATS/DesignTimeBuild/.dtbcache.v2
+/GalaxyATS/GalaxyATS/bin/Debug/
+/GalaxyATS/GalaxyATS/obj/Debug/
+*.feature.cs
+/GalaxyATS/GalaxyATS/obj/Debug/net6.0/ref/GalaxyATS.dll
+/GalaxyATS/GalaxyATS/obj/Debug/net6.0/refint/GalaxyATS.dll
+/GalaxyATS/GalaxyATS/obj/Debug/net6.0/GalaxyATS.csproj.CoreCompileInputs.cache
