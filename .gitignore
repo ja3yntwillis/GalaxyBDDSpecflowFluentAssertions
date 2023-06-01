@@ -32,3 +32,5 @@
 /GalaxyATS/DataGeneration.Galaxy/obj/Debug/net6.0/DataGeneration.Galaxy.GeneratedMSBuildEditorConfig.editorconfig
 /GalaxyATS/DataGeneration.Galaxy/obj/Debug/net6.0/DataGeneration.Galaxy.genruntimeconfig.cache
 /GalaxyATS/DataGeneration.Galaxy/obj/Debug/net6.0/DataGeneration.Galaxy.pdb
+/GalaxyATS/GalaxyATS/bin/Debug/net6.0/GalaxyATS.deps.json
+/GalaxyATS/GalaxyATS/bin/Debug/net6.0/Newtonsoft.Json.dll

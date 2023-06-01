@@ -2,6 +2,8 @@
 using AventStack.ExtentReports;
 using System.Reflection;
 using AventStack.ExtentReports.Reporter;
+using System.IO;
+using TechTalk.SpecFlow;
 
 namespace GalaxyATS
 {
@@ -11,21 +13,22 @@ namespace GalaxyATS
         private static ExtentTest scenario;
         private static ExtentReports extent;
         private static ExtentTest featureName;
+        private static string ReportPath;
 
         [BeforeScenario]
-        public void BeforeScenario()
+        public void BeforeScenario(ScenarioContext scenarioContext)
         {
             Console.WriteLine("BeforeScenario");
-            scenario = featureName.CreateNode<Scenario>(ScenarioContext.Current.ScenarioInfo.Title);
+            scenario = extent.CreateTest(scenarioContext.ScenarioInfo.Title);
+            //scenario = featureName.CreateNode<Scenario>(ScenarioContext.Current.ScenarioInfo.Title);
         }
 
         [BeforeTestRun]
         public static void InitializeReport()
         {
-            string path1 = AppDomain.CurrentDomain.BaseDirectory.Replace("\\bin\\Debug", "");
-            string path = path1 + "Report\\index.html";
-            var htmlReporter = new ExtentHtmlReporter(path);
-
+            string path1 = AppDomain.CurrentDomain.BaseDirectory.Replace("\\bin\\Debug\\net6.0", "");
+            ReportPath = path1 + "Report\\index.html";
+            var htmlReporter = new ExtentHtmlReporter(ReportPath);
             extent = new ExtentReports();
             extent.AttachReporter(htmlReporter);
         }
@@ -33,6 +36,7 @@ namespace GalaxyATS
         public static void TearDownReport()
         {
             extent.Flush();
+            System.Diagnostics.Process.Start(ReportPath);
         }
         [AfterStep]
         public void InsertReportingSteps(ScenarioContext sc)
@@ -48,30 +52,30 @@ namespace GalaxyATS
             {
                 
                 if (stepType == "Given")
-                    scenario.CreateNode<Given>(ScenarioStepContext.Current.StepInfo.Text);
+                    scenario.CreateNode<Given>(stepType + " " + ScenarioStepContext.Current.StepInfo.Text);
                 else if (stepType == "When")
-                    scenario.CreateNode<When>(ScenarioStepContext.Current.StepInfo.Text);
+                    scenario.CreateNode<When>(stepType + " " + ScenarioStepContext.Current.StepInfo.Text);
                 else if (stepType == "Then")
-                    scenario.CreateNode<Then>(ScenarioStepContext.Current.StepInfo.Text);
+                    scenario.CreateNode<Then>(stepType + " " + ScenarioStepContext.Current.StepInfo.Text);
                 else if (stepType == "And")
-                    scenario.CreateNode<And>(ScenarioStepContext.Current.StepInfo.Text);
+                    scenario.CreateNode<And>(stepType + " " + ScenarioStepContext.Current.StepInfo.Text);
             }
-            if (sc.TestError != null)
+            else
             {
                 if (stepType == "Given")
-                    scenario.CreateNode<Given>(ScenarioStepContext.Current.StepInfo.Text).Fail(sc.TestError.Message);
+                    scenario.CreateNode<Given>(stepType + " " + ScenarioStepContext.Current.StepInfo.Text).Fail(sc.TestError.Message);
                 if (stepType == "When")
-                    scenario.CreateNode<When>(ScenarioStepContext.Current.StepInfo.Text).Fail(sc.TestError.Message);
+                    scenario.CreateNode<When>(stepType + " " + ScenarioStepContext.Current.StepInfo.Text).Fail(sc.TestError.Message);
                 if (stepType == "Then")
-                    scenario.CreateNode<Then>(ScenarioStepContext.Current.StepInfo.Text).Fail(sc.TestError.Message);
+                    scenario.CreateNode<Then>(stepType + " " + ScenarioStepContext.Current.StepInfo.Text).Fail(sc.TestError.Message);
                 if (stepType == "And")
-                    scenario.CreateNode<And>(ScenarioStepContext.Current.StepInfo.Text).Fail(sc.TestError.Message);
+                    scenario.CreateNode<And>(stepType + " " + ScenarioStepContext.Current.StepInfo.Text).Fail(sc.TestError.Message);
             }
         }
-        [BeforeFeature]
-        public static void BeforeFeature(FeatureContext featurecontext)
-        {
-            featureName = extent.CreateTest(featurecontext.FeatureInfo.Title);
-        }
+        //[BeforeFeature]
+        //public static void BeforeFeature(ScenarioContext scenarioContext)
+        //{
+        //    featureName = extent.CreateTest(scenarioContext.ScenarioInfo.Title);
+        //}
     }
 }
