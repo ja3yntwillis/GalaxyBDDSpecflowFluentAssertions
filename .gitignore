@@ -38,3 +38,4 @@
 *.lock
 *.wsuo
 *.sqlite
+/GalaxyATS/.vs/GalaxyATS/v17/TestStore/0/testlog.manifest
