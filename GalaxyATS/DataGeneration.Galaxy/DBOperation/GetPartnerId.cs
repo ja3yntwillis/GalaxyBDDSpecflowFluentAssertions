@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataGeneration.Galaxy.Models;
-using DBOperations.Galaxy.DBModels;
 using FluentAssertions;
 
 namespace DataGeneration.Galaxy.DBOperation
@@ -16,7 +15,7 @@ namespace DataGeneration.Galaxy.DBOperation
             int partner_Id;
             using (var dbContext = new DevEHGalaxyContext())
             {
-                partner_Id = dbContext.Partners.Where(x => x.PARTNERNAME.Equals(PartnerName)).First().PARTNERID;
+                partner_Id = dbContext.Partners.Where(x => x.LEGALENTITYNAME.Equals(PartnerName)).First().PARTNERID;
 
             }
             partner_Id.Should().Be(Int32.Parse(PartnerId));

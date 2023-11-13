@@ -6,7 +6,8 @@ To verify on implementation of AT
 @Test
 @Business_cases
 Scenario: Validate the active campaigns and all the campaign segments of partner Ford Motor Company are updated correctly in the database
-	Given I have connected to database with the necessary connection details
+	Given I have Connected to extendhealth domain
+	Then I have connected to database with the necessary connection details
 	Then I check the existance of the "Ford Motor Company" in the Partner table below
 	| partnerid |
 	| 13000021  |

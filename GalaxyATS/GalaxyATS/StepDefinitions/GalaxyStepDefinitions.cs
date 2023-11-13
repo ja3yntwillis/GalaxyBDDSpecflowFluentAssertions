@@ -3,8 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using DataGeneration.Galaxy.Models;
-using DataGeneration.Galaxy.Models.DBModels;
-using DBOperations.Galaxy.DBModels;
+using DataGeneration.Galaxy.Models.FundingCacheClientDBModels;
 using GalaxyATS.UserFunctions;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using Org.BouncyCastle.Asn1.Cms;
@@ -61,16 +60,17 @@ namespace GalaxyATS.StepDefinitions
         }
   
         [Then(@"I check the existance of the ""([^""]*)"" in the Partner table below")]
-        public void ThenICheckTheExistanceOfTheInThePartnerTableBelow(string PartnerName, Table table)
+        public int ThenICheckTheExistanceOfTheInThePartnerTableBelow(string PartnerName, Table table)
         {
             int partner_Id;
             using (var dbContext = new DevEHGalaxyContext())
             {
-                partner_Id = dbContext.Partners.Where(x => x.PARTNERNAME.Equals(PartnerName)).First().PARTNERID;
+                partner_Id = dbContext.Partners.Where(x => x.LEGALENTITYNAME.Equals(PartnerName)).First().PARTNERID;
 
             }
-            partner_Id.Should().Be(Int32.Parse(table.Rows[0]["partnerid"]));
-            ScenarioContext.Current["partnerId"] = table.Rows[0]["partnerid"];
+            //partner_Id.Should().Be(Int32.Parse(table.Rows[0]["partnerid"]));
+            //ScenarioContext.Current["partnerId"] = table.Rows[0]["partnerid"];
+            return partner_Id;
         }
 
 

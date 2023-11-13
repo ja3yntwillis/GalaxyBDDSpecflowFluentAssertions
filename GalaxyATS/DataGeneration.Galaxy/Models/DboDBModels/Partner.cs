@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DBOperations.Galaxy.DBModels
+namespace DataGeneration.Galaxy.Models.DboDBModels
 {
+    
     public class Partner
     {
         public int PARTNERID { get; set; }
@@ -23,4 +25,3 @@ namespace DBOperations.Galaxy.DBModels
         public string? SFDCACCOUNTID { get; set; }
     }
 }
-

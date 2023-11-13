@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DataGeneration.Galaxy.Models.DBModels;
-using DBOperations.Galaxy.DBModels;
+﻿using FundingCacheClient = DataGeneration.Galaxy.Models.FundingCacheClientDBModels;
+using Dbo = DataGeneration.Galaxy.Models.DboDBModels;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 
 namespace DataGeneration.Galaxy.Models
 {
@@ -29,16 +23,17 @@ namespace DataGeneration.Galaxy.Models
         //            && level == LogLevel.Error)
         //        .AddConsole();
         //});
-        public DbSet<Partner> Partners { get; set; }
-        public DbSet<Campaign> Campaigns { get; set; }
-        public DbSet<CampaignSegment> Campaignsegments { get; set; }
+        public DbSet<FundingCacheClient.Partner> Partners { get; set; }
+        public DbSet<Dbo.Partner> DboPartners { get; set; }
+        public DbSet<FundingCacheClient.Campaign> Campaigns { get; set; }
+        public DbSet<FundingCacheClient.CampaignSegment> Campaignsegments { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
                 //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer(@"Server=devsqlag.extendhealth.com;Database=DevEHGalaxy;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer(@"Server=qasqlag.extendhealth.com;Database=QAExtendHealth;Trusted_Connection=True;");
             }
         }
 
@@ -57,23 +52,29 @@ namespace DataGeneration.Galaxy.Models
             //        .HasConstraintName("FK_Course_Teacher");
             //});
             // Map entity type with DB table
-            #region Partner Table
-            modelBuilder.Entity<Partner>().ToTable("PARTNER");
+            #region FundingCache Partner Table
+            modelBuilder.Entity<FundingCacheClient.Partner>().ToTable("Partner", "FundingCache_Client");
 
             // Set the primary key
-            modelBuilder.Entity<Partner>().HasKey(pc => new { pc.PARTNERID});
+            modelBuilder.Entity<FundingCacheClient.Partner>().HasKey(pc => new { pc.PARTNERID });
+            #endregion
+            #region DBO Partner Table
+            modelBuilder.Entity<Dbo.Partner>().ToTable("Partner", "dbo");
+
+            // Set the primary key
+            modelBuilder.Entity<Dbo.Partner>().HasKey(pc => new { pc.PARTNERID });
             #endregion
             #region Campaign Table
-            modelBuilder.Entity<Campaign>().ToTable("CAMPAIGN");
+            modelBuilder.Entity<FundingCacheClient.Campaign>().ToTable("campaign", "FundingCache_Client");
 
             // Set the primary key
-            modelBuilder.Entity<Campaign>().HasKey(pc => new { pc.campaignId });
+            modelBuilder.Entity<FundingCacheClient.Campaign>().HasKey(pc => new { pc.campaignId });
             #endregion
             #region CampaignSegemnt Table
-            modelBuilder.Entity<CampaignSegment>().ToTable("CAMPAIGNSEGMENT");
+            modelBuilder.Entity<FundingCacheClient.CampaignSegment>().ToTable("campaignsegment", "FundingCache_Client");
 
             // Set the primary key
-            modelBuilder.Entity<CampaignSegment>().HasKey(pc => new { pc.campaignSegmentId });
+            modelBuilder.Entity<FundingCacheClient.CampaignSegment>().HasKey(pc => new { pc.campaignSegmentId });
             #endregion
         }
 
