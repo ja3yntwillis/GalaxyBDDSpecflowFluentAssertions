@@ -1,0 +1,323 @@
+﻿@charset "utf-8";
+/* CSS Document */
+#runInfoLeftContainer
+{
+	width:61%;
+	display:block;
+	float:left;
+	margin:10px 0px 55px 22px;
+}
+
+#runInfoRightContainer
+{
+	width:36%;
+	float:right;
+	display:block;
+	margin:10px 22px 55px 0px;
+}
+
+#RunDetailChart
+{
+	width:300px;
+	height:250px;
+	display:block;
+	float:left;
+}
+
+.pieChartResults
+{
+	padding:25px;
+}
+
+#RunDetailData
+{
+	width:auto;
+	display:block;
+	float:left;
+}
+
+#RunDetailButtonWrapper
+{
+	width:auto;
+	display:block;
+	float:right;
+}
+
+.runDataUList
+{
+	list-style-type:none;
+}
+
+.runDataUList li
+{
+	padding: 0px 0px 10px 10px
+}
+
+.runDataHeaders
+{
+	font-weight:bold;
+}
+
+#TestTableWrapper
+{
+	width:100%;
+	display:block;
+	margin:40px 0px 0px 0px;
+}
+
+#TestTableWrapper legend
+{
+	display: inline-block;
+	display: -moz-inline-stack;
+	padding: .2em .5em;
+	color:#000;
+	border-top: 1px solid;
+	border-right: 1px solid;
+	border-left: 1px solid;
+	border-bottom: 0px;
+	font-variant:small-caps;
+	letter-spacing:3px;
+	vertical-align:bottom;
+	font-size:19px;
+}
+
+#TestTableWrapper2
+{
+	width:100%;
+	display:block;
+	margin:0px 0px 0px 0px;
+}
+
+#TestTableWrapper2 legend
+{
+	display: inline-block;
+	display: -moz-inline-stack;
+	padding: .2em .5em;
+	color:#000;
+	border-top: 1px solid;
+	border-right: 1px solid;
+	border-left: 1px solid;
+	border-bottom: 0px;
+	font-variant:small-caps;
+	letter-spacing:2px;
+	vertical-align:bottom;
+	font-size:12px;
+    cursor:pointer;
+}
+
+#TestTableWrapper2 fieldset {
+    height:750px;
+    overflow-y:scroll;
+}
+
+#TestTableWrapper2 legend.selectedTab {
+    font-size: 20px;
+}
+
+#runSummaryTable {
+	max-width:10px;
+	border: 1px solid black !important;
+	border-collapse: collapse ;
+}
+
+#runSummaryTable tr td:nth-child(n) {
+	border: 1px solid black !important;
+	border-collapse: collapse ;
+	word-wrap: break-word;
+	max-width: 90px;
+}
+
+#runSummaryTable tr th:nth-child(n) {
+	border: 1px solid black !important;
+	border-collapse: collapse ;
+}
+
+table
+{
+	border-collapse:collapse;
+	border-spacing:0;
+	border:0 none;
+}
+
+td
+{
+	vertical-align:bottom;
+	border:0 none;
+}
+
+.infoTableRow
+{
+	margin: 15px 0px 0px 0px;
+	display: block;
+	width: 100%;
+    word-wrap:break-word;
+}
+
+.failedTestRow1
+{
+	vertical-align:top;
+	padding:0px 5px 0px 0px;
+	width:160px;
+}
+
+.failedTestTableRow
+{
+	width:100%;
+}
+
+.failedTestButtonGroup
+{
+	float:right;
+	display:block;
+}
+
+.failedTestButtons 
+{
+    float:right;
+    width: 150px;
+}
+
+#failedTestTable
+{
+	width:100%;
+}
+
+.failedType
+{
+	font-style:italic;
+	font-size:14px;
+}
+
+.failedText 
+{
+    font-style: italic;
+    color: #969696;
+    font-size: 14px;
+    width: 100%;
+    display: block;
+}
+
+.failedTestName
+{
+	font-weight:bold;
+	font-size:16px;
+}
+
+.failedTestLink
+{
+	color:#F00;
+}
+
+#failedInfoTable 
+{
+    display: block;
+    width: 100%;
+}
+
+#failedInfoTable tbody 
+{
+    display: block;
+}
+
+.failedTestRow2 
+{
+    display: block;
+}
+
+.failedTestLink:visited {
+    color: #900;
+}
+
+.failedTestLink:hover 
+{
+    color: #ff6c32;
+}
+
+.commits
+{
+	min-height:300px;
+}
+
+.commitLinks 
+{
+    color: #000;
+}
+
+.commitLinks:visited
+{
+	color:#003;
+}
+
+.commitLinks:hover 
+{
+    color: #969696;
+}
+
+@media only screen and (min-width: 300px) 
+{
+    #runInfoLeftContainer
+	{
+		width:94%;
+	}
+	
+	.runDetail
+	{
+		width:94%;
+	}
+	
+	#TestTableWrapper
+	{
+		width:96%;
+	}
+	
+	#runInfoRightContainer
+	{
+		width:96%;
+	}
+}
+
+@media only screen and (min-width: 600px)  
+{
+	#runInfoLeftContainer
+	{
+		width:94%;
+	}
+	
+	.runDetail
+	{
+		width:94%;
+	}
+	
+	#TestTableWrapper
+	{
+		width:96%;
+	}
+	
+	#runInfoRightContainer
+	{
+		width:96%;
+	}
+}
+
+@media only screen and (min-width: 1600px)
+{
+	#runInfoLeftContainer
+	{
+		width:61%;
+	}
+	
+	.runDetail
+	{
+		width:97%;
+	}
+	
+	#TestTableWrapper
+	{
+		width:100%;
+	}
+	
+	#runInfoRightContainer
+	{
+		width:36%;
+	}
+}

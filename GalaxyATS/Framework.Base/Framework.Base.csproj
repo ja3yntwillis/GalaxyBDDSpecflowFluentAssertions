@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="System.Text.Json" Version="7.0.3" />
+		<PackageReference Include="Cedar.Configuration" Version="1.0.2" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Cedar.DataGeneration" Version="1.0.2" />
+  </ItemGroup>
+
+</Project>

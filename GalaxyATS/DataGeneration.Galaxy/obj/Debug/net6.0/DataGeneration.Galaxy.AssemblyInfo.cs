@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DataGeneration.Galaxy")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d9bde32ffc9ab77a10541cab5fee2b3898f2e34d")]
 [assembly: System.Reflection.AssemblyProductAttribute("DataGeneration.Galaxy")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DataGeneration.Galaxy")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

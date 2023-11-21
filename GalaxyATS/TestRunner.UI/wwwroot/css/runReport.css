@@ -1,0 +1,72 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+#runReport
+{
+    margin: 10px;
+    font-size:14px;
+}
+
+#runReportList 
+{
+    margin: 0px 0px 5px 0px;
+    list-style: none;
+}
+
+#runReportList span
+{
+    font-weight:bold;
+    font-size:15px;
+}
+
+#runReportURLs 
+{
+    list-style: none;
+}
+
+#runReportURLs span 
+{
+    font-weight:bold;
+}
+
+#azDevopsURLs
+{
+    list-style: none;
+}
+
+#azDevopsURLs span 
+{
+    font-weight: bold;
+}
+
+#runReportTable 
+{
+    border-spacing: 0px;
+    padding: 40px;
+}
+
+#runReportTable td, th 
+{
+    border: 1px solid black;
+    padding: 4px;
+}
+
+.appHeader
+{
+    font-size: 17px;
+    font-weight:bold;
+    text-decoration:underline;
+    padding:0px 0px 3px 0px;
+}
+
+@media only screen and (min-width: 300px) {
+}
+
+@media only screen and (min-width: 600px)  
+{
+	
+}
+
+@media only screen and (min-width: 1600px)
+{
+}

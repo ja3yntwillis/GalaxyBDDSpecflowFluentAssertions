@@ -1,0 +1,191 @@
+﻿@{
+    ViewData["Title"] = "Test Presets";
+}
+
+@using TestRunner.UI.ViewModels
+@model TestPresetVM
+
+@section AddedStyles
+{
+    <link rel="stylesheet" type="text/css" href="~/css/site.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/testPreset.css" />
+}
+
+<div class="seGrid sidebar2">
+    <div id="breadCrumbNav">
+        <div id="breadCrumbContainer">
+            <ul class="breadcrumb">
+                <li><a href="/Home">Home</a></li>
+                <li>Test Presets</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="seGrid content">
+    <div id="contentWrapper">
+        <div id="leftcontainer">
+            <div id="inputBlock">
+                <label for="presetList">Current Presets</label>
+                <select id="presetList" name="presetList" size="6">
+                    @foreach (var preset in Model.CurrentPresets)
+                    {
+                        <option value="@preset">@preset</option>
+                    }
+                </select>
+            </div>
+        </div>
+        <div id="centercontainer">
+            <div id="btnBlock">
+                <button id="uploadBtn">Upload Preset</button>
+                <input type="file" name="presetFile" id="fileInput" accept=".json" hidden />
+            </div>
+            <div id="btnBlock">
+                <button id="addBtn">Download Preset</button>
+                <a href="#" id="dwnldLink" download=".json" hidden></a>
+            </div>
+            <div id="btnBlock">
+                <button id="deleteBtn">Remove Preset</button>
+            </div>
+            <div id="btnBlock">
+                <button id="updateBtn">Update Preset</button>
+            </div>
+        </div>
+        <div id="rightcontainer">
+            <div id="inputBlock">
+                    <label for="selectedPresetInfo">Selected Preset Information</label>
+                    <ul id="selectedPresetInfo">
+                    </ul>
+                <div id="listWrapper">
+                    <label for="selectedPresetTests" id="selectedPresetTestsLabel">Test List</label>
+                    <ul id="selectedPresetTests">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script>
+        function downloadURI(uri, name) {
+            var link = document.getElementById("dwnldLink");
+            link.download = name + ".json";
+            link.href = uri;
+            link.click();
+        }
+        function applyTestPreset(presetContent) {
+            var keysToIgnore = ["starttime", "endtime"];
+            var settingsUl = document.getElementById("selectedPresetInfo");
+            settingsUl.innerHTML = "";
+            var testUl = document.getElementById("selectedPresetTests");
+            var testUlLabel = document.getElementById("selectedPresetTestsLabel");
+            testUl.innerHTML = "";
+            var numberOfTests = "";
+            Object.entries(presetContent).forEach(([key, dataValue]) => {
+                if (key === "tests" && dataValue !== null) {
+                    dataValue.forEach(function (testName) {
+                        var liElem = document.createElement("li");
+                        liElem.innerText = testName;
+                        testUl.append(liElem);
+                    });
+                }
+                else if (!keysToIgnore.includes(key.toLowerCase()) && dataValue !== null) {
+                    var liElem = document.createElement("li");
+                    var tempElem = document.createElement("b");
+                    tempElem.innerText = key.toLocaleUpperCase() + ":  ";
+                    liElem.append(tempElem);
+                    var tempElem = document.createElement("i");
+                    tempElem.innerText = dataValue;
+                    liElem.append(tempElem);
+                    settingsUl.append(liElem);
+                }
+                
+                numberOfTests = testUl.getElementsByTagName("li").length;
+                countDisplay = numberOfTests < 1 ? "" : " (" + numberOfTests + ")";
+                testUlLabel.innerText = "Test List" + countDisplay;
+            })
+        }
+
+        function changePresetsDropdown_eventListener() {
+            if (this.value != "") {
+                var url = "/api/settings/preset?name=" + this.value;
+                fetch(url)
+                    .then(data => { return data.json() })
+                    .then(res => { applyTestPreset(res) });
+            }
+        }
+        function clickDownloadPreset_eventListener() {
+            var presetName = document.getElementById('presetList').value;
+            if (presetName != "") {
+                downloadURI("/api/settings/preset?name=" + presetName, presetName);
+            }
+        }
+        function clickDeletePreset_eventListener() {
+            var presetName = document.getElementById('presetList').value;
+            if (presetName != "" && confirm("Are you sure you want to delete the selected Preset?")) {
+                var url = "/api/settings/preset?name=" + presetName;
+                fetch(url, {
+                    method: "DELETE"
+                })
+                    .then(data => { return data.json() })
+                    .then(res => {
+                        if (res == true) {
+                            location.reload();
+                        }
+                        else {
+                            alert(res)
+                        }
+                    });
+            }
+        }
+        function clickUpdatePreset_eventListener() {
+            var presetName = document.getElementById('presetList').value;
+            if (presetName != "" && confirm("Are you sure you want to update the selected Preset? Test list will be updated using the assumption that tests are in Tests.UI project.")) {
+                var url = "/api/settings/preset?name=" + presetName;
+                fetch(url, {
+                    method: "PUT"
+                })
+                    .then(data => { return data.json() })
+                    .then(res => {
+                        if (res == true) {
+                            location.reload();
+                            document.getElementById('presetList').dispatchEvent(new Event('change'));
+                        }
+                        else {
+                            alert(res)
+                        }
+                    });
+            }
+        }
+        function clickUploadPreset_eventListener() {
+            document.getElementById('fileInput').click();
+        }
+        function changeFileInputPreset_eventListener() {
+            if (this.value != "") {
+                var formData = new FormData();
+                formData.append('presetFile', this.files[0]);
+                var url = "/api/settings/preset";
+                fetch(url, {
+                    method: "POST",
+                    body: formData,
+                })
+                    .then(data => {
+                        if (data.ok) {
+                            data.json().then(res => { alert("Success!"); location.reload(true); });
+                        }
+                        else {
+                            data.json().then(res => { alert(res); });
+                        }
+                    });
+            }
+        }
+
+        document.getElementById('presetList').addEventListener("change", changePresetsDropdown_eventListener, false);
+        document.getElementById('addBtn').addEventListener("click", clickDownloadPreset_eventListener, false);
+        document.getElementById('uploadBtn').addEventListener("click", clickUploadPreset_eventListener, false);
+        document.getElementById('deleteBtn').addEventListener("click", clickDeletePreset_eventListener, false);
+        document.getElementById('updateBtn').addEventListener("click", clickUpdatePreset_eventListener, false);
+        document.getElementById('fileInput').addEventListener("change", changeFileInputPreset_eventListener, false);
+    </script>
+}

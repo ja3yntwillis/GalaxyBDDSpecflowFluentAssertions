@@ -1,0 +1,76 @@
+﻿.hidden
+{
+    display:none;
+}
+
+.noStyleList 
+{
+    list-style:none;
+}
+
+#runsTable 
+{
+    width: 100%;
+    margin: 20px 0px 0px 7px;
+}
+
+.dataTable-top
+{
+    margin: 10px 0px 0px 7px
+}
+
+#runsTable thead 
+{
+    background-color: #b7b7b7;
+}
+
+#runsTable tr:nth-child(even) 
+{
+    background-color: #f9f9f9;
+}
+
+#runsTable tr:nth-child(odd) 
+{
+    background-color: #fcfcfc;
+}
+
+#runsTable a:hover 
+{
+    color: #68BCFF;
+}
+
+#runsTable a:visited 
+{
+    color: #ad1c00;
+}
+
+#runsTable 
+{
+    border-spacing: 3px;
+}
+
+#homeWrapper
+{
+    margin: 15px 0px 0px 20px;
+}
+
+#homeWrapper h2
+{
+    font-variant:small-caps;
+}
+
+#homeWrapper h3 
+{
+    font-variant: small-caps;
+}
+
+#homeWrapper h4 
+{
+    margin: 60px 0px 0px 0px;
+    text-decoration:underline;
+}
+
+.homeAutomationtable
+{
+    margin:15px 0px;
+}

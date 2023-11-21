@@ -39,3 +39,9 @@
 *.wsuo
 *.sqlite
 /GalaxyATS/.vs/GalaxyATS/v17/TestStore/0/testlog.manifest
+/GalaxyATS/Framework.Base/obj
+/GalaxyATS/Framework.Galaxy/obj
+/GalaxyATS/Test.Galaxy/obj
+/GalaxyATS/TestRunner.UI/obj
+/GalaxyATS/TestRunner.Utilities/obj
+/GalaxyATS/.vs/GalaxyATS/FileContentIndex/read.lock

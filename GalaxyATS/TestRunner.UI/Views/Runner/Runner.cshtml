@@ -1,0 +1,1273 @@
+﻿@{
+
+    ViewData["Title"] = "Runner";
+}
+
+@using TestRunner.UI.ViewModels
+@model TestRunnerVM
+
+@section AddedStyles
+{
+<link rel="stylesheet" type="text/css" href="~/css/runnerLayout.css" />
+<link rel="stylesheet" type="text/css" href="~/css/site.css" />
+}
+
+<div class="seGrid sidebar2">
+    <div id="breadCrumbNav">
+        <div id="breadCrumbContainer">
+            <ul class="breadcrumb">
+                <li><a href="/Home">Home</a></li>
+                <li>Automation Runner</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="seGrid content">
+    <div id="runnerContainer">
+        <form id="runConfiguration" method="post" action="/RunnerSubmit">
+            <div id="leftContainer">
+                <fieldset class="testSetup">
+                    <legend class="testSetupLegend">Tests</legend>
+                    <div id="testSettingsWrapper">
+                        <div id="testPresetWrapper">
+                            <label for="testPresetDropdown">Test Presets:</label>
+                            <select id="testPresetDropdown" name="testPreset">
+                                <option value=""></option>
+                                @foreach (var preset in Model.Presets)
+                                {
+                                    <option value="@preset">@preset</option>
+                                }
+                            </select>
+                            <input id="presetNameInput" name="presetName" type="text" hidden value="newTest" />
+                            <button id="createPresetBtn" name="createNewPreset" type="button">Create New Preset</button>
+                            <img id="presetInfoIcon" src="~/images/informationIcon.png"
+                                title="Click button to create a new preset after selecting all desired settings in this form." />
+                        </div>
+                        <div id="testTypeWrapper">
+                            <label for="suiteTypeDropdown">Test Type:</label>
+                            <select id="suiteTypeDropdown" name="suiteType">
+                                @foreach (var testType in Model.TestSuites)
+
+                                {
+                                    <option value="@testType">@testType</option>
+
+                                }
+                            </select>
+                        </div>
+                        <div id="applicationWrapper">
+                            <label for="attributeDropdown">Attributes:</label>
+                            <select id="attributeDropdown" name="attributes" multiple size="5">
+                                @foreach (var app in Model.Applications)
+
+                                {
+
+                                    if (@app == "Acclaris")
+
+                                    {
+                                        <option value="@app" selected>@app</option>
+
+                                    }
+
+                                    else
+
+                                    {
+                                        <option value="@app">@app</option>
+
+                                    }
+
+                                }
+                            </select>
+                        </div>
+                        <div id="domainWrapper">
+                            <label for="assemblyDropdown">Domain:</label>
+                            <select id="assemblyDropdown" name="assembly">
+                                <option value=""></option>
+                                @foreach (var domain in Model.Assemblies)
+
+                                {
+                                    <option value="@domain">@domain</option>
+
+                                }
+                            </select>
+                        </div>
+                        <div id="AdditionalRunOptions">
+                            <table id="inputOptions" width="100%" border="0px">
+                                <tr>
+                                    <td>
+                                        <div id="vmWrapper">
+                                            <label for="RunOnVM">Run On VM:</label>
+                                            <input id="RunOnVM" name="runonvm" value="true" type="checkbox" />
+                                        </div>
+                                        <div id="localServiceWrapper">
+                                            <label for="RunLocalService">Run Local Service:</label>
+                                            <input id="RunLocalService" name="runlocalservice" value="true" type="checkbox" />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div id="gridWrapper" style="display: none;">
+                                            <label for="RunOnGrid">Run On Grid:</label>
+                                            <input id="RunOnGrid" name="runongrid" value="true" type="checkbox" />
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="searchWrapper">
+                        <div id="searchBar">
+                            <input id="searchBarInput" class="inputSearchBar" placeholder="Search For Test(s)"
+                                type="text" />
+                            <input id="clearSearch" class="testButtons" value="Clear" type="button" />
+                        </div>
+                    </div>
+                    <div id="buttonWrapper">
+                        <div id="buttonGroup">
+                            <input id="collapseAllTests" class="testButtons" value="Collapse All" type="button" />
+                            <input id="expandAllTests" class="testButtons" value="Expand All" type="button" />
+                            <input id="selectAllTests" class="testButtons" value="Check All" type="button" />
+                            <input id="selectVisibleTests" class="testButtons" value="Check Visible" type="button" />
+                            <input id="deselectAllTests" class="testButtons" value="Uncheck All" type="button" />
+                        </div>
+                    </div>
+                    <div id="testTree">
+                        <ul class="outline noStyleList" id="testTreeList">
+                            <li class="testList">
+                                Home
+                            </li>
+                        </ul>
+                    </div>
+                </fieldset>
+            </div>
+            <div id="rightContainer">
+                <div id="advancedOptions" class="advOptions">
+                    <fieldset class="advancedOptionsFieldSet">
+                        <legend class="advancedOptionsLegend">Environment Options</legend>
+                        <div id="runSettingsWrapper">
+                            <div id="dbWrapper">
+                                <div id="inputBlock">
+                                    <label for="databaseName">Database:</label>
+                                    <select id="databaseName" name="databasename" class="text">
+                                        <option value=""></option>
+                                        @foreach (var database in Model.DatabaseName)
+
+                                        {
+                                            <option value="@database">@database</option>
+
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            <div id="inputWrapper">
+                                <div id="inputBlock">
+                                    <label for="dbUserName">DB Username:</label>
+                                    <input id="dbUserName" name="dbusername" type="text" />
+                                    <span id="dbUsernameError" style="display:none;color:red">Please enter your database
+                                        username</span>
+                                </div>
+                            </div>
+                            <div id="inputWrapper">
+                                <div id="inputBlock">
+                                    <label for="dbPassword">DB Password:</label>
+                                    <input id="dbPassword" name="dbpassword" type="password" />
+                                    <span id="dbPasswordError" style="display:none;color:red">Please enter your database
+                                        password</span>
+                                </div>
+                            </div>
+                            <div id="inputWrapper">
+                                <div id="inputBlock">
+                                    <label for="urlBar">Environment:</label>
+                                    <select id="baseURLSelect" name="baseurl" class="text"
+                                    oninput = "configureMobileOSVersion(this,document.getElementById('mobileOSVersion'),document.getElementById('mobileDevice'))">
+                                        <option id="selectEnvironment" value="selectEnvironment">--Select Environment--</option>
+                                        @foreach (var url in Model.Urls)
+                                        {
+                                            if(@url.StartsWith("ENT") || @url.StartsWith("FID") || @url.StartsWith("EUS"))
+                                            {
+                                                <option id="@url" value="@url">@url</option>
+                                            }
+                                            else
+                                            {
+                                                <option id="@url" value="@url" style="display:none">@url</option>
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            <div id="inputWrapper">
+                                <div id="inputBlock" class="LocalService" style="display:none">
+                                    <label for="serviceDropdown">Services:</label>
+                                    <select id="serviceDropdown" name="localServices" multiple size="5">
+                                        @foreach (var service in Model.LocalServices)
+                                        {
+                                            <option value="@service">@service</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            <div id="inputBlock" class="VmSetting" style="display:none">
+                                <label for="VmUserName">VM Username:</label>
+                                <input id="vmUserName" name="vmusername" type="text" />
+                            </div>
+                            <div id="inputBlock" class="VmSetting" style="display:none">
+                                <label for="VmPassword">VM Password:</label>
+                                <input id="vmPassword" name="vmpassword" type="password" />
+                            </div>
+                            <div id="inputBlock" class="VmSetting" style="display:none">
+                                <label for="VmUrl">Virtual Box:</label>
+                                <select id="vmUrl" name="vmurl" class="text">
+                                    @foreach (var vm in Model.VirtualMachine)
+
+                                    {
+                                        <option value="@vm">@vm</option>
+
+                                    }
+                                </select>
+                            </div>
+                            <div id="inputBlock" class="VmSetting" style="display:none">
+                                <label for="VmBranch">VM Branch:</label>
+                                <input id="vmBranch" name="vmbranch" type="text" value="develop" />
+                            </div>
+                        </div>
+                        @*<div id="inputWrapper">
+                            <div id="inputBlock">
+                            <label for="randomAdmin">Use Random Admin:</label>
+                            <input id="randomAdmin" name="randomAdmin" type="checkbox" />
+                            </div>
+                            </div>*@
+                    </fieldset>
+                </div>
+                <div id="runSettings">
+                    <fieldset class="runSettingFieldSet">
+                        <legend class="testRunnerLegend">Run Settings</legend>
+                        <div id="runSettingsWrapper">
+                            <div id="inputWrapper">
+                                <div id="inputBlock" class="uiSetting">
+                                    <label for="browserDropdown">Browser:</label>
+                                    <select id="browserDropdown" name="browser" class="text">
+                                        <option value="chromeHeadless" selected>Chrome - Headless</option>
+                                        <option value="chrome">Chrome</option>
+                                        <option value="FireFoxHeadless">FireFox - Headless</option>
+                                        <option value="firefox">FireFox</option>
+                                        <option value="edgeHeadless">Edge - Headless</option>
+                                        <option value="edge">Edge</option>
+                                        <option value="chrome-bs">Chrome-BS</option>
+                                        <option value="firefox-bs">Firefox-BS</option>
+                                        <option value="edge-bs">Edge-BS</option>
+                                        <option value="safari-bs">Safari-BS</option>
+                                        <option value="chrome-bs-device">Chrome-Device</option>
+                                        <option value="firefox-bs-device">Firefox-Device</option>
+                                        <option value="safari-bs-device">Safari-Device</option>
+                                    </select>
+                                </div>
+                                <div id="inputBlock" class="browserStackSetting">
+                                    <label for="browserVersionDropdown">Browser Version:</label>
+                                    <select id="browserVersionDropdown" name="browserversion" class="text">
+                                    </select>
+                                </div>
+                                <div id="inputBlock" class="browserStackSetting">
+                                    <label for="operatingSystemDropdown">Operating System:</label>
+                                    <select id="operatingSystemDropdown" name="operatingSystem" class="text"
+                                        onchange="configureOsVersionList(this, document.getElementById('osVersionDropdown'))">
+                                        <option value="Windows">Windows</option>
+                                        <option value="OS X">OS X</option>
+                                    </select>
+                                </div>
+                                <div id="inputBlock" class="deviceSetting">
+                                    <label for="deviceOperatingSystemDropdown">Operating System:</label>
+                                    <select id="deviceOperatingSystemDropdown" name="deviceoperatingsystem" class="text"
+                                        onchange="configureDeviceList(this, document.getElementById('deviceDropdown'))">
+                                        <option value="" ></option>
+                                        <option value="iOS">iOS</option>
+                                        <option value="Android">Android</option>
+                                    </select>
+                                </div>
+                                <div id="inputBlock" class="deviceSetting">
+                                    <label for="deviceDropdown">Device:</label>
+                                    <select id="deviceDropdown" name="devicedropdown" class="text"
+                                        onchange="configureOsVersionDevice(this, document.getElementById('deviceOsVersionDropdown'))">
+                                        <option value="Samsung Galaxy Tab S7">Samsung Galaxy Tab S7</option>
+                                        <option value="Samsung Galaxy Tab S6">Samsung Galaxy Tab S6</option>
+                                    </select>
+                                </div>
+                                <div id="inputBlock" class="deviceSetting">
+                                    <label for="deviceOrientationDropdown">Device Orientation:</label>
+                                    <select id="deviceOrientationDropdown" name="deviceOrientationDropdown" class="text">
+                                        <option value="Portrait">Portrait</option>
+                                        <option value="Landscape">Landscape</option>
+                                    </select>
+                                </div>
+                                <div id="inputBlock" class="browserStackSetting">
+                                    <label for="osVersionDropdown">OS Version:</label>
+                                    <select id="osVersionDropdown" name="osversion" class="text">
+                                        <option value="11" selected>11</option>
+                                        <option value="10">10</option>
+                                        <option value="8.1">8.1</option>
+                                        <option value="8">8</option>
+                                    </select>
+                                </div>
+                                <div id="inputBlock" class="deviceSetting">
+                                    <label for="deviceOsVersionDropdown">OS Version:</label>
+                                    <select id="deviceOsVersionDropdown" name="deviceosversion" class="text">
+                                    </select>
+                                </div>
+                                <div id="inputBlock" class="appiumSetting" hidden>
+                                    <label for="deviceType">Device Type:</label>
+                                    <select id="deviceType" name="devicetype" class="text">
+                                        <option value="localDevice">Local</option>
+                                        <option value="browserstackDevice">Browserstack</option>
+                                    </select>
+                                </div>
+                                <div id="inputBlock" class="appiumSetting mobileSetting" hidden>
+                                    <label id="mobileOSVersionLabel">Mobile Device OS Version:</label>
+                                    <select id="mobileOSVersion" name="mobileosversion" class="text"
+                                     onchange = "configureMobileDevice(document.getElementById('baseURLSelect'),this.value,document.getElementById('mobileDevice'))">
+                                    </select>
+                                </div>
+                                <div id="inputBlock" class="appiumSetting mobileSetting" hidden>
+                                    <label id="mobileDeviceLabel">Mobile Device:</label>
+                                    <select id="mobileDevice" name="mobiledevice" class="text">
+                                </select>
+                                </div>
+                                <div id="inputBlock" class="browserStackSetting appiumSetting deviceSetting bsCredentials">
+                                    <label for="browserStackUsername">BrowserStack User:</label>
+                                    <input id="browserStackUsername" name="browserstackusername" type="text" />
+                                </div>
+                                <div id="inputBlock" class="browserStackSetting appiumSetting deviceSetting bsCredentials">
+                                    <label for="browserStackKey">BrowserStack Key:</label>
+                                    <input id="browserStackKey" name="browserstackkey" type="password" />
+                                </div>
+                                <div id="inputBlock" class="appiumSetting mobileSetting" hidden>
+                                    <label id ="appPathId" for="appFileInput">App File:</label>
+                                    <input id="appPathInput" name="browserstackapppath" type="text">
+                                </div>
+                                <div id="inputBlock" class="appiumSetting local" hidden>
+                                    <label for="platformDropdown">Device UdId:</label>
+                                    <textarea id="udIdTextarea" name="udid" rows="2" class="text">
+                                    </textarea>
+                                </div>
+                                <div id="inputBlock" class="appiumSetting">
+                                    <label for="appDropdown">App:</label>
+                                    <select id="appDropdown" name="app" class="text">
+                                        <option value="viaBenefitsAccounts">Via Benefits Accounts</option>
+                                    </select>
+                                </div>
+                                <div id="inputWrapper">
+                                    <div id="inputBlock">
+                                        <label for="attemptField">Retries:</label>
+                                        <input id="attemptField" name="retries" value="0" min="0" max="5" type="number"
+                                            class="number" />
+                                    </div>
+                                </div>
+                                <div id="inputWrapper">
+                                    <div id="inputBlock" class="appiumSetting uiSetting">
+                                        <label for="explicitTO">Timeout:</label>
+                                        <input id="explicitTO" name="timeout" value="75" min="1" max="100" type="number"
+                                            class="number" />
+                                    </div>
+                                </div>
+                                <div id="inputWrapper">
+                                    <div id="inputBlock">
+                                        <label for="maxThreads">Max Threads:</label>
+                                        <input id="maxThreads" name="maxthreads" value="1" min="1" max="50"
+                                            type="number" class="number" />
+                                    </div>
+                                </div>
+                                <div id="inputWrapper">
+                                    <div id="inputBlock">
+                                        <label for="LogTestData">Log Test Data:</label>
+                                        <input id="LogTestData" name="logtestdata" value="true" type="checkbox" />
+                                    </div>
+                                </div>
+                                <div id="inputWrapper">
+                                    <div id="inputBlock">
+                                        <label for="UpdateDriver">Update Driver:</label>
+                                        <input id="UpdateDriver" name="updateDriver" value="true" type="checkbox" />
+                                    </div>
+                                </div>
+                                <div id="inputWrapper">
+                                    <div id="inputBlock">
+                                        <label for="selectedTestsCount">Test Count:</label>
+                                        <input id="selectedTestsCount" name="selectedTestsCount" value="0" type="text"
+                                            class="number" disabled="disabled" />
+                                        <span id="testCountError" style="display:none;color:red">Test Count cannot be
+                                            zero</span>
+                                    </div>
+                                </div>
+                            </div>
+                            @*<div id="inputWrapper">
+                                <div id="inputBlock">
+                                <label for="debugMode">Debug Mode:</label>
+                                <input id="debugMode" name="debugMode" type="checkbox" />
+                                </div>
+                                </div>*@
+                            @*<div id="inputWrapper">
+                                <div id="inputBlock">
+                                <label for="logging">Log To Dashboard:</label>
+                                <input id="logging" name="logging" type="checkbox" />
+                                </div>
+                                </div>*@
+                            @*<div id="inputWrapper">
+                                <div id="inputBlock">
+                                <label for="screenshots">Screenshots:</label>
+                                <input id="screenshots" name="screenshots" type="checkbox" />
+                                </div>
+                                </div>*@
+                            @*<div id="inputWrapper">
+                                <div id="inputBlock">
+                                <label for="browserStack">BrowserStack:</label>
+                                <input id="browserStack" name="browserStack" type="checkbox" />
+                                </div>
+                                </div>*@
+                            <div id="inputWrapper">
+                                <div id="queueRun">
+                                    <input id="submitRun" name="submit" value="Run Tests" type="submit" />
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </form>
+        <input type="hidden" id="reRunApplication" value="@Model.ReRunApplication" />
+        <input type="hidden" id="reRunSuiteType" value="@Model.ReRunSuiteType" />
+        <input type="hidden" id="reRunTestList" value="@Model.ReRunTestList" />
+    </div>
+</div>
+
+@section Scripts
+{
+<script>
+
+    //Functions
+
+    async function getTestList(testSuite, attribute, assembly) {
+        if (attribute == "") {
+            attribute = "Acclaris";
+            //var attributeElem = document.querySelector("#attributeDropdown option[value=Acclaris]");
+            //attributeElem.selected = true;
+        }
+        var url = "/runner/testlist?testsuitename=" + testSuite + "&attributename=" + attribute + "&assemblyname=" + assembly;
+        await fetch(url)
+            .then(data => { return data.text() })
+            .then(res => { populateTestTree(res) });
+    }
+
+    async function getReRunTestList(reRunTestList) {
+        var url = "/runner/reruntestlist?reRunTestList=" + reRunTestList;
+        await fetch(url)
+            .then(data => { return data.text() })
+            .then(res => { populateTestTree(res) });
+    }
+
+    //Function to populate the Test Tree
+    function populateTestTree(testTreeHTML) {
+        document.getElementById('testTreeList').innerHTML = testTreeHTML;
+        document.querySelectorAll('#testTreeList .expColImg').forEach(function (elem) {
+            elem.addEventListener("click", clickExpCollapseImg_eventListener);
+        });
+        document.querySelectorAll('#testTreeList .fixtureCB').forEach(function (elem) {
+            elem.addEventListener("change", checkTestFixtureTreeNode_eventListener, false);
+        });
+        document.querySelectorAll('#testTreeList .methodCB').forEach(function (elem) {
+            elem.addEventListener("change", checkTestMethodTreeNode_eventListener, false);
+        });
+        setSelectedTestsCount();
+    }
+
+    function setTestTreeNodeState(elem, expandState) {
+        var classNames = "noStyleList";
+        var dataAttribute = "expanded";
+        var imgSrc = "/images/MinusSign1.png";
+        if (expandState === false) {
+            classNames = "noStyleList hidden";
+            dataAttribute = "collapsed";
+            imgSrc = "/images/PlusSign1.png";
+        }
+        elem.parentNode.getElementsByTagName("ul")[0].setAttribute("class", classNames);
+        elem.setAttribute("data-state", dataAttribute);
+        elem.getElementsByTagName("img")[0].setAttribute("src", imgSrc);
+    }
+
+    function setChildNodeChecks(parentElem, check) {
+        parentElem.querySelectorAll("input").forEach(function (elem) {
+            if (check) {
+                elem.checked = true;
+            }
+            else {
+                elem.checked = false;
+            }
+        });
+    }
+
+    function setVisibleChildNodeChecks(parentElem, check) {
+        parentElem.querySelectorAll("input.methodCB").forEach(function (elem) {
+            if (check && (elem.offsetWidth || elem.offsetHeight || elem.getClientRects().length)) {
+                elem.checked = true;
+                elem.ev
+            }
+        });
+    }
+
+    function showHideRunSettings(suiteType, runOnVm, runlocalservice) {
+        showVMRunSettings(runOnVm);
+        showServiceSelector(runlocalservice);
+        switch (suiteType.toLowerCase()) {
+            case "android":
+            case "mobile":
+            case "ios":
+                showUIRunSettings(false);
+                showBrowserStackSettings(false);
+                showAppiumRunSettings(true);
+                showAppiumBrowserStackSettings(true);
+                showRunOnGrid(false);
+                break;
+            case "ui":
+                showAppiumRunSettings(false);
+                showBrowserStackSettings(true);
+                showUIRunSettings(true);
+                showRunOnGrid(true);
+                break;
+            case "nut":
+                showAppiumRunSettings(false);
+                showBrowserStackSettings(false);
+                showUIRunSettings(false);
+                showRunOnGrid(false);
+                break;
+            case "db":
+                showAppiumRunSettings(false);
+                showBrowserStackSettings(false);
+                showUIRunSettings(false);
+                showRunOnGrid(false);
+                break;
+        }
+    }
+
+    function showAppiumRunSettings(showBoolean) {
+        document.querySelectorAll("div.appiumSetting").forEach(function (elem) {
+            if (showBoolean) {
+                elem.style.display = null;
+            }
+            else {
+                elem.style.display = "none";
+            }
+        });
+    }
+
+    function showUIRunSettings(showBoolean) {
+        document.querySelectorAll("div.uiSetting").forEach(function (elem) {
+            if (showBoolean) {
+                elem.style.display = null;
+            }
+            else {
+                elem.style.display = "none";
+            }
+        });
+    }
+
+    function showBrowserStackSettings(showBoolean) {
+        var browserVerDd = document.getElementById('browserVersionDropdown');
+        var browser = document.getElementById("browserDropdown").value.toLowerCase();
+        var respOperatingSysDd = document.getElementById("deviceOperatingSystemDropdown");
+        document.querySelectorAll("div.browserStackSetting").forEach(function (elem) {
+            if (showBoolean && (browser == "chrome-bs" || browser == "firefox-bs" || browser == "edge-bs" || browser == "safari-bs")) {
+                if (browser == "safari-bs") {
+                    browserVerDd.options.length = 0;
+                    createOption(browserVerDd, "Latest", "latest");
+                    browserVerDd.disabled = true;
+                } else {
+                    browserVerDd.options.length = 0;
+                    createOption(browserVerDd, "Beta", "latest-beta");
+                    createOption(browserVerDd, "Latest", "latest");
+                    createOption(browserVerDd, "Latest-1", "latest-1");
+                    createOption(browserVerDd, "Latest-2", "latest-2");
+                    browserVerDd.disabled = false;
+                }
+                elem.style.display = null;
+            }
+            else {
+
+                elem.style.display = "none";
+            }
+        });
+        document.querySelectorAll("div.deviceSetting").forEach(function (elem) {
+            if (showBoolean && (browser == "chrome-bs-device" || browser == "firefox-bs-device" || browser == "safari-bs-device")) {
+                
+                switch(browser) {
+                    case "chrome-bs-device":
+                        respOperatingSysDd.options.length = 0;
+                        createOption(respOperatingSysDd, "", "");
+                        createOption(respOperatingSysDd, "iOS", "iOS");
+                        createOption(respOperatingSysDd, "Android", "Android");
+                    break;
+                    case "firefox-bs-device":
+                        respOperatingSysDd.options.length = 0;
+                        createOption(respOperatingSysDd, "", "");
+                        createOption(respOperatingSysDd, "Android", "Android");
+                    break;
+                    case "safari-bs-device":
+                        respOperatingSysDd.options.length = 0;
+                        createOption(respOperatingSysDd, "", "");
+                        createOption(respOperatingSysDd, "iOS", "iOS");
+                    break;
+                }
+                configureDeviceList(respOperatingSysDd, document.getElementById("deviceDropdown"));
+                configureOsVersionDevice(document.getElementById('deviceDropdown'), document.getElementById('deviceOsVersionDropdown'));
+                elem.style.display = null;
+            }
+            else {
+                respOperatingSysDd.value = null;
+                elem.style.display = "none";
+
+            }
+        });
+        if(showBoolean && (browser == "chrome-bs" || browser == "firefox-bs" || browser == "edge-bs" || browser == "safari-bs" || browser == "chrome-bs-device" || browser == "firefox-bs-device" || browser == "safari-bs-device")) {
+            document.querySelectorAll("div.bsCredentials").forEach(function (elem) {
+                elem.style.display = null;
+                elem.setAttribute("required", "");
+            });
+        }
+        else{
+            document.querySelectorAll("div.bsCredentials").forEach(function (elem) {
+                elem.style.display = "none";
+                elem.removeAttribute("required");
+            });
+        }
+    }
+
+    function showRunOnGrid(showBoolean) {
+        document.querySelectorAll("div#gridWrapper").forEach(function (elem) {
+            if (showBoolean) {
+                elem.style.display = "block";
+            }
+            else {
+                elem.style.display = "none";
+            }
+        });
+    }
+
+    function showVMRunSettings(showBoolean) {
+        document.querySelectorAll("div.VmSetting").forEach(function (elem) {
+            if (showBoolean && (document.getElementById("RunOnVM").checked)) {
+                elem.style.display = "block";
+                document.getElementById("vmUserName").setAttribute("required", "");
+                document.getElementById("vmPassword").setAttribute("required", "");
+                document.getElementById("vmBranch").setAttribute("required", "");
+                document.getElementById("browserDropdown").disabled = true;
+                document.getElementById("browserDropdown").value = "chromeHeadless";
+                document.getElementById("LogTestData").disabled = true;
+                document.getElementById("UpdateDriver").disabled = true;
+            }
+            else {
+                elem.style.display = "none";
+                document.getElementById("vmUserName").removeAttribute("required");
+                document.getElementById("vmPassword").removeAttribute("required");
+                document.getElementById("vmBranch").removeAttribute("required");
+                document.getElementById("browserDropdown").disabled = false;
+                document.getElementById("LogTestData").disabled = false;
+                document.getElementById("UpdateDriver").disabled = false;
+            }
+        });
+    }
+
+    function showServiceSelector(showBoolean) {
+     document.querySelectorAll("div.LocalService").forEach(function (elem) {
+        if(showBoolean && (document.getElementById("RunLocalService").checked)) {
+            elem.style.display = "block";
+        }
+        else {
+            elem.style.display = "none";
+        }
+     });
+    }
+
+    function showAppiumBrowserStackSettings(showBoolean) {
+        document.querySelectorAll("div.browserStackSetting.appiumSetting").forEach(function (elem) {
+            if (showBoolean && (document.getElementById("deviceType")).value.toLowerCase() == "browserstackdevice") {
+                elem.style.display = null;
+                document.getElementById("browserStackUsername").setAttribute("required", "");
+                document.getElementById("browserStackKey").setAttribute("required", "");
+                document.getElementById("appPathInput").setAttribute("required", "");
+            }
+            else {
+                elem.style.display = "none";
+                document.getElementById("browserStackUsername").removeAttribute("required");
+                document.getElementById("browserStackKey").removeAttribute("required");
+                document.getElementById("appPathInput").removeAttribute("required");
+            }
+        });
+        document.querySelectorAll("div.appiumSetting.local").forEach(function (elem) {
+            if (showBoolean && (document.getElementById("deviceType")).value.toLowerCase() == "localdevice") {
+                elem.style.display = null;
+                document.querySelectorAll("div.appiumSetting.mobileSetting").forEach(function (elem){
+                   elem.style.display = "none";     
+                });      
+            }
+            else {
+                elem.style.display = "none";
+                document.querySelectorAll("div.appiumSetting.mobileSetting").forEach(function (elem){
+                   elem.style.display = null;     
+                });
+            }
+        });
+    }
+
+    function filterTestTree(searchString) {
+        document.querySelectorAll('#testTreeList label.fixtureName').forEach(function (fixtureElem) {
+            var fixtureLi = fixtureElem.parentElement.parentElement;
+            if (fixtureElem.textContent.toLowerCase().includes(searchString.toLowerCase())) {
+                fixtureLi.hidden = false;
+                fixtureLi.querySelectorAll('li.methodNode').forEach(function (methodNodeElem) {
+                    methodNodeElem.hidden = false;
+                });
+            }
+            else {
+                var childrenFound = false;
+                fixtureLi.querySelectorAll('label.methodName').forEach(function (methodElem) {
+                    if (methodElem.textContent.toLowerCase().includes(searchString.toLowerCase())) {
+                        methodElem.parentElement.parentElement.hidden = false;
+                        childrenFound = true;
+                    }
+                    else {
+                        methodElem.parentElement.parentElement.hidden = true;
+                    }
+                });
+                if (childrenFound) {
+                    fixtureLi.hidden = false;
+                }
+                else {
+                    fixtureLi.hidden = true;
+                }
+            }
+        });
+        clickExpandAllBtn_eventListener();
+    }
+
+    function setSelectedTestsCount() {
+        document.getElementById('selectedTestsCount').value = document.querySelectorAll('#testTreeList input.methodCB:checked').length;
+    }
+
+    async function applyTestPreset(presetContent) {
+        if (presetContent["suiteType"] == null) {
+            alert("This preset is not compatible with recent updates to this Runner. Please go to the 'Test Preset' page and attempt to Update this preset.");
+            return;
+        }
+        var attributeElem = document.getElementsByName("attributes")[0];
+        var testTypeElem = document.getElementsByName("suiteType")[0];
+        var domainElem = document.getElementsByName("assembly")[0];
+        testTypeElem.value = presetContent["suiteType"];
+        domainElem.value = presetContent["assembly"];
+        var mobileDeviceElem = document.getElementsByName("mobiledevice")[0];
+        var mobileOsElem = document.getElementsByName("mobileosversion")[0];
+        var envTypeElem = document.getElementsByName("baseurl")[0];
+        Array.from(envTypeElem.options).forEach(function (option) {
+            if(option.value.includes("MOBILE") && option.value == presetContent["baseUrl"]){
+                configureMobileOSVersion(option,mobileOsElem,mobileDeviceElem);
+                mobileDeviceElem.options.length = 0;
+                configureMobileDevice(option,presetContent["mobileOSVersion"],mobileDeviceElem);
+                    Array.from(mobileDeviceElem.options).forEach(function (option) {
+                        option.selected = presetContent["mobileDevice"].includes(option.value);
+                    });
+            }
+        });        
+        Array.from(attributeElem.options).forEach(function (option) {
+            option.selected = presetContent["attributes"].includes(option.value);
+        });
+        await getTestList(testTypeElem.value, presetContent["attributes"].join(), domainElem.value);
+        var skipElements = ["assembly", "attributes", "suiteType", "mobileOSVersion","mobileDevice","baseUrl"];
+        Object.entries(presetContent).forEach(([key, dataValue]) => {
+            var formElem = document.getElementsByName(key.toLowerCase());
+            if (formElem.length == 1 && !skipElements.includes(key.toLowerCase())) {
+                formElem[0].value = dataValue;
+                if (formElem[0].getAttribute("type") == "checkbox") {
+                    if (dataValue) {
+                        formElem[0].checked = true;
+                    }
+                    else {
+                        formElem[0].checked = false;
+                    }
+                    return;
+                }
+            }
+            else if (key == "tests" && dataValue != null) {
+                document.getElementById('testTreeList').querySelectorAll("input").forEach(function (elem) {
+                    if (dataValue.includes(elem.value)) {
+                        elem.checked = true;
+                    }
+                    else {
+                        elem.checked = false;
+                    }
+                });
+                setSelectedTestsCount();
+            }
+        })
+        await changeSuiteTypeDropdown_eventListener();
+        envTypeElem.value=presetContent["baseUrl"];
+
+    }
+
+    function addSuccessfulPreset(presetName) {
+        var presetSelect = document.getElementById("testPresetDropdown");
+        var optionElem = document.createElement("option");
+        optionElem.value = presetName;
+        optionElem.innerText = presetName;
+        presetSelect.append(optionElem);
+        presetSelect.options.selectedIndex = presetSelect.options.length - 1;
+    }
+
+    //Events
+    function hideTestOptionsByApplicationSelected_eventListener() {
+        var uiOnlyOptions = document.getElementsByClassName("uiExclusive");
+        var regex = /_NUT/;
+        for (var i = 0; i < uiOnlyOptions.length; i++) {
+            if (regex.test(this.value)) {
+                uiOnlyOptions[i].style.display = "none";
+            }
+            else if (!regex.test(this.value) && uiOnlyOptions[i].style.display === "none") {
+                uiOnlyOptions[i].style.display = 'block';
+            }
+        }
+    }
+
+    function changeTestFilteringDropdowns_eventListener() {
+        var attributeListStr = Array.from(document.querySelectorAll('#attributeDropdown option:checked')).map(el => el.value).join();
+        getTestList(document.getElementById('suiteTypeDropdown').value, attributeListStr, document.getElementById('assemblyDropdown').value);
+    }
+
+    function changeSuiteTypeDropdown_eventListener() {
+        showHideRunSettings(document.getElementById('suiteTypeDropdown').value, document.getElementById('RunOnVM').checked, document.getElementById('RunLocalService').checked);
+        showHideEnvironments(document.getElementById('suiteTypeDropdown').value);
+    }
+
+    function changeBrowserDropdown_eventListener() {
+        showBrowserStackSettings(true);
+    }
+
+    function changeDeviceTypeDropdown_eventListener() {
+        showAppiumBrowserStackSettings(true);
+    }
+
+    function changePresetsDropdown_eventListener() {
+        if (this.value != "") {
+            var url = "/api/settings/preset?name=" + this.value;
+            fetch(url)
+                .then(data => { return data.json() })
+                .then(res => { applyTestPreset(res) });
+        }
+    }
+
+    function clickExpCollapseImg_eventListener() {
+        var expandState = this.getAttribute("data-state") === "expanded" ? false : true;
+        setTestTreeNodeState(this, expandState);
+    }
+
+    function checkTestFixtureTreeNode_eventListener() {
+        setChildNodeChecks(this.parentNode.parentNode.getElementsByTagName("ul")[0], this.checked);
+        setSelectedTestsCount();
+    }
+
+    function checkTestMethodTreeNode_eventListener() {
+        setSelectedTestsCount();
+    }
+
+    function clickExpandAllBtn_eventListener() {
+        document.querySelectorAll('#testTreeList .expColImg').forEach(function (elem) {
+            setTestTreeNodeState(elem, true);
+        });
+    }
+
+    function clickCollapseAllBtn_eventListener() {
+        document.querySelectorAll('#testTreeList .expColImg').forEach(function (elem) {
+            setTestTreeNodeState(elem, false);
+        });
+    }
+
+    function clickSelectAllBtn_eventListener() {
+        setChildNodeChecks(document.getElementById('testTreeList'), true);
+        setSelectedTestsCount();
+    }
+
+    function clickDeselectAllBtn_eventListener() {
+        setChildNodeChecks(document.getElementById('testTreeList'), false);
+        setSelectedTestsCount();
+    }
+
+    function clickSelectVisibleBtn_eventListener() {
+        setVisibleChildNodeChecks(document.getElementById('testTreeList'), true);
+        setSelectedTestsCount();
+    }
+
+    function changeSearchBarInput_eventListener(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            filterTestTree(this.value);
+        }
+    }
+
+    function clearSearchBarBtn_eventListener() {
+        document.getElementById('searchBarInput').value = "";
+        filterTestTree("");
+    }
+
+    function clickCreatePreset_eventListener() {
+        var presetName = prompt("New Preset Name:", "");
+        if (presetName != "" && presetName != null) {
+            document.getElementById('presetNameInput').value = presetName;
+            var formElem = document.getElementById('runConfiguration');
+            var formData = new FormData(formElem);
+            var url = "/api/settings/preset";
+            fetch(url, {
+                method: "POST",
+                body: formData,
+            })
+                .then(data => {
+                    if (data.ok) {
+                        data.json().then(res => { alert("Success!"); addSuccessfulPreset(res); });
+                    }
+                    else {
+                        data.json().then(res => { alert(res); });
+                    }
+                });
+        }
+    }
+
+    function setRunOnVm() {
+        if (document.getElementById("RunOnVM").checked) {
+            document.getElementById("RunOnVM").value = "true";
+        }
+    }
+
+    function setRunLocalService() {
+        if (document.getElementById("RunLocalService").checked) {
+            document.getElementById("RunLocalService").value = "true";
+        }
+    }
+
+    function setRunOnGrid() {
+        if (document.getElementById("RunOnGrid").checked) {
+            document.getElementById("RunOnGrid").value = "true";
+        }
+    }
+
+    function setDbCredentialsRequired() {
+        if (!(document.getElementById("databaseName").value == "")) {
+            document.getElementById("dbUserName").setAttribute("required", "");
+            document.getElementById("dbPassword").setAttribute("required", "");
+            document.getElementById("dbUserNameError").style.display = null;
+            document.getElementById("dbPasswordError").style.display = null;
+        }
+        else {
+            document.getElementById("dbUserName").removeAttribute("required");
+            document.getElementById("dbPassword").removeAttribute("required");
+            document.getElementById("dbUserNameError").style.display = "none";
+            document.getElementById("dbPasswordError").style.display = "none";
+        }
+    }
+
+    function checkRequiredFields() {
+        if (document.getElementById("selectedTestsCount").value == "0") {
+            document.getElementById("testCountError").style.display = null;
+        }
+        else {
+            document.getElementById("testCountError").style.display = "none";
+        }
+    }
+
+    function configureOsVersionList(osDd, osVersionDd) {
+        switch (osDd.value) {
+            case 'Windows':
+                osVersionDd.options.length = 0;
+                createOption(osVersionDd, "11", "11");
+                createOption(osVersionDd, "10", "10");
+                createOption(osVersionDd, "8.1", "8.1");
+                createOption(osVersionDd, "8", "8");
+                break;
+            case 'OS X':
+                osVersionDd.options.length = 0;
+                createOption(osVersionDd, "Big Sur", "Big Sur");
+                createOption(osVersionDd, "Monterey", "Monterey");
+                createOption(osVersionDd, "Catalina", "Catalina");
+                createOption(osVersionDd, "Mojave", "Mojave");
+                break;
+            default:
+                osVersionDd.options.length = 0;
+                break;
+        }
+
+    }
+
+    function configureDeviceList(operatingSysDd, deviceDd) {
+        switch (operatingSysDd.value) {
+            case 'iOS':
+                deviceDd.options.length = 0;
+                createOption(deviceDd, "iPad Pro 12.9 2018", "iPad Pro 12.9 2018");
+                createOption(deviceDd, "iPad Pro 12.9 2021", "iPad Pro 12.9 2021");
+                createOption(deviceDd, "iPad Pro 12.9 2022", "iPad Pro 12.9 2022");
+                createOption(deviceDd, "iPad Mini 2021", "iPad Mini 2021");
+                createOption(deviceDd, "iPad Mini 2019", "iPad Mini 2019");
+                createOption(deviceDd, "iPad 8th", "iPad 8th");
+                createOption(deviceDd, "iPad 9th", "iPad 9th");
+                createOption(deviceDd, "iPad 10th", "iPad 10th");
+                createOption(deviceDd, "iPhone 13 Pro", "iPhone 13 Pro");
+                createOption(deviceDd, "iPhone 14 Pro", "iPhone 14 Pro");
+                createOption(deviceDd, "iPhone 14 Pro Max", "iPhone 14 Pro Max");
+                break;
+            case 'Android':
+                deviceDd.options.length = 0;
+                createOption(deviceDd, "Google Pixel 6 Pro", "Google Pixel 6 Pro");
+                createOption(deviceDd, "Samsung Galaxy S23", "Samsung Galaxy S23");
+                createOption(deviceDd, "Samsung Galaxy Tab S6", "Samsung Galaxy Tab S6");
+                createOption(deviceDd, "Samsung Galaxy Tab S7", "Samsung Galaxy Tab S7");
+                createOption(deviceDd, "Samsung Galaxy Tab S8", "Samsung Galaxy Tab S8");
+                break;
+            default:
+                deviceDd.options.length = 0;
+                break;
+        }
+        configureOsVersionDevice(document.getElementById('deviceDropdown'), document.getElementById('deviceOsVersionDropdown'));
+    }
+
+    function configureOsVersionDevice(deviceDd, respOsVersionDd) {
+        switch(deviceDd.value) {
+            case "iPad Pro 12.9 2018":
+                respOsVersionDd.options.length = 0;
+                createOption(respOsVersionDd, "15", "15");
+                createOption(respOsVersionDd, "13", "13");
+                createOption(respOsVersionDd, "12", "12");
+                break;
+            case "iPad Pro 12.9 2021":
+                respOsVersionDd.options.length = 0;
+                createOption(respOsVersionDd, "14", "14");
+                break;
+            case "iPad Pro 12.9 2022":
+                respOsVersionDd.options.length = 0;
+                createOption(respOsVersionDd, "16", "16");
+                break;
+            case "iPad Mini 2021":
+                respOsVersionDd.options.length = 0;
+                createOption(respOsVersionDd, "15", "15");
+                break;
+            case "iPad Mini 2019":
+                respOsVersionDd.options.length = 0;
+                createOption(respOsVersionDd, "13", "13");
+                createOption(respOsVersionDd, "12", "12");
+                break;
+            case "iPad 8th":
+                respOsVersionDd.options.length = 0;
+                createOption(respOsVersionDd, "14", "14");
+                break;
+            case "iPad 9th":
+                respOsVersionDd.options.length = 0;
+                createOption(respOsVersionDd, "15", "15");
+                break;
+            case "iPad 10th":
+                respOsVersionDd.options.length = 0;
+                createOption(respOsVersionDd, "16", "16");
+                break;
+            case "iPhone 13 Pro":
+                respOsVersionDd.options.length = 0;
+                createOption(respOsVersionDd, "15", "15");
+                break;
+            case "iPhone 14 Pro":
+                respOsVersionDd.options.length = 0;
+                createOption(respOsVersionDd, "16", "16");
+                break;
+            case "iPhone 14 Pro Max":
+                respOsVersionDd.options.length = 0;
+                createOption(respOsVersionDd, "16", "16");
+                break;
+            case "Google Pixel 6 Pro":
+                respOsVersionDd.options.length = 0;
+                createOption(respOsVersionDd, "12", "12");
+                createOption(respOsVersionDd, "13", "13");
+                break;
+            case "Samsung Galaxy S23":
+                respOsVersionDd.options.length = 0;
+                createOption(respOsVersionDd, "13", "13");
+                break;
+            case "Samsung Galaxy Tab S6":
+                respOsVersionDd.options.length = 0;
+                createOption(respOsVersionDd, "9", "9");
+                break;
+            case "Samsung Galaxy Tab S7":
+                respOsVersionDd.options.length = 0;
+                createOption(respOsVersionDd, "10", "10");
+                break;
+            case "Samsung Galaxy Tab S8":
+                respOsVersionDd.options.length = 0;
+                createOption(respOsVersionDd, "12", "12");
+                break;
+        }
+    }
+
+    function createOption(ddl, text, value) {
+        var opt = document.createElement('option');
+        opt.value = value;
+        opt.text = text;
+        ddl.options.add(opt);
+    }
+    function configureMobileDevice(envDd,mobileOSversionDd,respMobileDeviceDd){
+            if (envDd.value.includes("MOBILE-IOS")) {
+                switch(mobileOSversionDd){
+                    case "14":
+                    respMobileDeviceDd.options.length = 0;
+                    createOption(respMobileDeviceDd, "iPhone 12", "iPhone,12");
+                    createOption(respMobileDeviceDd, "iPhone 11 Pro Max", "iPhone,11,Pro,Max");
+                    createOption(respMobileDeviceDd, "iPhone 11", "iPhone,11");
+                    break;
+                    case "15":
+                    respMobileDeviceDd.options.length = 0;
+                    createOption(respMobileDeviceDd, "iPhone 13", "iPhone,13");
+                    createOption(respMobileDeviceDd, "iPhone 13 Pro", "iPhone,13,Pro");
+                    createOption(respMobileDeviceDd, "iPhone 11", "iPhone,11");
+                    break;
+                    case "16":
+                    respMobileDeviceDd.options.length = 0;
+                    createOption(respMobileDeviceDd, "iPhone 14 Pro", "iPhone,14,Pro");
+                    createOption(respMobileDeviceDd, "iPhone 14 Plus", "iPhone,14,Plus");
+                    createOption(respMobileDeviceDd, "iPhone 14 Pro Max", "iPhone,14,Pro,Max");                    
+                    createOption(respMobileDeviceDd, "iPhone 14", "iPhone,14");
+                    createOption(respMobileDeviceDd, "iPhone 12 Pro", "iPhone,12,Pro");
+                    createOption(respMobileDeviceDd, "iPhone 11 Pro Max", "iPhone,11,Pro,Max");
+                    break;
+                    case "17":
+                    respMobileDeviceDd.options.length = 0;
+                    createOption(respMobileDeviceDd, "iPhone 13", "iPhone,13");
+                    break;
+                }
+            }
+            else if (envDd.value.includes("MOBILE-ANDROID")) {
+                switch(mobileOSversionDd){
+                    case "10.0":
+                    respMobileDeviceDd.options.length = 0;
+                    createOption(respMobileDeviceDd, "Google Pixel 4", "Google,Pixel,4");
+                    createOption(respMobileDeviceDd, "Google Pixel 4 XL", "Google,Pixel,4,XL");
+                    break;
+                    case "11.0":
+                    respMobileDeviceDd.options.length = 0;
+                    createOption(respMobileDeviceDd, "Google Pixel 4", "Google,Pixel,4");
+                    createOption(respMobileDeviceDd, "Google Pixel 5", "Google,Pixel,5");
+                    break;
+                    case "12.0":
+                    respMobileDeviceDd.options.length = 0;
+                    createOption(respMobileDeviceDd, "Google Pixel 5", "Google,Pixel,5");
+                    createOption(respMobileDeviceDd, "Google Pixel 6", "Google,Pixel,6");
+                    createOption(respMobileDeviceDd, "Google Pixel 6 Pro", "Google,Pixel,6,Pro");
+                    break;
+                    case "13.0":
+                    respMobileDeviceDd.options.length = 0;
+                    createOption(respMobileDeviceDd, "Google Pixel 7", "Google,Pixel,7");
+                    createOption(respMobileDeviceDd, "Google Pixel 7 Pro", "Google,Pixel,7,Pro");
+                    break;
+                }
+            }
+        }
+    function configureMobileOSVersion(envDd,respMobileOSversionDd,mobileDeviceDd) {
+        removeNonMobileComponent();
+        if (envDd.value.includes("MOBILE-IOS")) {
+            respMobileOSversionDd.options.length = 0;
+            createOption(respMobileOSversionDd, "14", "14");
+            createOption(respMobileOSversionDd, "15", "15");
+            createOption(respMobileOSversionDd, "16", "16");
+            createOption(respMobileOSversionDd, "17", "17");
+        }
+        else if(envDd.value.includes("MOBILE-ANDROID")){
+            respMobileOSversionDd.options.length = 0;
+            createOption(respMobileOSversionDd, "10.0", "10.0");
+            createOption(respMobileOSversionDd, "11.0", "11.0");
+            createOption(respMobileOSversionDd, "12.0", "12.0");
+            createOption(respMobileOSversionDd, "13.0", "13.0");
+        }
+        configureMobileDevice(envDd,respMobileOSversionDd.value,mobileDeviceDd);
+        removeNonMobileComponent();
+    }
+
+    function removeNonMobileComponent(){
+        var envDd = document.getElementById("baseURLSelect");
+        var deviceDd = document.getElementById("deviceType");
+        if(envDd.value.includes("MOBILE") && deviceDd.value.includes("browserstackDevice"))
+        {
+                document.querySelectorAll("div.appiumSetting.mobileSetting").forEach(function (elem){
+                   elem.style.display = null;     
+                }); 
+        }  
+        else{
+                document.querySelectorAll("div.appiumSetting.mobileSetting").forEach(function (elem){
+                   elem.style.display = "none";     
+                });
+        } 
+    }
+    function showHideEnvironments(suiteType) {
+        document.querySelector("#baseURLSelect> option[id='selectEnvironment']").selected=true;
+        switch (suiteType.toLowerCase()) {
+            case "android":
+            case "mobile":
+            case "ios":
+            document.querySelectorAll("select[id='baseURLSelect'] > option").forEach(function (elem){
+                   elem.style.display = "none";   
+                });
+                document.querySelectorAll("select[id='baseURLSelect'] > option[id*='MOBILE']").forEach(function (elem){
+                   elem.style.display = null;   
+                });
+                break;
+            case "ui":
+                document.querySelectorAll("select[id='baseURLSelect'] > option").forEach(function (elem){
+                   elem.style.display = "none";   
+                });
+                document.querySelectorAll("select[id='baseURLSelect'] > option[id^='PORTAL'],select[id='baseURLSelect'] > option[id^='LOCAL']").forEach(function (elem){
+                   elem.style.display = null;   
+                });
+                break;
+            case "nut":
+                document.querySelectorAll("select[id='baseURLSelect'] > option").forEach(function (elem){
+                   elem.style.display = "none";   
+                });
+                document.querySelectorAll("select[id='baseURLSelect'] > option[id^='API']").forEach(function (elem){
+                   elem.style.display = null;   
+                });
+                break;
+            case "db":
+                document.querySelectorAll("select[id='baseURLSelect'] > option").forEach(function (elem){
+                   elem.style.display = "none";   
+                });
+                document.querySelectorAll("select[id='baseURLSelect'] > option[id^='ENT'],select[id='baseURLSelect'] > option[id^='EUS'],select[id='baseURLSelect'] > option[id^='FID']").forEach(function (elem){
+                   elem.style.display = null;   
+                });
+                break;
+        }
+    }
+
+    //OnReady
+    document.getElementById('attributeDropdown').addEventListener("change", hideTestOptionsByApplicationSelected_eventListener, false);
+    document.getElementById('attributeDropdown').addEventListener("change", changeTestFilteringDropdowns_eventListener, false);
+    document.getElementById('suiteTypeDropdown').addEventListener("change", changeTestFilteringDropdowns_eventListener, false);
+    document.getElementById('suiteTypeDropdown').addEventListener("change", changeSuiteTypeDropdown_eventListener, false);
+    document.getElementById('assemblyDropdown').addEventListener("change", changeTestFilteringDropdowns_eventListener, false);
+    document.getElementById('testPresetDropdown').addEventListener("change", changePresetsDropdown_eventListener, false);
+    document.getElementById('browserDropdown').addEventListener("change", changeBrowserDropdown_eventListener, false);
+    document.getElementById('RunOnVM').addEventListener("change", function () { showVMRunSettings(this.checked) }, false);
+    document.getElementById('RunLocalService').addEventListener("change", function () { showServiceSelector(this.checked) }, false);
+    document.getElementById('deviceType').addEventListener("change", changeDeviceTypeDropdown_eventListener, false);
+    document.getElementById('expandAllTests').addEventListener("click", clickExpandAllBtn_eventListener);
+    document.getElementById('collapseAllTests').addEventListener("click", clickCollapseAllBtn_eventListener);
+    document.getElementById('selectAllTests').addEventListener("click", clickSelectAllBtn_eventListener);
+    document.getElementById('deselectAllTests').addEventListener("click", clickDeselectAllBtn_eventListener);
+    document.getElementById('selectVisibleTests').addEventListener("click", clickSelectVisibleBtn_eventListener);
+    document.getElementById('clearSearch').addEventListener("click", clearSearchBarBtn_eventListener);
+    document.getElementById('createPresetBtn').addEventListener("click", clickCreatePreset_eventListener);
+    document.getElementById('searchBarInput').addEventListener("keypress", changeSearchBarInput_eventListener);
+    document.getElementById('RunOnVM').addEventListener("click", setRunOnVm);
+    document.getElementById('RunLocalService').addEventListener("click", setRunLocalService);
+    document.getElementById('RunOnGrid').addEventListener("click", setRunOnGrid);
+    document.getElementById('databaseName').addEventListener("change", setDbCredentialsRequired);
+    document.getElementById('submitRun').addEventListener("click", checkRequiredFields);
+    if (document.getElementById('reRunApplication').value == "" && document.getElementById('reRunTestList').value == "") {
+        changeTestFilteringDropdowns_eventListener();
+        changeSuiteTypeDropdown_eventListener();
+        changeBrowserDropdown_eventListener();
+    } else {
+        document.querySelector('#suiteTypeDropdown [value="' + document.getElementById('reRunSuiteType').value + '"]').selected = true;
+        getReRunTestList(document.getElementById('reRunTestList').value);
+        changeSuiteTypeDropdown_eventListener();
+    }
+</script>
+}

@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Load Testing";
+}
+
+@model LoadTestDto
+
+@section AddedStyles
+{
+    <link rel="stylesheet" type="text/css" href="~/css/loadTesting.css" />
+}
+
+<div class="seGrid sidebar2">
+    <div id="breadCrumbNav">
+        <div id="breadCrumbContainer">
+            <ul class="breadcrumb">
+                <li><a href="/Home">Home</a></li>
+                <li>Load Testing</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="seGrid content">
+    <form id="loadTestUploadForm" method="post" action="/Report/LoadTestSubmit" enctype="multipart/form-data">
+        <label>Release Number</label>
+        <input type="text" name="releaseNumber" />
+
+        <label>Upload File</label>
+        <input type="file" name="loadTestFile" id="fileInput" accept=".csv" />
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <ul id="loadTestsList">
+        <li><h2>Tests</h2></li>
+        @foreach (var value in Model.Value)
+        {
+            <li>
+                <a class="loadTest" href="/Report/LoadTesting/@value.RowKey">@value.RowKey</a>
+            </li>
+        }
+    </ul>
+</div>

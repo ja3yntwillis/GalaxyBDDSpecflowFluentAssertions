@@ -1,0 +1,440 @@
+@{
+    ViewData["Title"] = "BitBucket Artifacts";
+}
+
+@using TestRunner.UI.ViewModels
+@model BitBucketReportsVM
+
+@section AddedStyles
+{
+    <link rel="stylesheet" type="text/css" href="~/css/site.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/bsmobileApps.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/bitbucketLayout.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/spinnerLayout.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/vanilla-dataTables.min.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="~/js/vanilla-dataTables.min.js"></script>
+    <script type="text/javascript" src="~/js/table2excel.js"></script>
+}
+
+<div class="seGrid sidebar2">
+    <div id="breadCrumbNav">
+        <div id="breadCrumbContainer">
+            <ul class="breadcrumb">
+                <li><a href="/Home">Home</a></li>
+                <li>BitBucket Reports</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="seGrid content">
+    <div id="contentContainer">
+        <form id="bitBucketReport" enctype="multipart/form-data" method="post" action="/GetBitBucketReport">
+            <div id="leftContainer">
+                <fieldset class="blockSetup">
+                    <legend class="connectionSetupLegend">Enter Bitbucket Credential</legend>
+                    <div id="bitbucketWrapper">
+                        <div id="inputWrapper">
+                            <div id="inputBlock">
+                                <label for="bitbucketUsername">BitBucket Username:</label>
+                                <input id="bitbucketUsername" name="bitbucketUsername" type="text" size="15" value="@Model.BitbucketUsername" />
+                                <span id="bitbucketUsernameError" style="display:none;color:red">Please enter your BitBucket username</span>
+                            </div>
+                            <div id="inputBlock">
+                                <label for="bitbucketPassword">BitBucket Password:</label>
+                                <input id="bitbucketPassword" name="bitbucketPassword" type="password" size="15" value="@Model.BitbucketPassword" />
+                                <span id="bitbucketPasswordError" style="display:none;color:red">Please enter your BitBucket password</span>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div id="centerContainer">
+                <fieldset class="blockSetup">
+                    <legend class="connectionSetupLegend">Choose Report Type</legend>
+                    <div id="bitbucketWrapper">
+                        <div id="inputWrapper">
+                            <table id="inputParams" width="100%" border="0px">
+                                <tr>
+                                    <td>
+                                        <div id="inputBlock">
+                                            <label for="reportType">Which report to generate:</label>
+                                            <select id="reportType" name="reportType" class="text">
+                                                <option selected>-- Choose BitBucket Report --</option>
+                                                <option value="PR">Pull Requests</option>
+                                                <option value="BR">Stale Branches</option>
+                                                <option value="CP">Cherry Picks</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div id="inputBlock" class="cherryPickReportSettings" style="display: none;">
+                                            <label for="targetBranch">Target Branch:</label>
+                                            <select id="targetBranch" name="targetBranch" class="text">
+                                                <option selected>-- Choose Target Branch --</option>
+                                                <option value="trunk">trunk</option>
+                                                <option value="release">release</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div id="inputBlock" class="noTypeChosen" align="center">
+                                <span style="background-color: chartreuse; color: rgb(172, 84, 21); padding-left: 4em; padding-right: 4em; padding-bottom: 0.2em;">
+                                    Please select the report type from the above dropdown
+                                </span>
+                            </div>
+                            <div class="commitsReportSettings" style="display: none;">
+                                <table id="inputDates" width="100%" border="0px">
+                                    <tr>
+                                        <td>
+                                            <div id="inputBlock">
+                                                <label for="reportStartDate">Commits from:</label>
+                                                <input id="reportStartDate" name="reportStartDate" class="datePicker" type="text" />
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div id="inputBlock">
+                                                <label for="reportEndDate">Commits till:</label>
+                                                <input id="reportEndDate" name="reportEndDate" class="datePicker" type="text" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div id="inputBlock" class="branchReportSettings" width="45%" style="display: none;">
+                                <label for="branchCutoffDate">Choose cut-off date:</label>
+                                <input id="branchCutoffDate" name="branchCutoffDate" class="datePicker" type="text" />
+                            </div>
+                            <div id="inputBlock" class="cherryPickReportSettings" style="display: none;">
+                                <table id="inputValues" width="100%" border="0px">
+                                    <tr>
+                                        <td>
+                                            <div id="inputBlock">
+                                                <label for="cherryPickReportType">Choose commits:</label>
+                                                <select id="cherryPickReportType" name="cherryPickReportType" class="text">
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div id="inputBlock">
+                                                <label for="commitCutoffDate">Choose cut-off date:</label>
+                                                <input id="commitCutoffDate" name="commitCutoffDate" class="datePicker" type="text" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div id="rightContainer">
+                <div id="bitbucketWrapper">
+                    <div id="inputWrapper">
+                        <div id="logo">
+                            <a href="https://bitbucket.acclariscorp.com/users/nirav483/repos/benefitsaccounts_automation/browse">
+                                <img class="companyPicture" src="~/images/logo.png" title="Click here for WTW BitBucket Repository" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="bitbucketTableWrapper">
+                <table id="detailTable" style="width:100%">
+                    <tbody>
+                        <tr class="buttonRow">
+                            <td class="buttonGroup" align="center">
+                                <input id="getReport" class="testButtons" value="Generate Report" type="submit" />
+                                <input id="back" class="testButtons" value="Go Back" type="button" onclick="history.go(-1)" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="spinner" style="display:none">
+                    <div class="center-div">
+                        <div class="inner-div">
+                            <div class="loader"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div id="reports">
+        @if (Model.IsCommitsReportAvailable)
+        {
+            <div id="headline" align="center">
+                <br />
+                <span>Pull requests details that are merged between @Convert.ToDateTime(@Model.ReportStartDate) and @Convert.ToDateTime(@Model.ReportEndDate).AddSeconds(-1)</span>
+            </div>
+            <table id="urlsTable" class="urlsTable stripe hover row-border">
+                <thead>
+                    <tr>
+                        <th>Contributor Name</th>
+                        <th>Commit ID</th>
+                        <th>Pull Request Title</th>
+                        <th>Commit Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var commit in Model.Commits)
+                    {
+                        <tr>
+                            <td>@commit.Contributor</td>
+                            <td>@commit.CommitId</td>
+                            <td>@commit.PullRequestTitle</td>
+                            <td>@commit.CommitDate</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        @if (Model.IsBranchesReportAvailable)
+        {
+            <div id="headline" align="center">
+                <br />
+                <span>Git branches that are stale on @Convert.ToDateTime(@Model.ReportCutoffDate)</span>
+            </div>
+            <table id="urlsTable" class="urlsTable stripe hover row-border">
+                <thead>
+                    <tr>
+                        <th>Branch Name</th>
+                        <th>Last Commit</th>
+                        <th>Commit Date</th>
+                        <th>Committer</th>
+                        <th>Committer Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var branch in Model.Branches)
+                    {
+                        <tr>
+                            <td>@branch.BranchName</td>
+                            <td>@branch.LastCommitId</td>
+                            <td>@branch.LastCommitDate</td>
+                            <td>@branch.LastCommitter</td>
+                            <td>@branch.CommitterEmail</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        @if (Model.IsCherryPicksReportAvailable)
+        {
+            string label = $"{Model.CherryPickTargetBranch} cherry-pick report for {Model.CherryPickType} {Model.CherryPickBaseBranch} commits";
+            if (Model.ReportCutoffDate != null)
+            {
+                label = $"{label} since {Model.ReportCutoffDate}";
+            }
+            <div id="headline" align="center">
+                <br />
+                <span>@label</span>
+            </div>
+            <table id="urlsTable" class="urlsTable stripe hover row-border" style="font-size: x-small;">
+                <thead>
+                    <tr>
+                        <th>@Model.CherryPickBaseBranch Commit Date</th>
+                        <th>Pull Request Title</th>
+                        <th>Contributor Name</th>
+                        <th>@Model.CherryPickBaseBranch Commit</th>
+                        <th>JIRA ID</th>
+                        <th>JIRA Status</th>
+                        <th>Cherry-Picked?</th>
+                        @if (Model.CherryPickType.Equals("all"))
+                        {
+                            <th>Cherry-Picked By</th>
+                            <th>Cherry-Pick Date</th>
+                            <th>@Model.CherryPickTargetBranch Commit</th>
+                        }
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var cherryPick in Model.CherryPicks)
+                    {
+                        <tr>
+                            <td>@cherryPick.BaseBranchCommitDate</td>
+                            <td>@cherryPick.PullRequestTitle</td>
+                            <td>@cherryPick.Contributor</td>
+                            <td>
+                                <a href="https://bitbucket.acclariscorp.com/users/nirav483/repos/benefitsaccounts_automation/commits/@cherryPick.BaseBranchCommitId">@cherryPick.BaseBranchCommitId</a>
+                            </td>
+                            <td>
+                                @if (cherryPick.JiraId != null)
+                                {
+                                    var jiraIDs = cherryPick.JiraId.Split(",");
+                                    @for (int i = 0; i < jiraIDs.Length; i++)
+                                    {
+                                        <a href="https://jira.extendhealth.com/browse/@jiraIDs[i].Trim()">@jiraIDs[i].Trim()</a>
+                                        if (i != jiraIDs.Length - 1)
+                                        {
+                                            <span>, </span>
+                                        }
+                                    }
+                                }
+                            </td>
+                            <td>@cherryPick.JiraStatus</td>
+                            <td>@cherryPick.IsCherryPicked</td>
+                            @if (Model.CherryPickType.Equals("all"))
+                            {
+                                <td>@cherryPick.CherryPickedBy</td>
+                                <td>@cherryPick.TargetBranchCommitDate</td>
+                                <td>
+                                    <a href="https://bitbucket.acclariscorp.com/users/nirav483/repos/benefitsaccounts_automation/commits/@cherryPick.TargetBranchCommitId">@cherryPick.TargetBranchCommitId</a>
+                                </td>
+                            }
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        @if (Model.IsCommitsReportAvailable || Model.IsBranchesReportAvailable || Model.IsCherryPicksReportAvailable)
+        {
+            <div id="export" align="center">
+                <input id="exportBtn" class="testButtons" value="Download Report" type="button"></input>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts
+{
+    <script>
+        function showCommitsReportInputs(show) {
+            document.querySelectorAll("div.commitsReportSettings").forEach(function (element) {
+                if (show) {
+                    element.style.display = "block";
+                }
+                else {
+                    element.style.display = "none";
+                }
+            });
+        }
+
+        function showBranchesReportInputs(show) {
+            document.querySelectorAll("div.branchReportSettings").forEach(function (element) {
+                if (show) {
+                    element.style.display = "block";
+                }
+                else {
+                    element.style.display = "none";
+                }
+            });
+        }
+
+        function showCherryPickReportInputs(show) {
+            document.querySelectorAll("div.cherryPickReportSettings").forEach(function (element) {
+                if (show) {
+                    element.style.display = "block";
+                }
+                else {
+                    element.style.display = "none";
+                }
+            });
+        }
+
+        function showError(show) {
+            document.querySelectorAll("div.noTypeChosen").forEach(function (element) {
+                if (show) {
+                    element.style.display = "block";
+                }
+                else {
+                    element.style.display = "none";
+                }
+            });
+        }
+
+        function changeBrowserDropdownEventListener() {
+            if (document.getElementById('reportType').value == "PR") {
+                showCommitsReportInputs(true);
+                showBranchesReportInputs(false);
+                showCherryPickReportInputs(false);
+                showError(false);
+            }
+            else if (document.getElementById('reportType').value == "BR") {
+                showBranchesReportInputs(true);
+                showCommitsReportInputs(false);
+                showCherryPickReportInputs(false);
+                showError(false);
+            }
+            else if (document.getElementById('reportType').value == "CP") {
+                showCherryPickReportInputs(true);
+                showCommitsReportInputs(false);
+                showBranchesReportInputs(false);
+                showError(false);
+            }
+            else {
+                showCommitsReportInputs(false);
+                showBranchesReportInputs(false);
+                showCherryPickReportInputs(false);
+                showError(true);
+            }
+        }
+
+        function showLoader() {
+            document.querySelectorAll("div.spinner").forEach(function (element) {
+                element.style.display = "block";
+            });
+        }
+
+        function changeCherryPickDropdownEventListener() {
+            var targetBranch = document.getElementById('targetBranch').value;
+            var cherryPickOptions = document.getElementById('cherryPickReportType');
+            if (targetBranch == "trunk") {
+                cherryPickOptions.disabled = false;
+                cherryPickOptions.options.length = 0;
+                createOption(cherryPickOptions, "All develop commits", "all");
+                createOption(cherryPickOptions, "Pending develop commits", "pending");
+            } else if (targetBranch == "release") {
+                cherryPickOptions.disabled = false;
+                cherryPickOptions.options.length = 0;
+                createOption(cherryPickOptions, "All trunk commits", "all");
+                createOption(cherryPickOptions, "Pending trunk commits", "pending");
+            } else {
+                cherryPickOptions.disabled = true;
+            }
+        }
+
+        function createOption(ddl, text, value) {
+            var opt = document.createElement('option');
+            opt.value = value;
+            opt.text = text;
+            ddl.options.add(opt);
+        }
+
+        $(document).ready(function() {
+            $(".datePicker").datepicker({
+                dateFormat: "dd-MM-yy",
+                changeMonth: true,
+                changeYear: true
+            });
+        });
+
+        document.getElementById('reportType').addEventListener("change", changeBrowserDropdownEventListener, false);
+        document.getElementById('targetBranch').addEventListener("change", changeCherryPickDropdownEventListener, false);
+        document.getElementById('getReport').addEventListener("click", showLoader, false);
+    </script>
+
+    @if (Model.IsCommitsReportAvailable || Model.IsBranchesReportAvailable || Model.IsCherryPicksReportAvailable)
+    {
+        <script>
+            var dataTable = new DataTable("#urlsTable", {
+                columns: [
+                    { select: 0, sort: "asc" },
+                ],
+                perPage: 20,
+                perPageSelect: [10, 25, 50, 150, 500, 1200]
+            });
+        </script>
+        <script>
+            document.getElementById('exportBtn').addEventListener("click", function() {
+                var table2excel = new Table2Excel();
+                table2excel.export(document.querySelectorAll("#urlsTable"));
+            });
+        </script>
+    }
+}

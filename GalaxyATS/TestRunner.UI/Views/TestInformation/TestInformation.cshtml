@@ -1,0 +1,159 @@
+﻿@{
+    ViewData["Title"] = "Test Inventory";
+}
+
+@using TestRunner.UI.ViewModels
+@model TestInformationVM
+
+@section AddedStyles
+{
+    <link rel="stylesheet" type="text/css" href="~/css/site.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/vanilla-dataTables.min.css" />
+    <script type="text/javascript" src="~/js/vanilla-dataTables.min.js"></script>
+}
+
+<div class="seGrid sidebar2">
+    <div id="breadCrumbNav">
+        <div id="breadCrumbContainer">
+            <ul class="breadcrumb">
+                <li>Test Inventory</li>
+                @if (Model.Actions != null)
+                {
+                    <li><a href="?type=tests">Tests</a> || Actions || <a href="?type=pageobjects">Page Objects</a> || <a href="TestInformation/ApiClients">Api Clients</a></li>
+                }
+                else if (Model.Tests != null)
+                {
+                    <li>Tests || <a href="?type=actions">Actions</a> || <a href="?type=pageobjects">Page Objects</a> || <a href="TestInformation/ApiClients">Api Clients</a></li>
+                }
+                else if (Model.PageObjects != null)
+                {
+                    <li><a href="?type=tests">Tests</a> || <a href="?type=actions">Actions</a> || Page Objects || <a href="TestInformation/ApiClients">Api Clients</a></li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="seGrid content">
+    @if (Model.Actions != null)
+    {
+        <div id="actions">
+            <table id="actionsTable" class="stripe hover row-border" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Action Method</th>
+                        <th>Action Class</th>
+                        <th>Description</th>
+                        <th>Test Count</th>
+                        <th>PO Count</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var action in Model.Actions)
+                    {
+                        <tr>
+                            <td>
+                                <a href="/TestInformation/action/@(action.ClassName + "." + action.Method)">@action.Method</a>
+                            </td>
+                            <td>@action.ClassName</td>
+                            <td>@action.Description</td>
+                            <td>@action.Tests.Count</td>
+                            <td>@action.PageObjects.Count</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    @if (Model.Tests != null)
+    {
+        <div id="tests">
+            <table id="testsTable" class="stripe hover row-border" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Test Method</th>
+                        <th>Test Fixture</th>
+                        <th>Description</th>
+                        <th>Action Count</th>
+                        <th>PO Count</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var test in Model.Tests)
+                    {
+                        <tr>
+                            <td>
+                                <a href="/TestInformation/test/@(test.ClassName + "." + test.Method)">@test.Method</a>
+                            </td>
+                            <td>@test.ClassName</td>
+                            <td>@test.Description</td>
+                            <td>@test.Actions.Count</td>
+                            <td>@test.PageObjects.Count</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    @if (Model.PageObjects != null)
+    {
+        <div id="pageobjects">
+            <table id="pageObjectsTable" class="stripe hover row-border" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Class</th>
+                        <th>Description</th>
+                        <th>Action Count</th>
+                        <th>Test Count</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var pageObject in Model.PageObjects)
+                    {
+                        <tr>
+                            <td>
+                                <a href="/TestInformation/pageobject/@(pageObject.ClassName)">@pageObject.ClassName</a>
+                            </td>
+                            <td>@pageObject.Description</td>
+                            <td>@pageObject.Actions.Count</td>
+                            <td>@pageObject.Tests.Count</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>
+
+@section Scripts
+{
+    @if (Model.Tests != null)
+    {
+        <script>
+            var testDataTable = new DataTable("#testsTable", {
+                columns: [
+                    { select: 1, sort: "dsc" },
+                ],
+                perPage: 25,
+                perPageSelect: [10, 25, 50, 150]
+            });
+        </script>
+    }
+    @if (Model.Actions != null)
+    {
+        <script>
+            var actionDataTable = new DataTable("#actionsTable", {
+                perPage: 25,
+                perPageSelect: [10, 25, 50, 150]
+            });
+        </script>
+    }
+    @if (Model.PageObjects != null)
+    {
+        <script>
+            var pageObjectsDataTable = new DataTable("#pageObjectsTable", {
+                perPage: 25,
+                perPageSelect: [10, 25, 50, 150]
+            });
+        </script>
+    }
+}

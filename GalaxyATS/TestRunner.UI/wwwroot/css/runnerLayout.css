@@ -1,0 +1,332 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+#runnerContainer
+{
+	width:100%;
+}
+
+#runnerContainer:after
+{
+	clear:both;
+}
+
+#leftContainer
+{
+	width:45%;
+	display:block;
+	float:left;
+	margin:0px 0px 55px 22px;
+}
+
+#rightContainer
+{
+	width:42%;
+	float:right;
+	display:block;
+	margin:0px 22px 55px 0px;
+}
+
+#runConfiguration
+{
+	width:100%;
+	height:100%;
+	display:block;
+	margin: 30px auto;
+}
+
+.testSetup
+{
+	width:100%;
+	display:block;
+	box-sizing:border-box;
+    min-width: 0px;
+}
+
+.testSetupLegend
+{
+	display:block;
+	padding:.2em .5em;
+	border:1px solid;
+	color:#000;
+	font-size:20px;
+	font-variant:small-caps;
+	letter-spacing:3px;
+	text-align:left;
+}
+
+#codeBranchWrapper
+{
+	width:100%;
+	display:block;
+	margin: 0px 0px 10px 0px;
+}
+
+#domainWrapper 
+{
+    width: 100%;
+    margin: 0px 0px 10px 12px;
+}
+
+#applicationWrapper
+{
+	width:100%;
+	margin: 0px 0px 10px 12px;
+}
+
+#testPresetWrapper
+{
+	width:100%;
+	margin: 0px 0px 10px 12px;
+}
+
+#testTypeWrapper
+{
+    width: 100%;
+    margin: 0px 0px 10px 12px;
+}
+
+#searchWrapper
+{
+	margin: 30px 0 0 0;
+	width:100%;
+	display:block;
+}
+
+#searchBar
+{
+	width:98%;
+}
+
+#searchBarInput
+{
+	width:100%;
+}
+
+#buttonWrapper
+{
+	width:100%;
+	margin:20px 0px 3px 0px;
+}
+
+#buttonGroup
+{
+	display:block;
+	margin: 0 auto;
+}
+
+#testTree 
+{
+    display: block;
+    width: 98%;
+    border: double;
+    border-color: #999;
+}
+
+#testDescription
+{
+	text-align:center;
+	width:100%;
+	display:block;
+}
+
+.testDescriptionFieldSet
+{
+	border: 1px solid #000;
+	display:block;
+	box-sizing:border-box;
+	min-height: 120px;
+}
+
+.testDescriptionLegend
+{
+	display:block;
+	padding:.2em .5em;
+	border:1px solid;
+	color:#000;
+	font-size:20px;
+	font-variant:small-caps;
+	letter-spacing:3px;
+	text-align:left;
+}
+
+#runSettings
+{
+	margin: 30px 0 0 0;
+	width:100%;
+	display:block;
+}
+
+.runSettingFieldSet
+{
+	display:block;
+	box-sizing:border-box;
+}
+
+.testRunnerLegend
+{
+	display:block;
+	padding:.2em .5em;
+	border:1px solid;
+	color:#000;
+	font-size:20px;
+	font-variant:small-caps;
+	letter-spacing:3px;
+	text-align:left;
+}
+
+#inputWrapper
+{
+	width:100%;
+}
+
+#inputBlock
+{
+	margin:10px 0 0;
+	display:block;
+}
+
+#queueRun
+{
+	margin:35px auto 0 auto;
+	display:block;
+	text-align:center;
+}
+
+#submitRun
+{
+	width:225px;
+	height:85px;
+	font-size: 20px;
+	font-variant: small-caps;
+	letter-spacing: 3px;
+}
+
+#advancedOptions
+{
+	margin:0;
+	width:100%;
+	display:block;
+}
+
+.advancedOptionsFieldSet
+{
+	display:block;
+	box-sizing:border-box;
+}
+
+.advancedOptionsLegend
+{
+	display:block;
+	padding:.2em .5em;
+	border:1px solid;
+	color:#000;
+	font-size:20px;
+	font-variant:small-caps;
+	letter-spacing:3px;
+	text-align:left;
+}
+
+#presetWrapper 
+{
+    width: 100%;
+    display:block;
+    height:12px;
+}
+
+#presetButton 
+{
+    display:block;
+    float:right;
+}
+
+@media only screen and (min-width: 300px) {
+    #leftContainer
+	{
+		width:93%;
+		margin:0px 0px 55px 3px;
+		float:none;
+	}
+	
+	#rightContainer
+	{
+		width:94%;
+		float:none;
+	}
+}
+
+@media only screen and (min-width: 1350px)
+{
+	#leftContainer
+	{
+		width:45%;
+		margin:0px 0px 55px 18px;
+		float:left;
+	}
+	
+	#rightContainer
+	{
+		width:42%;
+		float:right;
+	}
+}
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.methodNode
+{
+    word-wrap:break-word;
+}
+
+.fixtureName
+{
+    font-weight:bold;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 500px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 105%;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+#runSettingsWrapper label {
+    width: 125px;
+    display: inline-block;
+}
+
+#runSettingsWrapper .text {
+    width: 250px;
+}
+
+#runSettingsWrapper .number {
+    width: 50px;
+}
+
+#presetInfoIcon {
+    width:15px;
+}
+
+#testSettingsWrapper label {
+    width: 100px;
+    display: inline-block;
+}

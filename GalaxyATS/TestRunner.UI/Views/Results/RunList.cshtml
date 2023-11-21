@@ -1,0 +1,91 @@
+﻿@{
+    ViewData["Title"] = "Run List";
+}
+
+@using TestRunner.UI.ViewModels
+@model RunListVM
+
+@section AddedStyles
+{
+    <link rel="stylesheet" type="text/css" href="~/css/site.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/vanilla-dataTables.min.css" />
+    <script type="text/javascript" src="~/js/vanilla-dataTables.min.js"></script>
+}
+
+<div class="seGrid sidebar2">
+    <div id="breadCrumbNav">
+        <div id="breadCrumbContainer">
+            <ul class="breadcrumb">
+                <li><a href="/Home">Home</a></li>
+                @if (@ViewBag.AppType == "dashboard")
+                {
+                    <li><a href="/RunResult">Run Results</a></li>
+                    <li>Environment: @Context.Request.Query["url"]</li>
+                }
+                else
+                {
+                    <li>Run Results</li>
+                }
+                </ul>
+        </div>
+    </div>
+</div>
+
+<div class="seGrid content">
+    <div id="runs">
+        <form action="@Url.Action("RunList", "Results")" style="padding: 2px;">
+            <input hidden type="text" name="url" value="@Context.Request.Query["url"]" />
+            <label>Start Date</label>
+            <input type="date" name="startDate" />
+            <label>End Date</label>
+            <input type="date" name="endDate" />
+            <input type="submit" />
+        </form>
+        <table id="runsTable" class="runDataTable stripe hover row-border">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Start Time</th>
+                    <th>Url</th>
+                    <th>Browser</th>
+                    <th>Tests</th>
+                    <th>Labels</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var run in Model.Runs)
+                {
+                    <tr>
+                        <td>
+                            <a href="/RunResult/@run.RunId">@run.RunId</a>
+                        </td>
+                        <td>@run.StartTime.ToString("yyyy/MM/dd HH:mm:ss")</td>
+                        <td>@run.BaseUrl</td>
+                        <td>@run.Browser</td>
+                        @if (run.Tests == null)
+                        {
+                            <td>@run.TestsCount</td>
+                        }
+                        else
+                        {
+                            <td>@run.Tests.Count</td>
+                        }
+                        <td>@run.Labels</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts
+    {
+    <script>
+        var dataTable = new DataTable("#runsTable", {
+            columns: [
+                { select: 1, sort: "asc" },
+            ],
+            perPage: 20,
+        });
+    </script>
+}

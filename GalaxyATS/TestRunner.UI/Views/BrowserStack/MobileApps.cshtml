@@ -1,0 +1,109 @@
+﻿@{
+    ViewData["Title"] = "BrowserStack Mobile Apps";
+}
+
+@using TestRunner.UI.ViewModels
+@model BrowserStackAppsVM
+
+@section AddedStyles
+    {
+    <link rel="stylesheet" type="text/css" href="~/css/site.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/vanilla-dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/bsmobileApps.css" />
+    <script type="text/javascript" src="~/js/vanilla-dataTables.min.js"></script>
+}
+
+<div class="seGrid sidebar2">
+    <div id="breadCrumbNav">
+        <div id="breadCrumbContainer">
+            <ul class="breadcrumb">
+                <li><a href="/Home">Home</a></li>
+                <li>BrowserStack Mobile Apps</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="seGrid content">
+    <div id="contentContainer">
+        <div id="leftContainer">
+            <fieldset class="connectionSetup">
+                <legend class="connectionSetupLegend">BrowserStack Connection</legend>
+                <form id="browserStackConnection" enctype="multipart/form-data" method="post" action="/BrowserStack/MobileApps">
+                    <div id="connectionWrapper">
+                        <div id="inputWrapper">
+                            <div id="inputBlock" class="browserStackSetting">
+                                <label for="browserStackUsername">BrowserStack User:</label>
+                                <input id="browserStackUsername" name="browserstackusername" type="text" value="@Model.Username"/>
+                            </div>
+                            <div id="inputBlock" class="browserStackSetting">
+                                <label for="browserStackKey">BrowserStack Key:</label>
+                                <input id="browserStackKey" name="browserstackkey" type="password" value="@Model.Key"/>
+                            </div>
+                            @if (Model.Apps != null)
+                            {
+                                <div id="inputBlock" class="browserStackSetting">
+                                    <label for="browserStackKey">App File:</label>
+                                    <input id="browserStackAppFile" name="browserstackappfile" type="file" accept=".ipa,.apk"/>
+                                </div>
+                            }
+                        </div>
+                        <div id="inputWrapper">
+                            <div id="submitDiv">
+                            @if (Model.Apps != null)
+                            {
+                                <input id="submit" name="submit" value="Upload App File" type="submit" />
+                            } else
+                            {
+                                <input id="submit" name="submit" value="Connect to BrowserStack" type="submit" />
+                            }
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </fieldset>
+        </div>
+        @if (Model.Apps != null)
+        {
+        <div id="rightContainer">
+            <div id="appList">
+                <fieldset class="appsList">
+                    <legend class="appsListLegend">Uploaded Apps</legend>
+                    <table id="appsTable" class="appsTable stripe hover row-border">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Version</th>
+                                <th>Uploaded</th>
+                                <th>Url</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var app in Model.Apps)
+                            {
+                            <tr>
+                                <td>@app.Name</td>
+                                <td>@app.Version</td>
+                                <td>@app.Uploaded</td>
+                                <td>@app.Url</td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </fieldset>
+            </div>
+        </div>
+        }
+    </div>
+</div>
+
+@section Scripts
+    {
+    <script>
+        var dataTable = new DataTable("#appsTable", {
+            columns: [
+                { select: 2, sort: "asc" },
+            ],
+            perPage: 20,
+        });
+    </script>
+}

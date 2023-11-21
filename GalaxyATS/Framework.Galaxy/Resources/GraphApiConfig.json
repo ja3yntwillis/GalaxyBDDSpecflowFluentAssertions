@@ -1,0 +1,39 @@
+{
+    "GraphApiConfig": [
+        {
+            "Name": "EnterpriseDev",
+            "Url": "https://ent-dev.participantportal.com",
+            "ClientId": null,
+            "ClientSecret": null,
+            "Tenant": null
+        },
+        {
+            "Name": "EnterpriseStage",
+            "Url": "https://ent-stg.participantportal.com",
+            "ClientId": null,
+            "ClientSecret": null,
+            "Tenant": null
+        },
+        {
+            "Name": "EnterpriseUAT",
+            "Url": "https://ent-uat.participantportal.com",
+            "ClientId": null,
+            "ClientSecret": null,
+            "Tenant": null
+        },
+        {
+            "Name": "EnterpriseStress",
+            "Url": "https://ent-sts.participantportal.com",
+            "ClientId": null,
+            "ClientSecret": null,
+            "Tenant": null
+        },
+        {
+            "Name": "Payflex",
+            "Url": "https://pf-uat.participantportal.com",
+            "ClientId": null,
+            "ClientSecret": null,
+            "Tenant": null
+        }
+    ]
+}

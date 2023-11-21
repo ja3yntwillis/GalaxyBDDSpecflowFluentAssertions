@@ -1,0 +1,538 @@
+﻿@charset "utf-8";
+/* CSS Document */
+#testInfoLeftContainer
+{
+	width:55%;
+	display:block;
+	float:left;
+	margin:10px 0px 55px 22px;
+}
+
+#testInfoRightContainer
+{
+	width:36%;
+	float:right;
+	display:block;
+	margin:10px 22px 55px 0px;
+}
+
+#testHeader
+{
+	width:100%;
+	min-height:40px;
+	display:block;
+}
+
+#testNameHeader
+{
+	width:auto;
+	display:block;
+	padding:10px;
+	float:left;
+
+}
+
+#testIDHeader
+{
+	width:auto;
+	display:block;
+	float:right;
+	padding:10px;
+}
+
+.testTextBold
+{
+	font-weight:bold;
+}
+
+#testHeaderClear
+{
+	clear:both;
+	width:100%;
+	display:block;
+}
+
+#testDetailWrapper
+{
+	width:100%;
+	display:block;
+	margin:30px 0px 0px 0px;
+}
+
+table
+{
+	border-collapse:collapse;
+	border-spacing:0;
+	border:0 none;
+}
+
+td
+{
+	vertical-align:bottom;
+	border:0 none;
+}
+
+#testDetailWrapper .selectedTab {
+    font-size: 20px;
+}
+
+#testDetailWrapper legend 
+{
+    display: inline-block;
+    display: -moz-inline-stack;
+    padding: .2em .5em;
+    color: #000;
+    border-top: 1px solid;
+    border-right: 1px solid;
+    border-left: 1px solid;
+    border-bottom: 0px;
+    font-variant: small-caps;
+    letter-spacing: 2px;
+    vertical-align: bottom;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+#testStatusData
+{
+	width:auto;
+	display:block;
+	float:left;
+}
+
+#testStatusChart
+{
+	width:auto;
+	display:block;
+	float:right;
+	margin:3px 20px 0px 0px;
+}
+
+.testStatus
+{
+	padding:0px;
+}
+
+.testStatusPicture
+{
+    width:120px;
+	height:120px;
+}
+
+.testStatusUList
+{
+	list-style-type:none;
+}
+
+.testStatusUList li
+{
+	padding:5px 0px 5px 0px
+}
+
+.testStatusHeaders
+{
+	font-weight:bold;
+}
+
+.detailHeader
+{
+	display:block;
+    margin:10px;
+	padding:3px 10px 10px 0px;
+	font-weight:bold;
+	font-size:20px;
+}
+
+#testDataList 
+{
+    list-style: none;
+    list-style-type:none;
+    margin: 1em 0 2em 0;
+    padding: 0;
+    word-wrap: break-word;
+    text-align:center;
+}
+
+#testDataList ul 
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+#testDataList li 
+{
+    list-style: none;
+    list-style-type: none;
+    padding: 3px 0px;
+}
+
+#errorDetailList 
+{
+    list-style: none;
+    margin: 1em 0 2em 0;
+    padding: 0;
+    word-wrap: break-word;
+}
+
+#errorDetailList li 
+{
+    margin: 10px;
+    padding: 3px 10px 5px 20px;
+}
+
+.lastResultsRow 
+{
+    margin: 15px 0px 0px 0px;
+    display: block;
+    width: 100%;
+    word-wrap: break-word;
+}
+
+.lastResultTestName 
+{
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.failedType 
+{
+    font-style: italic;
+    font-size: 14px;
+}
+
+.resultIcon
+{
+    vertical-align: bottom;
+}
+
+.failedText 
+{
+    font-style: italic;
+    color: #969696;
+    font-size: 14px;
+    width: 100%;
+    display: block;
+}
+
+.failedTestLink
+{
+    color:#000000;
+}
+
+.resultTime
+{
+    font-size: 12px;
+    text-decoration:dashed;
+}
+
+.testLogoWrapper 
+{
+    display: block;
+}
+
+.failedTestRow 
+{
+    display: block;
+    word-break:break-all;
+    margin: 0px 0px 25px 0px;
+}
+
+#testDetailWrapper fieldset
+{
+    min-height:350px;
+}
+
+.dataKey 
+{
+    font-weight: bold;
+}
+
+#testDataList .dataKey 
+{
+    font-weight: bold;
+    margin: 5px 0px;
+    display: block;
+    font-size: 30px;
+}
+
+#testDataList .dataKeyChildren 
+{
+    font-weight: bold;
+    display: block;
+}
+
+#errorHintWrapper 
+{
+    width: 100%;
+    display: block;
+}
+
+.errorHintHeader
+{
+	display:block;
+	margin:10px;
+	padding:3px 10px 5px 0px;
+	text-decoration:underline;
+	font-weight:bold;
+	font-size:20px;
+}
+
+#errorHintList li
+{
+	padding:5px 0px 5px 0px
+}
+
+#screenshotWrapper
+{
+	width:100%;
+	display:block;
+}
+
+#screenshotWrapper legend
+{
+	min-width:180px;
+	display: inline-block;
+	display: -moz-inline-stack;
+	padding: .2em .5em;
+	color: #000;
+	border-top: 1px solid;
+	border-right: 1px solid;
+	border-left: 1px solid;
+	border-bottom: 0px;
+	font-variant: small-caps;
+	letter-spacing: 3px;
+	vertical-align: bottom;
+	font-size: 19px;
+}
+
+#screenshotDiv
+{
+	width:100%;
+	border: solid 1px;
+	display:block;
+}
+
+.failedScreenshot
+{
+	padding:20px 0px 20px 65px;
+	width:75%;
+}
+
+#actionWrapper
+{
+	width:100%;
+	display:block;
+	margin:30px 0px 0px 0px;
+}
+
+#actionWrapper legend
+{
+	display: inline-block;
+	display: -moz-inline-stack;
+	padding: .2em .5em;
+	color: #000;
+	border-top: 1px solid;
+	border-right: 1px solid;
+	border-left: 1px solid;
+	border-bottom: 0px;
+	font-variant: small-caps;
+	letter-spacing: 3px;
+	vertical-align: bottom;
+	font-size: 19px;
+}
+
+#actionDiv
+{
+	width:100%;
+	border: solid 1px;
+	display:block;
+}
+
+#actionButton
+{
+	width:100%;
+	border-left: 0px;
+	border-right: 0px;
+	border-top: 0px;
+	border-bottom: 1px solid;
+	display:block;
+}
+
+#expandAllActions
+{
+	margin:5px;
+}
+
+#collapseAllActions
+{
+	margin:5px;
+}
+
+#actionList
+{
+	list-style:none;
+	margin:1em 0;
+}
+
+#actionList li
+{
+	margin:15px 0px 0px 0px;
+	padding:5px 0px 3px 0px;
+}
+
+.dataAction
+{
+	font-size:18px;
+	font-weight:bold;
+	color:#005395;
+}
+
+.dataTime
+{
+	font-size:18px;
+}
+
+.dataDescription
+{
+	display:block;
+	margin:7px 0px 0px 0px;
+	font-size:16px;
+}
+
+.dataMessage
+{
+	font-size:14px;
+	font-style:italic;
+}
+
+#dataGenerationDiv
+{
+    width: 100%;
+    display: block;
+}
+
+#dataGenerationButtons {
+    width: 100%;
+    border-bottom: 1px solid;
+    display: block;
+    margin:5px 0px 0px 0px;
+    height:35px;
+}
+
+#expandAllDataGen, #collapseAllDataGen, #excelDataGen
+{
+	margin:5px;
+    display:block;
+    float:right;
+}
+
+.traceInfo
+{
+	padding:2px 0px 5px 20px;
+	display:block;
+	font-style: italic;
+}
+
+@media only screen and (min-width: 300px)  
+{	
+	#testNameHeader
+	{
+		float: none;
+	}
+	
+	#testIDHeader
+	{
+		float: none;	
+	}
+	
+	#testInfoLeftContainer
+	{
+		width: 94%;
+		float: none;
+		margin: 9px 0px 55px 10px;
+	}
+	
+	#testInfoRightContainer
+	{
+		width: 94%;
+		float: none;
+		margin: 9px 0px 55px 10px;
+	}
+}
+
+@media only screen and (min-width: 800px)  
+{
+    #testNameHeader 
+    {
+        display: block;
+    }
+
+    #testIDHeader 
+    {
+        display: block;
+    }
+	
+	#testInfoLeftContainer
+	{
+		width: 94%;
+		float: none;
+		margin: 9px 0px 55px 10px;
+	}
+	
+	#testInfoRightContainer
+	{
+		width: 94%;
+		float: none;
+		margin: 9px 0px 55px 10px;
+	}
+
+    #testDataList 
+    {
+        text-align:left;
+    }
+}
+
+@media only screen and (min-width: 1200px) 
+{
+    #testInfoLeftContainer {
+        width: 94%;
+        float: none;
+        margin: 9px 0px 55px 10px;
+    }
+
+    #testInfoRightContainer {
+        width: 94%;
+        float: none;
+        margin: 9px 0px 55px 10px;
+    }
+}
+
+@media only screen and (min-width: 1450px)
+{	
+	#testInfoLeftContainer
+	{
+		width: 55%;
+		float: left;
+		margin: 10px 0px 55px 22px;
+	}
+	
+	#testInfoRightContainer
+	{
+		width: 36%;
+		float: right;
+		margin: 10px 22px 55px 0px;
+	}
+	
+}
+
+@media only screen and (min-width: 1714px) {
+    #testNameHeader {
+        display: block;
+        float: left;
+    }
+
+    #testIDHeader {
+        display: block;
+        float: right;
+    }
+}

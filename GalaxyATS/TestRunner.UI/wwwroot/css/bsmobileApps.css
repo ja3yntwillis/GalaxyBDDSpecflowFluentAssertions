@@ -1,0 +1,184 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+#contentContainer
+{
+	width:100%;
+}
+
+#leftContainer
+{
+	width:45%;
+	display:block;
+	float:left;
+	margin:0px 0px 55px 22px;
+	clear:both;
+}
+
+#rightContainer
+{
+	width:42%;
+	float:left;
+	display:block;
+	margin:0px 22px 55px 0px;
+}
+
+#browserStackConnection
+{
+	width:100%;
+	height:100%;
+	display:block;
+	margin: 30px auto;
+}
+
+.connectionSetup
+{
+	width:100%;
+	display:block;
+	box-sizing:border-box;
+    min-width: 0px;
+}
+
+.connectionSetupLegend
+{
+	display:block;
+	padding:.2em .5em;
+	border:1px solid;
+	color:#000;
+	font-size:20px;
+	font-variant:small-caps;
+	letter-spacing:3px;
+	text-align:left;
+}
+
+#buttonWrapper
+{
+	width:100%;
+	margin:20px 0px 3px 0px;
+}
+
+#buttonGroup
+{
+	display:block;
+	margin: 0 auto;
+}
+
+#appsList
+{
+	margin: 30px 0 0 0;
+	width:100%;
+	display:block;
+}
+
+.appsListFieldSet
+{
+	display:block;
+	box-sizing:border-box;
+}
+
+.appsListLegend
+{
+	display:block;
+	padding:.2em .5em;
+	border:1px solid;
+	color:#000;
+	font-size:20px;
+	font-variant:small-caps;
+	letter-spacing:3px;
+	text-align:left;
+}
+
+#inputWrapper
+{
+	width:100%;
+}
+
+#inputBlock
+{
+	margin:10px 0 0;
+	display:block;
+}
+
+#submitDiv
+{
+	margin:35px auto 0 auto;
+	display:block;
+	text-align:center;
+}
+
+@media only screen and (min-width: 300px) {
+    #leftContainer
+	{
+		width:93%;
+		margin:0px 0px 55px 3px;
+		float:none;
+	}
+	
+	#rightContainer
+	{
+		width:94%;
+		float:none;
+	}
+}
+
+@media only screen and (min-width: 1350px)
+{
+	#leftContainer
+	{
+		width:45%;
+		margin:0px 0px 55px 18px;
+		float:left;
+		clear:both;
+	}
+	
+	#rightContainer
+	{
+		width:100%;
+		float:left;
+	}
+}
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 500px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 105%;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+#appsListWrapper label {
+    width: 125px;
+    display: inline-block;
+}
+
+#appsListWrapper .text {
+    width: 250px;
+}
+
+#appsListWrapper .number {
+    width: 50px;
+}
+#connectionWrapper label {
+    width: 100px;
+    display: inline-block;
+}

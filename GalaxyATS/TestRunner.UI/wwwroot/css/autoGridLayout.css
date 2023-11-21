@@ -1,0 +1,274 @@
+﻿@charset "utf-8";
+/* CSS Document */
+html,body
+{
+	font-family:'Open Sans', "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-weight:400;
+	margin:0;
+	height:100%;
+	background-color:#000;
+}
+
+input
+{
+	font-family:'Open Sans', "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-weight:400;
+}
+
+select
+{
+	font-family:'Open Sans', "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-weight:400;
+    width:200px;
+}
+
+fieldset
+{
+    min-width:0px;
+}
+
+/*Grid Layout Start's Here (Do Not Touch)*/
+.sidebar 
+{
+	grid-area: sidebar;
+}
+    
+.sidebar2 
+{
+    grid-area: sidebar2;
+}
+
+.content 
+{
+    grid-area: content;
+}
+
+.header 
+{
+	grid-area: header;
+}
+
+.footer 
+{
+	grid-area: footer;
+}
+
+.automationwrapper 
+{
+    display: grid;
+    grid-gap: 0px;
+    grid-template-areas:
+     "header"
+     "sidebar"
+	 "sidebar2"
+     "content"
+     "footer"
+}
+
+.sidebar 
+{
+	background-color: #333;
+	color:#fff;
+}
+    
+.sidebar2 
+{
+	background-color: #eee;
+  	color: #646464;
+	height: 29px;
+}
+
+.content 
+{
+	background-color:#FFF;
+	min-height:1000px;
+    min-width: 0px;
+}
+
+.header 
+{
+	background-color:#000;
+	color:#fff;
+}
+
+.footer 
+{
+	height:100%;
+	background-color: #000;
+}
+
+#mainNavigation
+{
+	margin:0;
+	display:block;
+	float:left;
+	height:100%;
+    width:100%;
+	background-color:#333;
+}
+
+#breadCrumbNav
+{
+	margin:0;
+	display:block;
+	height:30px;
+	background-color:#eee;
+}
+
+#breadCrumbContainer
+{
+	display:block;
+	float:left;
+	height:30px;
+	/*width:100%;*/
+	margin: 0 0 0 8px;
+}
+
+ul.breadcrumb {
+    padding: 2px 0px 5px 0px;
+	margin: 0;
+    list-style: none;
+    background-color: #eee;
+	color:#646464;
+}
+
+/* Display list items side by side */
+ul.breadcrumb li {
+    display: inline;
+    font-size: 12px;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
+
+#mainNavList
+{
+	display:block;
+	width:100%;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.navAreas
+{
+	display:inline-block;
+	color: #666;
+	border-top: none;
+	border-bottom: 1px solid #666;
+	border-left: none;
+	border-right: none;
+	text-decoration: none;
+	width:100%;
+}
+
+.navAreas:hover
+{
+	background-color:#646464;
+	color:#0275d8;
+}
+
+.navAreas:active
+{
+	background-color:#2D89EF;
+	color:#fff;
+}
+
+.navLinks
+{
+	color:#fff;
+	line-height:20px;
+	text-decoration:none;
+	font-size:14px;
+	display:block;
+	padding: 15px 10px 14px 10px;
+}
+
+#headerBar
+{
+	margin:0;
+	display:block;
+	height:45px;
+	width:100%;
+	background-color:#000;
+}
+
+.runnerTitleStyle
+{
+	font-size: 20px;
+	font-weight: 200;
+	color: #fff;
+}
+
+.headerTextTitle
+{
+	display:block;
+	padding:6px;
+	float:left;
+}
+
+#verisonNumber 
+{
+    height: 100%;
+    width: 200px;
+    display: block;
+    float: right;
+}
+
+.verisonNumberStyle 
+{
+    font-size: 20px;
+    font-weight: 200;
+    color: #fff;
+}
+
+#poweredBy 
+{
+    height: 100%;
+    display: block;
+    float: left;
+}
+
+#poweredWrapper 
+{
+    display: block;
+    clear: both;
+    padding: 7px;
+}
+
+.powerTextHeader 
+{
+    font-size: 11px;
+    width: 126px;
+    font-weight: 200;
+    float: left;
+    color: #fff;
+}
+
+@media only screen and (min-width: 600px) 
+{
+    .automationwrapper 
+    {
+        grid-gap: 0px;
+        grid-template-columns: 200px auto;
+        grid-template-areas: "header header" "sidebar2 sidebar2" "sidebar content" "footer footer";
+        max-width: 100%;
+    }
+}
+/*Grid Layout End's Here (Do Not Touch)*/

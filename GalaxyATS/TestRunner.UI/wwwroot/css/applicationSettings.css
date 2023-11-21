@@ -1,0 +1,73 @@
+﻿@charset "utf-8";
+/* CSS Document */
+#leftcontainer 
+{
+    width: 100%;
+}
+
+.appSettingsFieldset 
+{
+    display: block;
+    box-sizing: border-box;
+    margin: 20px 0px 0px 20px;
+}
+
+.appSettingLegend 
+{
+    display: block;
+    padding: .2em .5em;
+    border: 1px solid;
+    color: #000;
+    font-size: 20px;
+    font-variant: small-caps;
+    letter-spacing: 3px;
+    text-align: left;
+}
+
+#inputWrapper 
+{
+    width: 100%;
+}
+
+#inputBlock 
+{
+    margin: 16px 0 0;
+    display: block;
+}
+
+#inputBlock label 
+{
+    width: 250px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+#inputBlock .text 
+{
+    width: 235px;
+}
+
+#inputBlock input
+{
+    width:250px;
+}
+
+#saveSettingBtn
+{
+    width: 200px;
+    height: 40px;
+    font-size: 18px;
+    margin: 15px 0px 0px 0px;
+}
+
+@media only screen and (min-width: 300px) {
+}
+
+@media only screen and (min-width: 600px)  
+{
+	
+}
+
+@media only screen and (min-width: 1600px)
+{
+}

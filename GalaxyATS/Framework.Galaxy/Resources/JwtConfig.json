@@ -1,0 +1,16 @@
+{
+  "JwtConfigList": [
+    {
+      "Platform": "https://dev-mobile-ig.participantportal.com/dev",
+      "iss": "https://www.client.com/appone",
+      "aud": "https://www.server.com/apptwo",
+      "Secret": "[*secret*]"
+    },
+    {
+      "Platform": "https://mobile-ig.participantportal.com/stg",
+      "iss": "https://fit.dev.mktp.io",
+      "aud": "urn:benefitsaccounts:ms:qa",
+      "Secret": "IMC0nn3c75B3n3fi7s#"
+    }
+  ]
+}

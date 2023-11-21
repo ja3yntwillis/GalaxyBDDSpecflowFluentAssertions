@@ -1,0 +1,270 @@
+{
+  "WebServiceConfig": [
+    {
+      "Name": "AuthenticateLoginExtn",
+      "Uri": "/benefits/webservices/AuthenticateLoginExtnService",
+      "SoapAction": "http://www.acclaris.com/AuthenticateLoginExtnService/AuthenticateLoginExtnService/AuthenticateLoginExtnRequest",
+      "Platform": [
+        {
+          "Env": "EnterpriseStage",
+          "Host": "https://ent-stg.participantportal.com",
+          "Username": "hmwsuser_test",
+          "Password": "dur3rj1n1sh"
+        },
+        {
+          "Env": "Enterprise PROD",
+          "Host": "https://entprd.participantportal.com",
+          "Username": "hmwsuser_test",
+          "Password": "dur3rj1n1sh"
+        }
+      ]
+    },
+    {
+      "Name": "GetClaims",
+      "Uri": "/Services/webservices/GetClaimsService",
+      "SoapAction": "http://www.acclaris.com/GetClaimsService/GetClaimsService/GetClaimsRequest",
+      "Platform": [
+        {
+          "Env": "Enterprise PROD",
+          "Host": "https://entprd.participantportal.com",
+          "Username": "hmwsuser_test",
+          "Password": "dur3rj1n1sh"
+        }
+      ]
+    },
+    {
+      "Name": "ActivateCard",
+      "Uri": "/Services/webservices/ActivateCardService",
+      "SoapAction": "http://www.acclaris.com/ActivateCardService/ActivateCardService/ActivateCardRequest",
+      "Platform": [
+        {
+          "Env": "Enterprise PROD",
+          "Host": "https://entprd.participantportal.com",
+          "Username": "hmwsuser_test",
+          "Password": "dur3rj1n1sh"
+        }
+      ]
+    },
+    {
+      "Name": "GetAccountInfo",
+      "Uri": "/Services/webservices/GetAccountInfoService",
+      "SoapAction": "http://www.acclaris.com/GetAccountInfoService/GetAccountInfoService/GetAccountInfoRequest",
+      "Platform": [
+        {
+          "Env": "Enterprise PROD",
+          "Host": "https://entprd.participantportal.com",
+          "Username": "hmwsuser_test",
+          "Password": "dur3rj1n1sh"
+        }
+      ]
+    },
+    {
+      "Name": "GetAccountInfoV1",
+      "Uri": "/Services/webservices/GetAccountInfoV1Service",
+      "SoapAction": "http://www.acclaris.com/GetAccountInfoV1Service/GetAccountInfoV1Service/GetAccountInfoV1Request",
+      "Platform": [
+        {
+          "Env": "Enterprise PROD",
+          "Host": "https://entprd.participantportal.com",
+          "Username": "hmwsuser_test",
+          "Password": "dur3rj1n1sh"
+        }
+      ]
+    },
+    {
+      "Name": "GetAccountsRequest",
+      "Uri": "/Services/webservices/GetAccountsAtAGlanceService",
+      "SoapAction": "http://www.acclaris.com/GetAccountsAtAGlanceService/v1/GetAccountsAtAGlanceService/GetAccountsAtAGlanceRequest",
+      "Platform": [
+        {
+          "Env": "Enterprise PROD",
+          "Host": "https://entprd.participantportal.com",
+          "Username": "hmwsuser_test",
+          "Password": "dur3rj1n1sh"
+        }
+      ]
+    },
+    {
+      "Name": "GetActionNeededItemsV1",
+      "Uri": "/Services/webservices/GetActionNeededItemsV1Service",
+      "SoapAction": "http://www.acclaris.com/GetActionNeededItemsV1Service/GetActionNeededItemsV1Service/GetActionNeededItemsV1Request",
+      "Platform": [
+        {
+          "Env": "Enterprise PROD",
+          "Host": "https://entprd.participantportal.com",
+          "Username": "hmwsuser_test",
+          "Password": "dur3rj1n1sh"
+        }
+      ]
+    },
+    {
+      "Name": "GetClaimBatchSummaryRequest",
+      "Uri": "/Services/webservices/GetClaimBatchSummaryService",
+      "SoapAction": "http://www.acclaris.com/GetClaimBatchSummaryService/v1/GetClaimBatchSummary",
+      "Platform": [
+        {
+          "Env": "Enterprise PROD",
+          "Host": "https://entprd.participantportal.com",
+          "Username": "hmwsuser_test",
+          "Password": "dur3rj1n1sh"
+        }
+      ]
+    },
+    {
+      "Name": "GetClaimsAmountV1",
+      "Uri": "/Services/webservices/GetClaimsAmountV1Service",
+      "SoapAction": "http://www.acclaris.com/GetClaimsAmountV1Service/GetClaimsAmountV1Service/GetClaimsAmountV1Request",
+      "Platform": [
+        {
+          "Env": "Enterprise PROD",
+          "Host": "https://entprd.participantportal.com",
+          "Username": "hmwsuser_test",
+          "Password": "dur3rj1n1sh"
+        }
+      ]
+    },
+    {
+      "Name": "GetDebitCardStatus",
+      "Uri": "/Services/webservices/GetDebitCardStatusService",
+      "SoapAction": "http://www.acclaris.com/GetDebitCardStatusService/GetDebitCardStatusService/GetDebitCardStatusRequest",
+      "Platform": [
+        {
+          "Env": "Enterprise PROD",
+          "Host": "https://entprd.participantportal.com",
+          "Username": "hmwsuser_test",
+          "Password": "dur3rj1n1sh"
+        }
+      ]
+    },
+    {
+      "Name": "GetPaymentsV1",
+      "Uri": "/Services/webservices/GetPaymentsV1Service",
+      "SoapAction": "http://www.acclaris.com/GetPaymentsV1Service/GetPaymentsV1Service/GetPaymentsV1Request",
+      "Platform": [
+        {
+          "Env": "Enterprise PROD",
+          "Host": "https://entprd.participantportal.com",
+          "Username": "hmwsuser_test",
+          "Password": "dur3rj1n1sh"
+        }
+      ]
+    },
+    {
+      "Name": "GetTransactionsV1Request",
+      "Uri": "/Services/webservices/GetTransactionsV1Service",
+      "SoapAction": "http://www.acclaris.com/GetTransactionsV1Service/GetTransactionsV1Service/GetTransactionsV1Request",
+      "Platform": [
+        {
+          "Env": "Enterprise PROD",
+          "Host": "https://entprd.participantportal.com",
+          "Username": "hmwsuser_test",
+          "Password": "dur3rj1n1sh"
+        }
+      ]
+    },
+    {
+      "Name": "LostStolenCard",
+      "Uri": "/Services/webservices/LostStolenCardService",
+      "SoapAction": "http://www.acclaris.com/LostStolenCardService/LostStolenCardService/LostStolenCardRequest",
+      "Platform": [
+        {
+          "Env": "Enterprise PROD",
+          "Host": "https://entprd.participantportal.com",
+          "Username": "hmwsuser_test",
+          "Password": "dur3rj1n1sh"
+        }
+      ]
+    },
+    {
+      "Name": "GetTransactionsV1Request",
+      "Uri": "/Services/webservices/GetTransactionsV1Service",
+      "SoapAction": "http://www.acclaris.com/GetTransactionsV1Service/GetTransactionsV1Service/GetTransactionsV1Request",
+      "Platform": [
+        {
+          "Env": "Enterprise PROD",
+          "Host": "https://entprd.participantportal.com",
+          "Username": "hmwsuser_test",
+          "Password": "dur3rj1n1sh"
+        }
+      ]
+    },
+    {
+      "Name": "GetDebitCardMailDate",
+      "Uri": "/Services/webservices/GetDebitCardMailDateService",
+      "SoapAction": "http://www.acclaris.com/GetDebitCardMailDateService/GetDebitCardMailDateService/GetDebitCardMailDateRequest",
+      "Platform": [
+        {
+          "Env": "Enterprise PROD",
+          "Host": "https://entprd.participantportal.com",
+          "Username": "hmwsuser_test",
+          "Password": "dur3rj1n1sh"
+        }
+      ]
+    },
+    {
+      "Name": "GetDebitCardsList",
+      "Uri": "/Services/webservices/GetDebitCardsListService",
+      "SoapAction": "http://www.acclaris.com/GetDebitCardsListService/GetDebitCardsListService/GetDebitCardsListRequest",
+      "Platform": [
+        {
+          "Env": "Enterprise PROD",
+          "Host": "https://entprd.participantportal.com",
+          "Username": "hmwsuser_test",
+          "Password": "dur3rj1n1sh"
+        }
+      ]
+    },
+    {
+      "Name": "GetClaimActivities",
+      "Uri": "/Services/webservices/GetClaimActivitiesV1Service",
+      "SoapAction": "http://www.acclaris.com/GetClaimActivitiesV1/GetClaimActivitiesV1/GetClaimActivitiesRequest",
+      "Platform": [
+        {
+          "Env": "Enterprise PROD",
+          "Host": "https://entprd.participantportal.com",
+          "Username": "hmwsuser_test",
+          "Password": "dur3rj1n1sh"
+        }
+      ]
+    },
+    {
+      "Name": "GetClaimActivitiesV2",
+      "Uri": "/Services/webservices/GetClaimActivitiesV2Service",
+      "SoapAction": "http://www.acclaris.com/GetClaimActivitiesV2Service/GetClaimActivitiesV2Service/GetClaimActivitiesV2Request",
+      "Platform": [
+        {
+          "Env": "Enterprise PROD",
+          "Host": "https://entprd.participantportal.com",
+          "Username": "hmwsuser_test",
+          "Password": "dur3rj1n1sh"
+        }
+      ]
+    },
+    {
+      "Name": "GetReceipts",
+      "Uri": "/Services/webservices/GetReceiptsService",
+      "SoapAction": "http://www.acclaris.com/GetReceiptsService/GetReceiptsService/GetReceiptsRequest",
+      "Platform": [
+        {
+          "Env": "Enterprise PROD",
+          "Host": "https://entprd.participantportal.com",
+          "Username": "hmwsuser_test",
+          "Password": "dur3rj1n1sh"
+        }
+      ]
+    },
+    {
+      "Name": "GetClaimConfiguration",
+      "Uri": "/Services/webservices/GetClaimConfigurationService",
+      "SoapAction": "http://www.acclaris.com/GetClaimConfigurationService/GetClaimConfigurationService/GetConfigurationByCategoryTypeRequest",
+      "Platform": [
+        {
+          "Env": "Enterprise PROD",
+          "Host": "https://entprd.participantportal.com",
+          "Username": "hmwsuser_test",
+          "Password": "dur3rj1n1sh"
+        }
+      ]
+    }
+  ]
+}

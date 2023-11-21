@@ -1,0 +1,31 @@
+﻿#loadTestUploadForm {
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+    padding-left: 30px;
+    margin: 10px 0px 10px 10px;
+}
+
+    #loadTestUploadForm input {
+        margin-bottom: 20px;
+    }
+
+#loadTestsList {
+    list-style: none;
+}
+
+    #loadTestsList h2 {
+        text-decoration: underline;
+    }
+
+    #loadTestsList li {
+        margin-top: 10px;
+    }
+
+    #loadTestsList a {
+        text-decoration: none;
+    }
+
+.loadTest {
+    color: blue;
+}

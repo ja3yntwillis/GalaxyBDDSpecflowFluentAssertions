@@ -1,0 +1,125 @@
+@{
+    ViewData["Title"] = "Execution Time Summary: " + @Model.RunId;
+}
+
+@using TestRunner.UI.ViewModels
+@model ExecutionTimeSummaryVM
+
+@section AddedStyles
+{
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4-4.6.0/jq-3.6.0/dt-1.12.0/b-2.2.3/b-print-2.2.3/cr-1.5.6/fc-4.1.0/r-2.3.0/rg-1.2.0/sc-2.0.6/sb-1.3.3/sp-2.0.1/sl-1.4.0/datatables.min.css"/>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.6.0/jq-3.6.0/dt-1.12.0/b-2.2.3/b-print-2.2.3/cr-1.5.6/fc-4.1.0/r-2.3.0/rg-1.2.0/sc-2.0.6/sb-1.3.3/sp-2.0.1/sl-1.4.0/datatables.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+}
+
+<div class="seGrid sidebar2">
+    <div id="breadCrumbNav">
+        <div id="breadCrumbContainer">
+            <ul class="breadcrumb">
+                <li><a href="/Home">Home</a></li>
+                <li><a href="/RunResult">Run Results</a></li>
+                <li><a href="/RunResult/@Model.RunId">Run Information - ID: @Model.RunId</a></li>
+                <li>Execution Time Summary</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="seGrid content">
+    <div id="timeInfoLeftContainer" style="margin-left:auto;margin-right:auto;align:center;width:98%">
+        <fieldset class="runDetail">
+            <legend class="runDetailLegend">Run ID : @Model.RunId</legend>
+            <div id="runData">
+                <table name="runSummary">
+                    <tbody>
+                        <tr>
+                            <td><strong>Run Date : </strong></td><td>@Model.RunDate</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Run Start Time : </strong></td><td>@Model.StartTime.ToString("T")</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Run End Time : </strong></td><td>@Model.EndTime.ToString("T")</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Browser : </strong></td><td>@Model.Browser</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Execution Time : </strong></td><td>@Model.ExecutionTime</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Threads : </strong></td><td>@Model.ThreadCount</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Number of Tests Executed : </strong></td><td>@Model.TestCount</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </fieldset>
+    </div>
+
+    <div id="TestTimeTableWrapper">
+        <table id="AllTestTable" style="width:100%">
+            <tbody>
+                <tr class="TestTableRow">
+                    <td class="ButtonGroup" align="center">
+                        <input id="back" class="TestButtons" value="Go Back to Run Result" type="button" onclick="history.go(-1)" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <fieldset class="tabularRun" style="margin-left:auto;margin-right:auto;align:center;width:98%">
+            <legend class="timeDetailLegend"><strong>All Tests Execution Time</strong></legend>
+            <div itemid="timeData">
+                <table id="runSummaryTable" style="border:1px solid black;margin-left:auto;margin-right:auto">
+                    <thead>
+                        <tr style="border:1px solid black;margin-left:auto;margin-right:auto;" align="center">
+                            <th>Test Name</th>
+                            <th style="width:12%">Test Execution Status</th>
+                            <th style="width:9%">Test Start Time</th>
+                            <th style="width:8%">Test End Time</th>
+                            <th style="width:11%">Test Execution Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var test in @Model.TotalTests)
+                        {
+                            <tr class="infoTableRow listAll" style="height:40px">
+                                <td>
+                                    <span class="testName"><a class="testLink" href="/RunResult/@Model.RunId/TestResult/@test.TestId">@test.Name</a></span>
+                                </td>
+                                <td align="center">
+                                    <span class="testExecStatus">@test.Status</span>
+                                </td>
+                                <td>
+                                    <span class="testStartAt">@test.StartTime.ToString("T")</span>
+                                </td>
+                                <td>
+                                    <span class="testFinishAt">@test.EndTime.ToString("T")</span>
+                                </td>
+                                <td align="center">
+                                    <span class="testExecTime">@test.ExecutionTime</span>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </fieldset>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script>
+        $(document).ready(function() {
+            $('#runSummaryTable').DataTable({
+                "scrollY": "450px",
+                "scrollCollapse": true,
+                "paging": true
+            });
+        });
+    </script>
+}

@@ -1,0 +1,78 @@
+﻿@{
+    ViewData["Title"] = "Develop Health Report";
+}
+
+@using TestRunner.UI.ViewModels
+@model DevelopHealthReportVM
+
+@section AddedStyles
+{
+    <link rel="stylesheet" type="text/css" href="~/css/site.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/vanilla-dataTables.min.css" />
+    <script type="text/javascript" src="~/js/vanilla-dataTables.min.js"></script>
+}
+
+<div class="seGrid sidebar2">
+    <div id="breadCrumbNav">
+        <div id="breadCrumbContainer">
+            <ul class="breadcrumb">
+                <li><a href="/Home">Home</a></li>
+                <li>Develop Health Report</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="seGrid content">
+    <div id="runReportTable">
+        <table id="reportTable">
+            <thead>
+                <tr>
+                    <th colspan="2">% Passed</th>
+                    <th rowspan="2">Pull Request</th>
+                    <th rowspan="2">Committer</th>
+                    <th rowspan="2">Build</th>
+                    <th colspan="2">Test Run</th>
+                    <th colspan="2">Release</th>
+                </tr>
+                <tr>
+                    <th>BA</th>
+                    <th>BC</th>
+                    <th>BA</th>
+                    <th>BC</th>
+                    <th>BA</th>
+                    <th>BC</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var run in Model.RunReports)
+                {
+                    <tr>
+                        <td>@run.PassedTestPercentBA</td>
+                        <td>@run.PassedTestPercentBC</td>
+                        <td><a target="_blank" href="@run.PullRequestUrl">@run.PullRequestId</a></td>
+                        <td>@run.Committer</td>
+                        <td><a target="_blank" href="@run.BuildUrl">@run.BuildId</a></td>
+                        <td><a target="_blank" href="@run.RunResultURLBA">@run.RunIdBA</a></td>
+                        <td><a target="_blank" href="@run.RunResultURLBC">@run.RunIdBC</a></td>
+                        <td><a target="_blank" href="@run.ReleaseUrlBA">@run.ReleaseIdBA</a></td>
+                        <td><a target="_blank" href="@run.ReleaseUrlBC">@run.ReleaseIdBC</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts
+    {
+    <script>
+        var dataTable = new DataTable("#reportTable", {
+            columns: [
+                { select: 4, sort: "asc" },
+            ],
+            perPage: 20,
+        });
+    </script>
+}
+

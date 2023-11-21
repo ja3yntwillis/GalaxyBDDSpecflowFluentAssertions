@@ -1,0 +1,44 @@
+﻿@{
+    Layout = "";
+}
+
+@using TestRunner.UI.ViewModels
+@model TestListVM
+
+    @{
+        var applicationCount = 0;
+        var fixtureCount = 0;
+        @foreach (var fixture in Model.TestFixtures)
+        {
+            var methodCount = 0;
+            var fixtureCBId = "cb_" + applicationCount + "_" + fixtureCount;
+            <li class="fixtureNode">
+                <span class="expColImg" data-state="">
+                    <img src="~/images/PlusSign1.png" />
+                </span>
+                <span class="fixtureSpan">
+                    <input id="@fixtureCBId" class="fixtureCB" type="checkbox" />
+                    <span class="fixtureIcon"></span>
+                    <label for="@fixtureCBId" class="fixtureName">@fixture.Name</label>
+                </span>
+                <ul class="noStyleList hidden">
+                    @foreach (var method in fixture.TestMethods)
+                    {
+                        var methodCBId = "cb_" + applicationCount + "_" + fixtureCount + "_" + methodCount;
+                        <li class="methodNode">
+                            <span class="noChild">
+                            </span>
+                            <span class="methodSpan tooltip">
+                                <input id="@methodCBId" class="methodCB" type="checkbox" name="tests" value="@(fixture.Assembly + "." + fixture.Name + "." + method.Name)" />
+                                <span class="methodIcon"></span>
+                                <label for="@methodCBId" class="methodName">@method.Name</label>
+                                <span class="tooltiptext">@method.Description</span>
+                            </span>
+                        </li>
+                        methodCount++;
+                    }
+                </ul>
+            </li>
+            fixtureCount++;
+        }
+    }

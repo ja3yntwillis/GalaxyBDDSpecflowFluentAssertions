@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Tests.Acclaris.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+  <ProjectReference Include="..\Framework.Galaxy\Framework.Galaxy.csproj" />
+  <ProjectReference Include="..\Framework.Base\Framework.Base.csproj" />
+</ItemGroup>
+</Project>

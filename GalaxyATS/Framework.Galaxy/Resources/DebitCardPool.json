@@ -1,0 +1,80 @@
+{
+  "DebitCardPool": [
+    {
+      "Environment": "EnterpriseDev",
+      "PlanCombination": "HCRA+HSA",
+      "DebitCardNo": "401526XXXXXX0351",
+      "DebitCardMemberId": "CM12343040",
+      "DebitCardCustomerId": "000119939",
+      "VendorDebitCardStatus": "CN",
+      "DebitCardPurseId": [
+        {
+          "ActpCd": "HCRA",
+          "PurseId": "HAZC23"
+        },
+        {
+          "ActpCd": "HSA",
+          "PurseId": "SA6C99"
+        }
+      ],
+      "DebitCardGroupId": "CM1045899",
+      "DebitCardPlanId": "A6N01D01",
+      "EffectiveDate": "05/02/2023"
+    },
+    {
+      "Environment": "EnterpriseStage",
+      "PlanCombination": "HCRA+HSA",
+      "DebitCardNo": "401526XXXXXX0377",
+      "DebitCardMemberId": "CM12343041",
+      "DebitCardCustomerId": "000119941",
+      "VendorDebitCardStatus": "CN",
+      "DebitCardPurseId": [
+        {
+          "ActpCd": "HCRA",
+          "PurseId": "HAZC23"
+        },
+        {
+          "ActpCd": "HSA",
+          "PurseId": "SA6C99"
+        }
+      ],
+      "DebitCardGroupId": "CM1045899",
+      "DebitCardPlanId": "A6N01D01",
+      "EffectiveDate": "05/02/2023"
+    },
+    {
+      "Environment": "EnterpriseStage",
+      "PlanCombination": "HSA",
+      "DebitCardNo": "401526XXXXXX0658",
+      "DebitCardMemberId": "CM12356676",
+      "DebitCardCustomerId": "000119969",
+      "VendorDebitCardStatus": "CN",
+      "DebitCardPurseId": [
+        {
+          "ActpCd": "HSA",
+          "PurseId": "SA6C99"
+        }
+      ],
+      "DebitCardGroupId": "CM1045899",
+      "DebitCardPlanId": "A6N01D01",
+      "EffectiveDate": "05/02/2023"
+    },
+    {
+      "Environment": "EnterpriseDev",
+      "PlanCombination": "HSA",
+      "DebitCardNo": "401526XXXXXX0666",
+      "DebitCardMemberId": "CM12356677",
+      "DebitCardCustomerId": "000119970",
+      "VendorDebitCardStatus": "CN",
+      "DebitCardPurseId": [
+        {
+          "ActpCd": "HSA",
+          "PurseId": "SA6C99"
+        }
+      ],
+      "DebitCardGroupId": "CM1045899",
+      "DebitCardPlanId": "A6N01D01",
+      "EffectiveDate": "05/02/2023"
+    }
+  ]
+}

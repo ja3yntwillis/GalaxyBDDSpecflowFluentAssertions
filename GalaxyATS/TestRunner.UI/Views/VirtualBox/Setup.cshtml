@@ -1,0 +1,70 @@
+@{
+    ViewData["Title"] = "VirtualBox Setup";
+}
+
+@using TestRunner.UI.ViewModels
+@model VirtualBoxSetupVM
+
+@section AddedStyles
+    {
+    <link rel="stylesheet" type="text/css" href="~/css/site.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/vanilla-dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/bsmobileApps.css" />
+    <script type="text/javascript" src="~/js/vanilla-dataTables.min.js"></script>
+}
+
+<div class="seGrid sidebar2">
+    <div id="breadCrumbNav">
+        <div id="breadCrumbContainer">
+            <ul class="breadcrumb">
+                <li><a href="/Home">Home</a></li>
+                <li>VirtualBox Setup</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="seGrid content">
+    <div id="contentContainer">
+        <div id="leftContainer">
+            <fieldset class="connectionSetup">
+                <legend class="connectionSetupLegend">Virtual Box Setup</legend>
+                <form id="virtualBoxSetup" enctype="multipart/form-data" method="post" action="/VirtualBox/SetUp">
+                    <div id="connectionWrapper">
+                        <div id="inputWrapper">
+                            <div id="inputBlock" class="VmSetting">
+                                <label for="bitbucketUsername">Bitbucket Username:</label>
+                                <input id="bitbucketUsername" name="bitBucketUsername" type="text" value="@Model.BitbucketUsername"/>
+                            </div>
+                            <div id="inputBlock" class="VmSetting">
+                                <label for="bitbucketKey">Bitbucket Access Key:</label>
+                                <input id="bitbucketKey" name="bitBucketKey" type="password" value="@Model.BitbucketKey"/>
+                            </div>
+                            <div id="inputBlock" class="VmSetting">
+                                    <label for="VmUserName">VM Username:</label>
+                                    <input id="vmUserName" name="vmusername" type="text" value="@Model.VMUsername"/>
+                            </div>
+                            <div id="inputBlock" class="VmSetting">
+                                    <label for="VmPassword">VM Password:</label>
+                                    <input id="vmPassword" name="vmpassword" type="password" value="@Model.VMPassword"/>
+                            </div>
+                            <div id="inputBlock" class="VmSetting">
+                                    <label for="VmUrl">Virtual Box:</label>
+                                    <select id="vmUrl" name="vmUrl" class="text" value="@Model.VirtualBox">
+                                    <option value="Select">Select</option>
+                                    <option value="AutomationTeam_Box1">AutomationTeam_Box1</option>
+                                    <option value="AutomationTeam_Box2">AutomationTeam_Box2</option>
+                                    <option value="Sajdevcoltst01_Box">Sajdevcoltst01_Box</option>
+                                    </select>
+                            </div>
+                        </div>
+                        <div id="inputWrapper">
+                            <div id="submitDiv">
+                                <input id="submit" name="submit" value="Setup Virtual Box" type="submit" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </fieldset>
+        </div>
+    </div>
+</div>

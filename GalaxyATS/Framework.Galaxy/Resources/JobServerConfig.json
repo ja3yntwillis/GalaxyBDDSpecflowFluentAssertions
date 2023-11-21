@@ -1,0 +1,68 @@
+{
+  "JobServerConfig": [
+    {
+      "Name": "EnterpriseDev",
+      "Host": "loudevenljob01.acclariscorp.com",
+      "FtpOutFilepath": "/u01/oracle_share/entdev/ftp/out",
+      "Port": 22,
+      "SudoUser": "jobsnc",
+      "Username": null,
+      "Password": null
+    },
+    {
+      "Name": "EnterpriseUAT",
+      "Host": "louuatenljob01.acclariscorp.com",
+      "FtpOutFilepath": "/u01/oracle_share/ent1rc/ftp/out",
+      "Port": 22,
+      "SudoUser": "jobsnc",
+      "Username": null,
+      "Password": null
+    },
+    {
+      "Name": "EnterpriseStage",
+      "Host": "tpastgenljob01.acclariscorp.com",
+      "FtpOutFilepath": "/u01/oracle_share/entstg/ftp/out",
+      "Port": 22,
+      "SudoUser": "jobsnc",
+      "Username": null,
+      "Password": null
+    },
+    {
+      "Name": "EnterpriseStress",
+      "Host": "loustsenljob02.acclariscorp.com",
+      "FtpOutFilepath": "/u01/oracle_share/entx/ftp/out",
+      "Port": 22,
+      "SudoUser": "jobsnc",
+      "Username": null,
+      "Password": null
+    },
+    {
+      "Name": "Fidelity Dev",
+      "Host": "loudevfiljob01.acclariscorp.com",
+      "FtpOutFilepath": "/u01/oracle_share/fidd/ftp/out",
+      "Port": 22,
+      "SudoUser": "jobsfi",
+      "Username": null,
+      "Password": null
+    },
+    {
+      "Name": "Payflex",
+      "Host": "sajpfxenljob01.acclariscorp.com",
+      "FtpOutFilepath": "/u01/oracle_share/entxpf/ftp/out",
+      "Port": 22,
+      "SudoUser": "jobsnc",
+      "Username": null,
+      "Password": null
+    },
+    {
+      "Name": "USAA",
+      "Host": "sajuatusljob01.acclariscorp.com",
+      "FtpOutFilepath": "/u01/oracle_share/entusaa/ftp/out",
+      "Port": 22,
+      "SudoUser": "jobsnc",
+      "Username": null,
+      "Password": null
+    }
+  ],
+  "MailsacApiKey": null
+}

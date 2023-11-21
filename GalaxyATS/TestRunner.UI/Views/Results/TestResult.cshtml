@@ -1,0 +1,404 @@
+﻿@{
+    ViewData["Title"] = "Test Results: " + @Model.TestId;
+}
+
+@using TestRunner.UI.ViewModels
+@model TestResultVM
+
+
+@section AddedStyles
+    {
+    <link rel="stylesheet" type="text/css" href="~/css/site.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/testResultLayout.css" />
+}
+
+<div class="seGrid sidebar2">
+    <div id="breadCrumbNav">
+        <div id="breadCrumbContainer">
+            <ul class="breadcrumb">
+                <li><a href="/Home">Home</a></li>
+                <li><a href="/RunResult">Run Results</a></li>
+                <li><a href="/RunResult/@Model.RunId">Run Information - ID: @Model.RunId</a></li>
+                <li>Test Result - ID:@Model.TestId</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="seGrid content">
+    <div id="testInfoLeftContainer">
+        <div id="testHeader">
+            <div id="testNameHeader">
+                <span class="testTextBold">Test: @Model.Name</span>
+            </div>
+            <div id="testIDHeader">
+                <span class="testTextBold">Test Id:</span> @Model.TestId
+            </div>
+        </div>
+        <fieldset class="testStatus">
+            <div id="testStatusData">
+                <ul class="testStatusUList">
+                    <li><span class="testTextBold">Start Date: </span>@Model.StartTime</li>
+                    <li><span class="testTextBold">End Date: </span>@Model.EndTime</li>
+                    <li><span class="testTextBold">Attempts: </span>@Model.Attempts</li>
+                </ul>
+            </div>
+            <div id="testStatusChart">
+                @if (@Model.Status == "Failed")
+                {
+                    <img class="testStatusPicture" src="~/images/failedTestIcon.png" alt="failedImg" />
+                }
+                else if (@Model.Status == "Passed")
+                {
+                    <img class="testStatusPicture" src="~/images/passedTestIconGreen.png" alt="passedImg" />
+                }
+            </div>
+        </fieldset>
+        <div id="testDetailWrapper">
+            <table id="testInfoTable">
+                <tbody>
+                    <tr>
+                        @if (@Model.Status == "Failed")
+                        {
+                            <td>
+                                <legend id="errorDetail" class="selectedTab">Error Detail</legend>
+                            </td>
+                        }
+                        else if (@Model.Status == "Passed")
+                        {
+                            <td>
+                                <legend id="errorDetail" class="selectedTab">Additional Info</legend>
+                            </td>
+                        }
+
+                        @if (@Model.DataTree != null)
+                        {
+                            <td>
+                                <legend id="dataResults">Test Data</legend>
+                            </td>
+                        }
+                        <td>
+                            <legend id="lastResults">Past Results</legend>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <fieldset class="" id="errorDetailField">
+                @if (@Model.Status == "Failed")
+                {
+                    <span class="detailHeader">Test Information</span>
+                    <ul id="errorDetailList">
+                        <li>
+                            <span class="dataKey">Error Type</span>
+                            :
+                            <span class="dataValue">@Model.ErrorType</span>
+                        </li>
+                        <li>
+                            <span class="dataKey">Message</span>
+                            :
+                            <span class="dataValue">@Model.Message</span>
+                        </li>
+                        <li>
+                            <span class="dataKey">Trace</span>
+                            :
+                            <span class="dataValue traceInfo">
+                                @foreach (var traceEntry in @Model.Trace)
+                                {
+                                    @traceEntry
+                                    <br />
+                                    <br />
+                                }
+                            </span>
+                        </li>
+                        <li>
+                            <span class="dataKey">Page Title</span>
+                            :
+                            <span class="dataValue">@Model.PageTitle</span>
+                        </li>
+                        <li>
+                            <span class="dataKey">URL</span>
+                            :
+                            <span class="dataValue">@Model.Url</span>
+                        </li>
+                    </ul>
+                }
+                else if (@Model.Status == "Passed")
+                {
+                    <span class="detailHeader">Additional Test Information</span>
+                    <br />
+                    <span><i>@Model.TestDescription</i></span>
+                    <br />
+                    <br />
+                    <span><b>Past Test Results Are Available In The Tab Above</b></span>
+                }
+            </fieldset>
+            <fieldset class="hidden" id="lastResultsField">
+                <span class="detailHeader">Last 10 Days Test Execution Results</span>
+                <table id="lastResultTable">
+                    @if (@Model.ResultList.Count > 0)
+                    {
+
+                        @foreach (var testResult in @Model.ResultList)
+                        {
+                            <tr class="lastResultsRow">
+                                <td class="failedTestRow">
+                                    @if (testResult.Status == "Failed")
+                                    {
+                                        <div id="testLogoWrapper">
+                                            <img class="resultIcon" alt="Failed Test Icon Small" title="Failed Test Icon Small"
+                                                src="~/images/failedTestIconSmall.png" />
+                                            <span class="lastResultTestName"><a target="_blank" class="failedTestLink"
+                                                    href="@testResult.Url">@((Model.Fixture + "." + Model.Method).Substring(0,
+                                        Math.Min((Model.Fixture + "." + Model.Method).Length, 100)))@((Model.Fixture +
+                                        "." + Model.Method).Length > 100 ? "..." : "")</a></span>
+                                        </div>
+                                        <br />
+                                        <span class="resultTime">@testResult.EndTime</span>
+                                        <span class="resultTime">&emsp; Environment: <b>@testResult.Labels</b></span>
+                                        <br />
+                                        <br />
+                                        <span class="failedType">@testResult.ErrorType</span>
+                                        <br />
+                                        <span class="failedText">@testResult.Message</span>
+                                    }
+                                    else if (testResult.Status == "Passed")
+                                    {
+                                        <div id="testLogoWrapper">
+                                            <img class="resultIcon" alt="Failed Test Icon Small" title="Failed Test Icon Small"
+                                                src="~/images/passedTestIconGreenSmall.png" />
+                                            <span class="lastResultTestName"><a target="_blank" class="failedTestLink"
+                                                    href="@testResult.Url">@((Model.Fixture + "." + Model.Method).Substring(0,
+                                        Math.Min((Model.Fixture + "." + Model.Method).Length, 100)))@((Model.Fixture +
+                                        "." + Model.Method).Length > 100 ? "..." : "")</a></span>
+                                        </div>
+                                        <span class="resultTime">@testResult.EndTime</span>
+                                        <span class="resultTime">&emsp; Environment: <b>@testResult.Labels</b></span>
+                                        <br />
+                                        <br />
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td>
+                                <p>No Past Test Results Available for this test</p>
+                            </td>
+                        </tr>
+                    }
+
+                    <!-- Remove Below Comment When Last 10 is Setup. Uncomment above code-->
+                    @*<tr class="lastResultsRow">
+                    <td class="failedTestRow">
+                    <div id="testLogoWrapper">
+                    <img class="resultIcon" alt="Failed Test Icon Small" title="Failed Test Icon Small"
+                    src="~/images/failedTestIconSmall.png" />
+                    <span class="lastResultTestName"><a target="_blank" class="failedTestLink"
+                    href="/RunResult/@Model.RunId/TestResult/@Model.TestId">@((Model.Fixture + "." +
+                    Model.Method).Substring(0, Math.Min((Model.Fixture + "." + Model.Method).Length,
+                    100)))@((Model.Fixture + "." + Model.Method).Length > 100 ? "..." : "")</a></span>
+                    </div>
+                    <span class="resultTime">@Model.EndTime</span>
+                    <br />
+                    <br />
+                    <span class="failedType">@Model.ErrorType</span>
+                    <br />
+                    <span class="failedText">@Model.Message</span>
+                    </td>
+                    </tr>
+                    <tr class="lastResultsRow">
+                    <td class="failedTestRow">
+                    <div id="testLogoWrapper">
+                    <img class="resultIcon" alt="Failed Test Icon Small" title="Failed Test Icon Small"
+                    src="~/images/failedTestIconSmall.png" />
+                    <span class="lastResultTestName"><a target="_blank" class="failedTestLink"
+                    href="/RunResult/@Model.RunId/TestResult/@Model.TestId">@((Model.Fixture + "." +
+                    Model.Method).Substring(0, Math.Min((Model.Fixture + "." + Model.Method).Length,
+                    100)))@((Model.Fixture + "." + Model.Method).Length > 100 ? "..." : "")</a></span>
+                    </div>
+                    <span class="resultTime">@Model.EndTime</span>
+                    <br />
+                    <br />
+                    <span class="failedType">@Model.ErrorType</span>
+                    <br />
+                    <span class="failedText">@Model.Message</span>
+                    </td>
+                    </tr>
+                    <tr class="lastResultsRow">
+                    <td class="failedTestRow">
+                    <div id="testLogoWrapper">
+                    <img class="resultIcon" alt="Failed Test Icon Small" title="Failed Test Icon Small"
+                    src="~/images/passedTestIconSmall.png" />
+                    <span class="lastResultTestName"><a target="_blank" class="failedTestLink"
+                    href="/RunResult/@Model.RunId/TestResult/@Model.TestId">@((Model.Fixture + "." +
+                    Model.Method).Substring(0, Math.Min((Model.Fixture + "." + Model.Method).Length,
+                    100)))@((Model.Fixture + "." + Model.Method).Length > 100 ? "..." : "")</a></span>
+                    </div>
+                    <span class="resultTime">@Model.EndTime</span>
+                    <br />
+                    <br />
+                    </td>
+                    </tr>
+                    <tr class="lastResultsRow">
+                    <td class="failedTestRow">
+                    <div id="testLogoWrapper">
+                    <img class="resultIcon" alt="Failed Test Icon Small" title="Failed Test Icon Small"
+                    src="~/images/failedTestIconSmall.png" />
+                    <span class="lastResultTestName"><a target="_blank" class="failedTestLink"
+                    href="/RunResult/@Model.RunId/TestResult/@Model.TestId">@((Model.Fixture + "." +
+                    Model.Method).Substring(0, Math.Min((Model.Fixture + "." + Model.Method).Length,
+                    100)))@((Model.Fixture + "." + Model.Method).Length > 100 ? "..." : "")</a></span>
+                    </div>
+                    <span class="resultTime">@Model.EndTime</span>
+                    <br />
+                    <br />
+                    <span class="failedType">@Model.ErrorType</span>
+                    <br />
+                    <span class="failedText">@Model.Message</span>
+                    </td>
+                    </tr>*@
+                </table>
+            </fieldset>
+            @if (@Model.DataTree != null)
+            {
+                <fieldset class="hidden" id="dataResultsField">
+                    <div id="dataGenerationDiv">
+                        <div id="dataGenerationButtons">
+                            <input id="expandAllDataGen" class="dataGenExpandButton" value="Expand All Data"
+                                type="button" />
+                            <input id="collapseAllDataGen" class="dataGenCollapseButton" value="Collapse All Data"
+                                type="button" />
+                        </div>
+                        <ul id="testDataList">
+                            @foreach (var testDataDTO in @Model.DataTree)
+                            {
+                                @Html.Partial("_TestResultTestData", testDataDTO)
+                            }
+                    </div>
+                </fieldset>
+            }
+        </div>
+    </div>
+    <div id="testInfoRightContainer">
+        @if (@Model.Status == "Failed")
+        {
+            <div id="screenshotWrapper">
+                <legend id="screenshotLegend">Error Screenshot</legend>
+                <div id="screenshotDiv">
+                    <img id="failedTestScreenShot" class="failedScreenshot"
+                        src="data:image/gif;base64,@Model.ScreenshotBase64" alt="failedScreenshot" />
+                </div>
+            </div>
+        }
+        @*<div id="actionWrapper">
+        <legend id="actionHeader">Actions Performed</legend>
+        <div id="actionDiv">
+        <div id="actionButton">
+        <input id="expandAllActions" class="actionExpandButton" value="Expand All Actions" type="button" />
+        <input id="collapseAllActions" class="actionCollapseButton" value="Collapse All Actions" type="button" />
+        </div>
+        <ul id="actionList">
+        <li>
+        <span class="dataAction">LoginAsAdmin</span>
+        : (
+        <span class="dataTime">5/2/2018 10:36:44 PM</span>
+        )
+        <br />
+        <span class="dataDescription">
+        <b>Summary:</b>
+        Log in as Admin through the login page.
+        <br />
+        <span class="dataMessage">
+        <b>Input:</b>
+        Username: seleniumAdmin123 | Password: testYay123
+        </span>
+        </span>
+        </li>
+        <li>
+        <span class="dataAction">OrganizationAddEdit</span>
+        : (
+        <span class="dataTime">5/2/2018 10:37:44 PM</span>
+        )
+        <br />
+        <span class="dataDescription">
+        <b>Summary:</b>
+        Creates an Organization.
+        <br />
+        <span class="dataMessage">
+        <b>Input:</b>
+        Organization Name: TestOrgGDFSHDSHSDA
+        </span>
+        </span>
+        </li>
+        </ul>
+        </div>
+        </div>*@
+    </div>
+</div>
+<div class="seGrid footer">
+    <div id="verisonNumber" class="verisonNumberStyle">
+        <span class="headerTextVerison">V 0.2.0 Beta</span>
+    </div>
+</div>
+
+@section Scripts
+    {
+    <script>
+        function clickUnselectedLegend_eventListener() {
+            document.querySelectorAll("#testInfoTable legend").forEach(function (elem) {
+                elem.setAttribute("class", "");
+            });
+            document.querySelectorAll("#testDetailWrapper fieldset").forEach(function (elem) {
+                elem.setAttribute("class", "hidden");
+            });
+            this.setAttribute("class", "selectedTab");
+            var id = this.getAttribute("id");
+            document.getElementById(id + "Field").setAttribute("class", "");
+        }
+
+        document.querySelectorAll('#testInfoTable legend').forEach(function (elem) {
+            elem.addEventListener("click", clickUnselectedLegend_eventListener);
+        });
+
+        function clickExpandAllBtn_eventListener() {
+            document.querySelectorAll("#dataGenerationDiv .plusImg").forEach(function (elem) {
+                elem.setAttribute("class", "plusImg hidden");
+            });
+            document.querySelectorAll("#dataGenerationDiv .minusImg").forEach(function (elem) {
+                elem.setAttribute("class", "minusImg");
+            });
+            document.querySelectorAll("#testDataList ul").forEach(function (elem) {
+                elem.setAttribute("class", "");
+            });
+        }
+        document.getElementById("expandAllDataGen").addEventListener("click", clickExpandAllBtn_eventListener);
+
+        function clickCollapseAllBtn_eventListener() {
+            document.querySelectorAll("#dataGenerationDiv .minusImg").forEach(function (elem) {
+                elem.setAttribute("class", "minusImg hidden");
+            });
+            document.querySelectorAll("#dataGenerationDiv .plusImg").forEach(function (elem) {
+                elem.setAttribute("class", "plusImg");
+            });
+            document.querySelectorAll("#testDataList ul").forEach(function (elem) {
+                elem.setAttribute("class", "hidden");
+            });
+        }
+        document.getElementById("collapseAllDataGen").addEventListener("click", clickCollapseAllBtn_eventListener);
+    </script>
+
+    @if (Model.Status == "Failed")
+    {
+        <script>
+            function clickBase64ImageInNewTab_eventListener() {
+                setTimeout(function () {
+                    var newWindow = window.open();
+                    newWindow.document.write('<html><head><title>Screenshot: @Model.TestId</title></head><body><img style="width: 100%; height:auto;" src="data:image/jpg;base64,@Model.ScreenshotBase64" /></body></html>');
+                }, 0);
+            }
+
+            document.getElementById('failedTestScreenShot').addEventListener("click", clickBase64ImageInNewTab_eventListener);
+        </script>
+    }
+}

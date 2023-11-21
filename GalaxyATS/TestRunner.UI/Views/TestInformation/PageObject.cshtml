@@ -1,0 +1,93 @@
+﻿@using TestRunner.UI.ViewModels
+@model TestInformationVM
+
+@section AddedStyles
+    {
+    <link rel="stylesheet" type="text/css" href="~/css/site.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/vanilla-dataTables.min.css" />
+    <script type="text/javascript" src="~/js/vanilla-dataTables.min.js"></script>
+}
+
+<div class="seGrid sidebar2">
+    <div id="breadCrumbNav">
+        <div id="breadCrumbContainer">
+            <ul class="breadcrumb">
+                <li><a href="/TestInformation">Test Inventory</a></li>
+                <li>Page Object: @Model.ClassName</li>
+                @if (Model.Actions != null)
+                {
+                    <li>Actions || <a href="?type=tests">Tests</a></li>
+                }
+                else if (Model.Tests != null)
+                {
+                    <li><a href="?type=actions">Actions</a> || Tests</li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="seGrid content">
+    @if (Model.Actions != null)
+    {
+        <div id="actions">
+            <table id="actionsTable" class="stripe hover row-border" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Action</th>
+                        <th>Class</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var action in Model.Actions)
+                    {
+                        <tr>
+                            <td>
+                                <a href="/TestInformation/action/@(action.ClassName + "." + action.Method)">@action.Method</a>
+                            </td>
+                            <td>@action.ClassName</td>
+                            <td>@action.Description</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    @if (Model.Tests != null)
+    {
+        <div id="tests">
+            <table id="actionsTable" class="stripe hover row-border" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Test Method</th>
+                        <th>Test Fixture</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var test in Model.Tests)
+                    {
+                        <tr>
+                            <td>
+                                <a href="/TestInformation/test/@(test.ClassName + "." + test.Method)">@test.Method</a>
+                            </td>
+                            <td>@test.ClassName</td>
+                            <td>@test.Description</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>
+
+@section Scripts
+    {
+        <script>
+            var actionDataTable = new DataTable("#actionsTable", {
+                perPage: 25,
+                perPageSelect: [10, 25, 50, 150]
+            });
+        </script>
+    }
+}

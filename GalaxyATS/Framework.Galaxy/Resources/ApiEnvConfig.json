@@ -1,0 +1,342 @@
+{
+	"Presets": [
+		{
+			"Name": "localhost",
+			"Applications": [ "Acclaris" ],
+			"Services": [
+        {
+          "Name": "LoginService",
+          "Uri": "api/authentication",
+          "Port": 8443
+        },
+        {
+          "Name": "AccountService",
+          "Uri": "api/account",
+          "Port": 8444
+        },
+        {
+          "Name": "AssistService",
+          "Uri": "api/assist",
+          "Port": 8445
+        },
+        {
+          "Name": "AlertNotificationService",
+          "Uri": "api/alertnotification",
+          "Port": 8446
+        },
+        {
+          "Name": "ContributionService",
+          "Uri": "api/contribution",
+          "Port": 8447
+        },
+        {
+          "Name": "DashboardService",
+          "Uri": "api/dashboard",
+          "Port": 8448
+        },
+        {
+          "Name": "DebitCardService",
+          "Uri": "api/debitcard",
+          "Port": 8449
+        },
+        {
+          "Name": "HelpTicketService",
+          "Uri": "api/helpticket",
+          "Port": 8450
+        },
+        {
+          "Name": "PaymentService",
+          "Uri": "api/payments",
+          "Port": 8451
+        },
+        {
+          "Name": "ReceiptService",
+          "Uri": "api/receipt",
+          "Port": 8452
+        },
+        {
+          "Name": "TransactionService",
+          "Uri": "api/transaction",
+          "Port": 8453
+        },
+        {
+          "Name": "UserDetailsService",
+          "Uri": "api/userdetails",
+          "Port": 8454
+        },
+        {
+          "Name": "RegistrationService",
+          "Uri": "api/userregistration",
+          "Port": 8455
+        },
+        {
+          "Name": "ClaimService",
+          "Uri": "api/claim",
+          "Port": 8456
+        },
+        {
+          "Name": "MenuService",
+          "Uri": "api/menu",
+          "Port": 8457
+        },
+        {
+          "Name": "InvestmentService",
+          "Uri": "api/investment",
+          "Port": 8458
+        }
+			]
+		},
+    {
+      "Name": "default",
+      "Applications": [
+        "Acclaris",
+        "AlertNotificationService",
+        "AccountService",
+        "AccountAggregateService",
+        "ClaimService",
+        "CommuterService",
+        "ContributionService",
+        "DashboardService",
+        "HelpTicketService",
+        "HSAAccountService",
+        "LoginService",
+        "SanityAPI",
+        "UserRegistrationService",
+        "PaymentService",
+        "Retiree",
+        "TransactionService",
+        "ImageProcessingService",
+        "ReconService"
+      ],
+      "Services": [
+        {
+          "Name": "LoginService",
+          "Uri": "api/authentication"
+        },
+        {
+          "Name": "RegistrationService",
+          "Uri": "api/userregistration"
+        },
+        {
+          "Name": "HSAAccountService",
+          "Uri": "api/hsaaccounts"
+        },
+        {
+          "Name": "UserDetailsservice",
+          "Uri": "api/userdetails"
+        },
+        {
+          "Name": "ClaimService",
+          "Uri": "api/claim" 
+        },
+        {
+          "Name": "PaymentService",
+          "Uri": "api/payments"
+        },
+        {
+          "Name": "OpenAM",
+          "Uri": "openam" 
+        },
+        {
+          "Name": "TransactionService",
+          "Uri": "api/transaction" 
+        },
+        {
+          "Name": "AccountService",
+          "Uri": "api/account"
+        },
+        {
+          "Name": "InvestmentService",
+          "Uri": "api/investment"
+        },
+        {
+          "Name": "AssistService",
+          "Uri": "api/assist"
+        },
+        {
+          "Name": "DebitCardService",
+          "Uri": "api/debitcard"
+        }
+      ]
+		}
+	],
+  "Environments": {
+    "localhost": {
+      "Hosts": [ "localhost" ],
+      "Application": "Acclaris",
+      "Preset": "localhost"
+    },
+    "mobile-dev": {
+      "Hosts": [ "dev" ],
+      "Application": "Acclaris",
+      "Preset": "default",
+      "Overrides": [
+        {
+          "Name": "LoginService",
+          "ExternalUrl": "https://mobile-dev-login.mobile.acclariscorp.com"
+        }
+      ]
+    },
+    "dev-mobile-ig.participantportal.com/dev": {
+      "Hosts": [ "sajnopmploigext.participantportal.com/dev" ],
+      "Application": "Acclaris",
+      "Preset": "default",
+      "Overrides": [
+        {
+          "Name": "OpenAM",
+          "ExternalUrl": "https://sajnopmploamext.participantportal.com/openam"
+        },
+        {
+          "Name": "ImageProcessingService",
+          "ExternalUrl": "https://mobile-dev17-imageprocessing.mobile.acclariscorp.com/dev/api/imageprocessing"
+        },
+        {
+          "Name": "ReconService",
+          "ExternalUrl": "https://mobile-dev17-recon.mobile.acclariscorp.com/dev/api/yparamgenerator"
+        }
+      ]
+    },
+    "dev-mobile-ig.participantportal.com/uat": {
+      "Hosts": [ "oci-sajnopmploigext.participantportal.com/uat" ],
+      "Application": "Acclaris",
+      "Preset": "default",
+      "Overrides": [
+        {
+          "Name": "OpenAM",
+          "ExternalUrl": "https://oci-sajnopmploamext.participantportal.com/openam"
+        },
+        {
+          "Name": "ImageProcessingService",
+          "ExternalUrl": "https://mobile-uat17-imageprocessing.mobile.acclariscorp.com/uat/api/imageprocessing"
+        },
+        {
+          "Name": "ReconService",
+          "ExternalUrl": "https://mobile-uat17-recon.mobile.acclariscorp.com/uat/api/yparamgenerator"
+        }
+      ]
+    },
+    "dev-mobile-ig.participantportal.com/pfx": {
+      "Hosts": [ "sajnopmploigext.participantportal.com/pfx" ],
+      "Application": "Acclaris",
+      "Preset": "default",
+      "Overrides": [
+        {
+          "Name": "OpenAM",
+          "ExternalUrl": "https://sajnopmploamext.participantportal.com/openam"
+        }
+      ]
+    },
+    "dev-mobile-ig.participantportal.com/sbx": {
+      "Hosts": [ "sajnopmploigext.participantportal.com/sbx" ],
+      "Application": "Acclaris",
+      "Preset": "default",
+      "Overrides": [
+        {
+          "Name": "OpenAM",
+          "ExternalUrl": "https://sajnopmploamext.participantportal.com/openam"
+        }
+      ]
+    },
+    "dev-mobile-ig.participantportal.com/usaa": {
+      "Hosts": [ "sajnopmploigext.participantportal.com/usaa" ],
+      "Application": "Acclaris",
+      "Preset": "default",
+      "Overrides": [
+        {
+          "Name": "OpenAM",
+          "ExternalUrl": "https://sajnopmploamext.participantportal.com/openam"
+        }
+      ]
+    },
+    "dev-mobile-ig.participantportal.com/sts": {
+      "Hosts": [ "sajnopmploigext.participantportal.com/sts" ],
+      "Application": "Acclaris",
+      "Preset": "default",
+      "Overrides": [
+        {
+          "Name": "OpenAM",
+          "ExternalUrl": "https://sajnopmploamext.participantportal.com/openam"
+        },
+        {
+          "Name": "ImageProcessingService",
+          "ExternalUrl": "https://mobile-sts17-imageprocessing.mobile.acclariscorp.com/sts/api/imageprocessing"
+        },
+        {
+          "Name": "ReconService",
+          "ExternalUrl": "https://mobile-sts17-recon.mobile.acclariscorp.com/sts/api/yparamgenerator"
+        }
+      ]
+    },
+    "mobile-ig.participantportal.com/stg": {
+      "Hosts": [ "ashprdmploigext.participantportal.com/stg" ],
+      "Application": "Acclaris",
+      "Preset": "default",
+      "Overrides": [
+        {
+          "Name": "OpenAM",
+          "ExternalUrl": "https://ashprdmploamext.participantportal.com/openam"
+        },
+        {
+          "Name": "ImageProcessingService",
+          "ExternalUrl": "https://oci-mobile-stg17-imageprocessing.mobile.acclariscorp.com/stg/api/imageprocessing"
+        },
+        {
+          "Name": "ReconService",
+          "ExternalUrl": "https://oci-mobile-stg17-recon.mobile.acclariscorp.com/stg/api/yparamgenerator"
+        }
+      ]
+    },
+    "mobile-ig.participantportal.com/stu": {
+      "Hosts": [ "ashprdmploigext.participantportal.com/stu" ],
+      "Application": "Acclaris",
+      "Preset": "default",
+      "Overrides": [
+        {
+          "Name": "OpenAM",
+          "ExternalUrl": "https://ashprdmploamext.participantportal.com/openam"
+        },
+        {
+          "Name": "ImageProcessingService",
+          "ExternalUrl": "https://oci-mobile-stu17-imageprocessing.mobile.acclariscorp.com/stg/api/imageprocessing"
+        },
+        {
+          "Name": "ReconService",
+          "ExternalUrl": "https://oci-mobile-stu17-recon.mobile.acclariscorp.com/stg/api/yparamgenerator"
+        }
+      ]
+    },
+    "mobile-ig.participantportal.com/demo": {
+      "Hosts": [ "ashprdmploigext.participantportal.com/demo" ],
+      "Application": "Acclaris",
+      "Preset": "default",
+      "Overrides": [
+        {
+          "Name": "OpenAM",
+          "ExternalUrl": "https://ashprdmploamext.participantportal.com/openam"
+        }
+      ]
+    },
+    "mobile-ig.participantportal.com/ent": {
+      "Hosts": [ "mobile-ig.participantportal.com/ent" ],
+      "Application": "Acclaris",
+      "Preset": "default",
+      "Overrides": [
+        {
+          "Name": "OpenAM",
+          "ExternalUrl": "https://mobile-am.participantportal.com/openam"
+        }
+      ]
+    },
+    "mobile-ig.participantportal.com/eus": {
+      "Hosts": [ "mobile-ig.participantportal.com/eus" ],
+      "Application": "Acclaris",
+      "Preset": "default",
+      "Overrides": [
+        {
+          "Name": "OpenAM",
+          "ExternalUrl": "https://mobile-am.participantportal.com/openam"
+        }
+      ]
+    }
+  }
+}

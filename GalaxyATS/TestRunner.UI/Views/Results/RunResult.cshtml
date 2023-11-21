@@ -1,0 +1,379 @@
+﻿@{
+    ViewData["Title"] = "Run Results: " + @Model.RunId;
+    var ReRunUrl = "/Runner";
+    if (ViewBag.AppType != "local")
+    {
+        ReRunUrl = "http://localhost:5000/Runner";
+    }
+}
+
+@using TestRunner.UI.ViewModels
+@model RunResultVM
+
+@section AddedStyles
+{
+    <link rel="stylesheet" type="text/css" href="~/css/runLayout.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/site.css" />
+    <script src="~/js/Chart.min.js" type="text/javascript"></script>
+    <script src="~/js/site.js" type="text/javascript"></script>
+}
+
+<div class="seGrid sidebar2">
+    <div id="breadCrumbNav">
+        <div id="breadCrumbContainer">
+            <ul class="breadcrumb">
+                <li><a href="/Home">Home</a></li>
+                <li><a href="/RunResult">Run Results</a></li>
+                @if (@ViewBag.AppType == "dashboard")
+                {
+                    <li><a href="/RunResult?url=@Model.BaseUrl">Environment: @Model.BaseUrl</a></li>
+                }
+                <li>Run Information - ID: @Model.RunId</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="seGrid content">
+    
+    <div id="runInfoLeftContainer">
+        <fieldset class="runDetail">
+            <legend class="runDetailLegend">Run Details - ID: @Model.RunId</legend>
+            <div id="RunDetailChart">
+                <div id="canvas-holder">
+                    <canvas id="chart-area" style="width:300px; height:250px;"></canvas>
+                </div>
+            </div>
+            <div id="RunDetailData">
+                <ul class="runDataUList">
+                    <li><span class="runDataHeaders">URL:</span> @Model.BaseUrl</li>
+                    <li><span class="runDataHeaders">Browser:</span> @Model.Browser</li>
+                    <li><span class="runDataHeaders">Threads:</span> @Model.Threads</li>
+                    <li><span class="runDataHeaders">Labels:</span> @Model.Labels</li>
+                    <li><span class="runDataHeaders">Start Time:</span> @Model.StartTime</li>
+                    <li><span class="runDataHeaders">End Time:</span> <span id="endTime" datetime="@Model.EndTime.ToUniversalTime().ToString("o")">@Model.EndTime</span></li>
+                    @if (Model.DashboardUrl != null)
+                    {
+                        <li><span class="runDataHeaders">Dashboard Link:</span> <a target="_blank" href="@Model.DashboardUrl">@Model.DashboardUrl</a></li>
+                    }
+                    @if (Model.IsReleaseId != false)
+                    {
+                        <li><span class="runDataHeaders">Run Report Link:</span> <a target="_blank" href="@Model.RunReportUrl">Click Here</a></li>
+                    }
+                </ul>
+            </div>
+            <div id="RunDetailButtonWrapper">
+                @*<input id="cancelRunButton" class="runDataButtons" value="Cancel Run" type="button" />*@
+                @if (ViewBag.AppType == "local" && Model.DashboardUrl == null)
+                {
+                    <input id="sendToDashButton" class="runDataButtons" value="Send Results To Dashboard" type="button" />
+                }
+                @if (Model.Application != null && Model.NonPassedTests.Count > 0)
+                {
+                    <form method="post" action="@ReRunUrl">
+                        <input name="rerunApplication" value="@Model.Application" type="hidden" />
+                        <input name="rerunSuiteType" value="@Model.SuiteType" type="hidden" />
+                        <input name="reRuntestList" value="@String.Join(",", Model.NonPassedTests)" type="hidden" />
+                        <input id="RerunFailedTests" class="failedTestButtons" value="Rerun Failed Tests" type="submit" />
+                    </form>
+                }
+                <div style="width:100%;height:50px;margin:10px 10px 0 0"><input id="tabsummary" value="Tabular Summary" type="submit" style="float:right" /></div>
+                <div style="width:100%;height:50px;margin:10px 10px 0 0"><input id="testexectime" value="Test Execution Time" type="submit" style="float:right" /></div>
+            </div>
+        </fieldset>
+
+        <div class="tabularRun" id="tabularRun" style="display:none">
+            <fieldset class="tabularRun">
+                <legend class="runSummaryLegend">Run Summary - ID: @Model.RunId</legend>
+                <table id="runSummaryTable">
+                    <tbody>
+                        <tr id="runSummaryTable">
+                            <th>Run Date</th>
+                            <th>Run Time</th>
+                            <th>Test</th>
+                            <th>Area/Attri</th>
+                            <th>Env</th>
+                            <th>Browser</th>
+                            <th>T</th>
+                            <th>P</th>
+                            <th>F</th>
+                            <th>Not Finished</th>
+                            <th>Thread#</th>
+                            <th>Run Duration</th>
+                            <th>Link</th>
+                        </tr>
+                        <tr id="runSummaryTable">
+                            <td>@Model.RunDate</td>
+                            <td>@Model.StartTime</td>
+                            <td>@Model.SuiteType</td>
+                            <td>Regression</td>
+                            <td>@Model.RunEnvironment</td>
+                            <td>@Model.Browser</td>
+                            <td>@Model.TestCount</td>
+                            <td>@Model.PassedCount</td>
+                            <td>@Model.FailedCount</td>
+                            <td>@Model.NonPassedTestCount</td>
+                            <td>@Model.Threads</td>
+                            <td>@Model.ExecutionTime</td>
+                            <td>@Model.DashboardUrl</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+        </div>
+        
+        <div id="TestTableWrapper">
+            <table id="failedTestTable">
+                <tbody>
+                    <tr class="failedTestTableRow">
+                        <td>
+                            <legend id="failedTests">Failed: @Model.FailedCount</legend>
+                        </td>
+                        <td class="failedTestButtonGroup">
+                            <input id="listAll" class="failedTestButtons" value="List All" type="button" />
+                            <input id="groupByError" class="failedTestButtons" value="Group By Error" type="button" />
+                            <input id="openAll" class="failedTestButtons" value="Open All" type="button" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <fieldset class="failedTestFieldSet">
+                <table id="failedInfoTable">
+                    <tbody>
+                        @foreach (var test in @Model.FailedTests)
+                        {
+                            <tr class="infoTableRow listAll">
+                                <td class="failedTestRow2 hidden">
+                                    <span class="failedTestName"><a class="failedTestLink" href="/RunResult/@Model.RunId/TestResult/@test.TestId">@test.Name</a></span>
+                                    <br />
+                                    <span class="failedType">@test.ErrorType</span>
+                                    <br />
+                                    <span class="failedText">@test.Message</span>
+                                </td>
+                            </tr>
+                        }
+                        @foreach (var testList in @Model.FailedTestsByMessage)
+                        {
+                            <tr class="infoTableRow groupedByMessage">
+                                <td class="failedTestRow2">
+                                    <span class="failedTestName">@testList.Value.First().ErrorType: </span><span class="failedType">@testList.Key</span>
+                                    <ul>
+                                        @foreach (var test in testList.Value)
+                                        {
+                                            <li>
+                                                <span class="failedTestName"><a class="failedTestLink" href="/RunResult/@Model.RunId/TestResult/@test.TestId" title="@(test.Name)">@test.Name</a></span>
+                                                @if (!string.IsNullOrEmpty(test.Url))
+                                                {
+                                                    <ul>
+                                                        <li>
+                                                            <span class="failedText">@test.Url</span>
+                                                        </li>
+                                                    </ul>
+                                                }
+                                            </li>
+                                        }
+                                    </ul>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </fieldset>
+        </div>
+    </div>
+    <div id="runInfoRightContainer">
+        <div id="TestTableWrapper2">
+            <table id="runInfoTable2">
+                <tbody>
+                    <tr>
+                        <td>
+                            <legend id="passed" class="selectedTab">Passed: @Model.PassedCount</legend>
+                        </td>
+                        <td>
+                            <legend id="started">Started: @Model.StartedCount</legend>
+                        </td>
+                        <td>
+                            <legend id="blocked">Blocked: @Model.BlockedCount</legend>
+                        </td>
+                        <td>
+                            <legend id="queued">Queued: @Model.QueuedCount</legend>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <fieldset class="" id="passedField">
+                <table id="passedTable">
+                    <tbody>
+                        @foreach (var test in @Model.PassedTests)
+                        {
+                            <tr class="infoTableRow">
+                                <td class="infoRow2">
+                                    <span><a class="commitLinks" href="/RunResult/@Model.RunId/TestResult/@test.TestId" title="@(test.Name)">@test.Name</a></span>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </fieldset>
+            <fieldset class="hidden" id="startedField">
+                <table id="startedTable">
+                    <tbody>
+                        @foreach (var test in @Model.StartedTests)
+                        {
+                            <tr class="infoTableRow">
+                                <td class="infoRow2">
+                                    <span>@(test.Name)</span>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </fieldset>
+            <fieldset class="hidden" id="blockedField">
+                <table id="blockedTable">
+                    <tbody>
+                        @foreach (var test in @Model.BlockedTests)
+                        {
+                            <tr class="infoTableRow">
+                                <td class="infoRow2">
+                                    <span>@(test.Name)</span>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </fieldset>
+            <fieldset class="hidden" id="queuedField">
+                <table id="queuedTable">
+                    <tbody>
+                        @foreach (var test in @Model.QueuedTests)
+                        {
+                            <tr class="infoTableRow">
+                                <td class="infoRow2">
+                                    <span>@(test)</span>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </fieldset>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts
+    {
+    <script>
+        var randomScalingFactor = function () {
+            return Math.round(Math.random() * 100);
+        };
+
+        var config = {
+            type: 'doughnut',
+            data: {
+                datasets: [{
+                    data: [
+                        @Model.PassedCount,
+                        @Model.FailedCount,
+                        @Model.BlockedCount,
+                        @Model.QueuedCount,
+                        @Model.StartedCount,
+                    ],
+                    backgroundColor: [
+                        'rgba(64, 214, 0, 1)',
+                        'rgba(245, 45, 0, 1)',
+                        'rgba(255, 149, 0, 1)',
+                        'rgba(245, 237, 0, 1)',
+                        'rgba(0, 200, 245, 1)',
+                    ],
+                }],
+                labels: [
+                    'Passed',
+                    'Failed',
+                    'Blocked',
+                    'Queued',
+                    'Started',
+                ]
+            },
+            options: {
+                responsive: true,
+                legend: {
+                    position: 'bottom',
+                },
+            }
+        };
+
+        window.onload = function () {
+            var ctx = document.getElementById('chart-area').getContext('2d');
+            window.myPie = new Chart(ctx, config);
+            if ("@ViewBag.AppType" == "local") {
+                window.ResultUpdater("@Model.RunId");
+            }
+        };
+
+        function clickUnselectedTab_eventListener() {
+            document.querySelectorAll("#runInfoTable2 legend").forEach(function (elem) {
+                elem.setAttribute("class", "");
+            });
+            document.querySelectorAll("#TestTableWrapper2 fieldset").forEach(function (elem) {
+                elem.setAttribute("class", "hidden");
+            });
+            this.setAttribute("class", "selectedTab");
+            var id = this.getAttribute("id");
+            document.getElementById(id + "Field").setAttribute("class", "");
+        }
+
+        document.querySelectorAll('#runInfoTable2 legend').forEach(function (elem) {
+            elem.addEventListener("click", clickUnselectedTab_eventListener);
+        });
+
+        document.querySelector('#groupByError').addEventListener("click", function () {
+            document.querySelectorAll(".listAll .failedTestRow2").forEach(function (trElem) {
+                trElem.setAttribute("class", "listAll failedTestRow2 hidden");
+            });
+            document.querySelectorAll(".groupedByMessage .failedTestRow2").forEach(function (trElem) {
+                trElem.setAttribute("class", "groupedByMessage failedTestRow2");
+            });
+        });
+
+        document.querySelector('#listAll').addEventListener("click", function () {
+            document.querySelectorAll(".groupedByMessage .failedTestRow2").forEach(function (trElem) {
+                trElem.setAttribute("class", "groupedByMessage failedTestRow2 hidden");
+            });
+            document.querySelectorAll(".listAll .failedTestRow2").forEach(function (trElem) {
+                trElem.setAttribute("class", "listAll failedTestRow2");
+            });
+        });
+
+        document.querySelector('#openAll').addEventListener("click", function () {
+            document.querySelectorAll(".listAll .failedTestLink").forEach(function (aElem) {
+                window.open(aElem.getAttribute("href"), "_blank");
+            });
+        });
+
+        var sendToDash = document.querySelector('#sendToDashButton');
+        if (sendToDash) {
+            document.querySelector('#sendToDashButton').addEventListener("click", function () {
+                location.href = "/RunResult/@Model.RunId/submit";
+            });
+        }
+
+        function showHideTabularRunSummary() {
+            if (document.getElementById("tabularRun").style.display === 'none') {
+                document.getElementById("tabularRun").style.display = null;
+            }
+            else{
+                document.getElementById("tabularRun").style.display = "none";
+            }
+        }
+        document.getElementById('tabsummary').addEventListener("click", showHideTabularRunSummary);
+
+        var testExecTime = document.querySelector('#testexectime');
+        if (testExecTime) {
+            document.querySelector('#testexectime').addEventListener("click", function () {
+                location.href = "/RunResult/@Model.RunId/ExecutionTimeSummary";
+            });
+        }
+    </script>
+}

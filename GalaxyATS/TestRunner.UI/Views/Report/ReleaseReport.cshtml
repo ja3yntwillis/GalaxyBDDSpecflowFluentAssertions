@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Release Report";
+}
+
+@using TestRunner.UI.ViewModels
+@model ReleaseReportVM
+
+@section AddedStyles
+{
+    <link rel="stylesheet" type="text/css" href="~/css/site.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/runReport.css" />
+}
+
+<div class="seGrid sidebar2">
+    <div id="breadCrumbNav">
+        <div id="breadCrumbContainer">
+            <ul class="breadcrumb">
+                <li><a href="/Home">Home</a></li>
+                <li><a href="/RunResult">Run Results</a></li>
+                <li>Release Report</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="seGrid content">
+    <div id="runReport">
+        <ul id="runReportList">
+            <li class="appHeader">@Model.ApplicationName</li>
+            <li><span>Date: </span> @Model.RunDate</li>
+            <li><span>Run Time: </span> @Model.RunTime</li>
+            <li><span>Build Time: </span> @Model.BuildTime</li>
+            <li><span>Deploy Time: </span> @Model.ReleaseDeployTime</li>
+        </ul>
+
+        <ul id="runReportURLs">
+            <li><span>Build Url: </span><a href="@Model.BuildUrl" target="_blank">Click Here</a></li>
+            <li><span>Release Url: </span><a href="@Model.ReleaseUrl" target="_blank">Click Here</a></li>
+        </ul>
+    </div>
+</div>

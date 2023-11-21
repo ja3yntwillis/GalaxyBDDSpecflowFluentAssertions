@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <DocumentationFile />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Cedar.Configuration" Version="1.0.2" />
+    <PackageReference Include="Flurl.Http" Version="3.0.1" />
+    <PackageReference Include="Microsoft.Edge.SeleniumTools" Version="3.141.3" />
+    <PackageReference Include="Microsoft.Win32.Registry" Version="6.0.0-preview.5.21301.5" />
+    <PackageReference Include="Oracle.ManagedDataAccess" Version="21.12.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataGeneration.Galaxy\DataGeneration.Galaxy.csproj" />
+    <ProjectReference Include="..\Framework.Base\Framework.Base.csproj" />
+    <ProjectReference Include="..\Framework.Galaxy\Framework.Galaxy.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Resources\chromedriver">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\chromedriver.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\geckodriver.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\geckodriver">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\msedgedriver.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

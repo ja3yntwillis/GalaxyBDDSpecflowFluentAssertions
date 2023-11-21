@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "Load Testing Report";
+}
+
+@model LoadTestReportVM
+
+@section AddedStyles
+{
+    <link rel="stylesheet" type="text/css" href="~/css/site.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/vanilla-dataTables.min.css" />
+    <script type="text/javascript" src="~/js/vanilla-dataTables.min.js"></script>
+    <script src="~/js/site.js" type="text/javascript"></script>
+}
+
+<div class="seGrid sidebar2">
+    <div id="breadCrumbNav">
+        <div id="breadCrumbContainer">
+            <ul class="breadcrumb">
+                <li><a href="/Home">Home</a></li>
+                <li><a href="/Report/LoadTesting">Load Testing</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="seGrid content">
+    <table id="reportTable">
+        <thead>
+            <tr>
+                <td>Area</td>
+                @foreach (var release in Model.ReleaseNumbers)
+                {
+                    <th scope="col">@release</th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var area in Model.Areas)
+            {
+                <tr>
+                    <th scope="row">@area</th>
+                    @foreach (var release in Model.ReleaseNumbers)
+                    {
+                        <td>@Model.Contents.Where(x => x.Area == area && x.Release == release).Single().Time</td>
+
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section Scripts
+    {
+    <script>
+        var dataTable = new DataTable("#reportTable", {
+            columns: [
+                { select: 0, sort: "desc" },
+            ],
+            perPage: 25,
+        });
+    </script>
+}

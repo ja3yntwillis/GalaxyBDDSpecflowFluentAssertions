@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="~/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="~/images/favicon.ico" rel="icon" type="image/x-icon" />
+    <title>@ViewData["Title"] - Automation Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="~/css/autoGridLayout.css" />
+    @RenderSection("AddedStyles", required: false)
+</head>
+
+<body>
+    <div class="automationwrapper">
+        <div class="seGrid header">
+            <div id="headerBar">
+                <div id="runnerTitle" class="runnerTitleStyle">
+                    <span class="headerTextTitle">Automation Dashboard</span>
+                </div>
+            </div>
+        </div>
+        <div class="seGrid sidebar">
+            <div id="mainNavigation">
+                <ul id="mainNavList">
+                    <li class="navAreas">
+                        <a class="navLinks" href="/Home">Home</a>
+                    </li>
+                    @if (@ViewBag.AppType != "dashboard")
+                    {
+                        <li class="navAreas">
+                            <a class="navLinks" href="/Runner">Automation Runner</a>
+                        </li>
+                        <li class="navAreas">
+                            <a class="navLinks" href="/TestPresets">Test Presets</a>
+                        </li>
+                        <li class="navAreas">
+                            <a class="navLinks" href="/BrowserStack/MobileApps">BrowserStack Apps</a>
+                        </li>
+                        <li class="navAreas">
+                            <a class="navLinks" href="/VirtualBox/SetUp">VirtualBox Setup</a>
+                        </li>
+                        <li class="navAreas">
+                            <a class="navLinks" href="/BitBucketReports">BitBucket Reports</a>
+                        </li>
+                        @*<li class="navAreas">
+                            <a class="navLinks" href="/ConsumerBuilder">Consumer Builder</a>
+                        </li>*@
+                    }
+                    <li class="navAreas">
+                        <a class="navLinks" href="/RunResult">Run Results</a>
+                    </li>
+                    @if (@ViewBag.AppType == "dashboard")
+                    {
+                        <li class="navAreas">
+                            <a class="navLinks" href="/DailyReport">Daily Report</a>
+                        </li>
+                        @*<li class="navAreas">
+                            <a class="navLinks" href="/TestInformation">Test Inventory</a>
+                        </li>*@
+                    }
+                </ul>
+            </div>
+        </div>
+        @RenderBody()
+        <div class="seGrid footer">
+            <div id="poweredBy" class="powerByText">
+                <div id="poweredWrapper">
+                    <span class="powerTextHeader">Dashboard Powered By:</span>
+                    <img class="vanillaJSPicture" alt="VanillaJS Logo" title="Only Vanilla JS because its all you need" src="~/images/vanillaJS.png" />
+                </div>
+            </div>
+            <div id="verisonNumber" class="verisonNumberStyle">
+                <span class="headerTextVerison">V 0.3.0 Beta</span>
+            </div>
+        </div>
+    </div>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,25 @@
+﻿@using TestRunner.Utilities.DTOs;
+@model DataTreeDto
+
+@if (@Model.Content != null || @Model.Content != null || @Model.DataType != null)
+{
+    <li style="list-style-type: none;">
+        <span class="dataKey">@Model.DataType</span>
+        <ul class="hidden">
+            @if (@Model.Content != null)
+            {
+                @foreach (var content in @Model.Content)
+                {
+                    <li><span class="dataKeyChildren">@content.Key</span><span class="dataValue">@content.Value</span></li>
+                }
+            }
+            @if (@Model.Children != null)
+            {
+                @foreach (var childData in @Model.Children)
+                {
+                    @Html.Partial("_TestResultTestData", childData)
+                }
+            }
+        </ul>
+    </li>
+}

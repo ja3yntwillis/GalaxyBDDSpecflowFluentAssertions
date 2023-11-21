@@ -1,0 +1,80 @@
+﻿@{
+    ViewData["Title"] = "Run Report";
+}
+
+@using TestRunner.UI.ViewModels
+@model RunReportVM
+
+@section AddedStyles
+{
+    <link rel="stylesheet" type="text/css" href="~/css/site.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/runReport.css" />
+}
+
+<div class="seGrid sidebar2">
+    <div id="breadCrumbNav">
+        <div id="breadCrumbContainer">
+            <ul class="breadcrumb">
+                <li><a href="/Home">Home</a></li>
+                <li><a href="/RunResult">Run Results</a></li>
+                <li>Run Report</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="seGrid content">
+    <div id="runReport">
+        <ul id="runReportList">
+            <li class="appHeader">@Model.ApplicationName</li>
+            <li><span>Date: </span> @Model.RunDate</li>
+            <li><span>Run Time: </span> @Model.RunTime</li>
+            <li><span>Test Results: </span>@Model.RunResult</li>
+            <li><span>Build Time: </span> @Model.BuildTime</li>
+            <li><span>Deploy Time: </span> @Model.ReleaseDeployTime</li>
+            <li><span>Test Execution Time: </span>@Model.TestExecutionTime</li>
+        </ul>
+
+        <ul id="runReportURLs">
+            <li><span>Run Result Url: </span><a href="@Model.RunResultURL" target="_blank">@Model.RunResultURL</a></li>
+            <li><span>Build Url: </span><a href="@Model.BuildUrl" target="_blank">@Model.BuildUrl</a></li>
+            <li><span>Release Url: </span><a href="@Model.ReleaseUrl" target="_blank">@Model.ReleaseUrl</a></li>
+        </ul>
+
+        <ul id="azDevopsURLs">
+            <li><span>Pull Request Url: </span><a href="@Model.PullRequestUrl" target="_blank">@Model.PullRequestUrl</a></li>
+            <li><span>Commit Url: </span><a href="@Model.CommitUrl" target="_blank">@Model.CommitUrl</a></li>
+        </ul>
+
+        <table id="runReportTable">
+            <tr>
+                <th>Date</th>
+                <th>Time</th>
+                <th>App</th>
+                <th># Tests</th>
+                <th>Passed</th>
+                <th>Failed</th>
+                <th>Blocked</th>
+                <th>Queued</th>
+                <th>Started</th>
+                <th>Monolith Build Time</th>
+                <th>Deploy Time</th>
+                <th>Test Execution Time</th>
+            </tr>
+            <tr>
+                <td>@Model.RunDate</td>
+                <td>@Model.RunTime</td>
+                <td>@(Model.ApplicationName == "BrightChoices" ? "BC" : "BA")</td>
+                <td>@Model.TotalTestCount</td>
+                <td>@Model.PassedTestCount</td>
+                <td>@Model.FailedTestCount</td>
+                <td>@Model.BlockedTestCount</td>
+                <td>@Model.QueuedTestCount</td>
+                <td>@Model.StartedTestCount</td>
+                <td>@Model.BuildHours:@Model.BuildMinutes:@Model.BuildSeconds</td>
+                <td>@Model.DeployHours:@Model.DeployMinutes:@Model.DeploySeconds</td>
+                <td>@Model.ExecutionHours:@Model.ExecutionMinutes:@Model.ExecutionSeconds</td>
+            </tr>
+        </table>
+    </div>
+</div>

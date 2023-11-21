@@ -1,0 +1,80 @@
+﻿@{
+    ViewData["Title"] = "Table Report";
+}
+
+@using TestRunner.UI.ViewModels
+@model OverviewTableReportVM
+
+@section AddedStyles
+{
+    <link rel="stylesheet" type="text/css" href="~/css/site.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/vanilla-dataTables.min.css" />
+    <script type="text/javascript" src="~/js/vanilla-dataTables.min.js"></script>
+}
+
+<div class="seGrid sidebar2">
+    <div id="breadCrumbNav">
+        <div id="breadCrumbContainer">
+            <ul class="breadcrumb">
+                <li><a href="/Home">Home</a></li>
+                <li><a href="/RunResult">Run Results</a></li>
+                <li>Overview Table Report</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="seGrid content">
+    <div id="runReportTable">
+        <table id="reportTable">
+            <thead>
+                <tr>
+                    <th>Release Created</th>
+                    <th>Release ID</th>
+                    <th>Build ID</th>
+                    <th>Pull Request ID</th>
+                    <th>Committer</th>
+                    <th>Test Run</th>
+                    <th>% Passed</th>
+                    <th>Passed</th>
+                    <th>Failed</th>
+                    <th>Started</th>
+                    <th>Queued</th>
+                    <th>Blocked</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var run in Model.RunReports)
+                {
+                    <tr>
+                        <td>@run.RunDate @run.RunTime</td>
+                        <td><a target="_blank" href="@run.ReleaseUrl">@run.ReleaseId</a></td>
+                        <td><a target="_blank" href="@run.BuildUrl">@run.BuildId</a></td>
+                        <td><a target="_blank" href="@run.PullRequestUrl">@run.PullRequestId</a></td>
+                        <td>@run.Committer</td>
+                        <td><a target="_blank" href="@run.RunResultURL">@run.RunId</a></td>
+                        <td>@run.PassedTestPercent</td>
+                        <td>@run.PassedTestCount</td>
+                        <td>@run.FailedTestCount</td>
+                        <td>@run.StartedTestCount</td>
+                        <td>@run.QueuedTestCount</td>
+                        <td>@run.BlockedTestCount</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts
+    {
+    <script>
+        var dataTable = new DataTable("#reportTable", {
+            columns: [
+                { select: 1, sort: "asc" },
+            ],
+            perPage: 20,
+        });
+    </script>
+}
+

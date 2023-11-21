@@ -1,0 +1,42 @@
+﻿@model ConsumerResultVM
+
+@{
+    ViewData["Title"] = "Consumer Builder Result";
+}
+
+@section AddedStyles
+{
+    <link rel="stylesheet" type="text/css" href="~/css/consumerBuilder.css" />
+}
+
+<div class="seGrid sidebar2">
+    <div id="breadCrumbNav">
+        <div id="breadCrumbContainer">
+            <ul class="breadcrumb">
+                <li><a href="/Home">Home</a></li>
+                <li>Consumer Builder</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="seGrid content">
+    <ul id="scenarioResults">
+        <li>Scenario: @Model.Scenario</li>
+        <li>ConsumerId: @Model.ConsumerID</li>
+        <li>Username: @Model.ConsumerUsername</li>
+        <li>Password: @Model.ConsumerPassword</li>
+        <li>Consumer Start Date: @Model.ConsumerStartDate</li>
+        @if (Model.ConsumerEndDate != DateTime.MinValue.ToString("MM/dd/yyyy"))
+        {
+            <li>Consumer Termination Date: @Model.ConsumerEndDate</li>
+            <li>Consumer Rehire Date: @Model.ConsumerReHireDate</li>
+        }
+        <li>Organization: @Model.Organization</li>
+        <li>Exchange: @Model.Exchange</li>
+        <li>Product Year: @Model.ProductYearStartDate - @Model.ProductYearEndDate</li>
+        @if (Model.SubsequentProductYearStartDate != DateTime.MinValue.ToString("MM/dd/yyyy"))
+        {
+            <li>Subsequent Product Year: @Model.SubsequentProductYearStartDate - @Model.SubsequentProductYearEndDate</li>
+        }
+    </ul>
+</div>

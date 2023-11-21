@@ -1,0 +1,50 @@
+﻿@model ConsumerBuilderVM
+
+@{
+    ViewData["Title"] = "Consumer Builder";
+}
+
+@section AddedStyles
+{
+    <link rel="stylesheet" type="text/css" href="~/css/consumerBuilder.css" />
+}
+
+<div class="seGrid sidebar2">
+    <div id="breadCrumbNav">
+        <div id="breadCrumbContainer">
+            <ul class="breadcrumb">
+                <li><a href="/Home">Home</a></li>
+                <li>Consumer Builder</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="seGrid content">
+    <form id="scenarioForm" action="@Url.Action("BuildResult", "ConsumerBuilder")">
+        <label>URL</label>
+        <input list="baseUrl" name="baseUrl" />
+        <datalist id="baseUrl">
+            @foreach (var url in Model.Urls)
+            {
+                <option value="@url">@url</option>
+            }
+        </datalist>
+
+        <label>Scenario</label>
+        <select name="scenario">
+            @foreach (var scenario in Model.Scenarios)
+            {
+                <option value="@scenario">@scenario</option>
+            }
+        </select>
+
+        <label>Application</label>
+        <select name="app">
+            @foreach (var application in Model.Applications)
+            {
+                <option value="@application.Key">@application.Value</option>
+            }
+        </select>
+        <input id="createConsumer" type="submit" value="Create" />
+    </form>
+</div>

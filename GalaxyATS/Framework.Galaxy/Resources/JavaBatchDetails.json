@@ -1,0 +1,154 @@
+{
+  "JavaBatchDetails": [
+    {
+      "BatchName": "BAMLWeeklyFundRequestBatch",
+      "ExistingLocation": "/u01/DevOps/selfcontainedbatches/BAMLClaimRequestProcessingBatch",
+      "UpdatedLocation": "/u01/DevOps/selfcontainedbatches_17/BAMLClaimRequestProcessingBatch"
+    },
+    {
+      "BatchName": "ClaimPaymentSkipBatch",
+      "ExistingLocation": "/u01/DevOps/selfcontainedbatches/ClaimPaymentSkipBatch",
+      "UpdatedLocation": null
+    },
+    {
+      "BatchName": "CommuterRenewalBatch",
+      "ExistingLocation": "/u01/DevOps/selfcontainedbatches/CommuterRenewalBatch",
+      "UpdatedLocation": "/u01/DevOps/selfcontainedbatches_17/CommuterRenewalBatch"
+    },
+    {
+      "BatchName": "CommunicationOnHoldBatchProcess",
+      "ExistingLocation": "/u01/DevOps/newjavabatch",
+      "UpdatedLocation": "/u01/DevOps/selfcontainedbatches_17/CommunicationOnHoldBatchProcess"
+    },
+    {
+      "BatchName": "EligibilityFileloadBatch",
+      "ExistingLocation": "/u01/DevOps/javabatch",
+      "UpdatedLocation": null
+    },
+    {
+      "BatchName": "ReissueUncashedCheck",
+      "ExistingLocation": "/u01/DevOps/selfcontainedbatches/ReissueUncashedCheck",
+      "UpdatedLocation": null
+    },
+    {
+      "BatchName": "ReconToolDataLoaderBatch",
+      "ExistingLocation": "/u01/DevOps/selfcontainedbatches/ReconToolDataLoaderBatch",
+      "UpdatedLocation": "/u01/DevOps/selfcontainedbatches_17/ReconToolDataLoaderBatch"
+    },
+    {
+      "BatchName": "ReconToolReconciliationBatch",
+      "ExistingLocation": "/u01/DevOps/selfcontainedbatches/ReconToolReconciliationBatch",
+      "UpdatedLocation": "/u01/DevOps/selfcontainedbatches_17/ReconToolReconciliationBatch"
+    },
+    {
+      "BatchName": "PayLumpSumClaimCreationBatch",
+      "ExistingLocation": "/u01/DevOps/selfcontainedbatches_17/PayLumpSumClaimCreationBatch",
+      "UpdatedLocation": null
+    },
+    {
+      "BatchName": "TDSCProcessingBatch",
+      "ExistingLocation": "/u01/DevOps/selfcontainedbatches/tdscbatch",
+      "UpdatedLocation": "/u01/DevOps/selfcontainedbatches_17/TDSCProcessingBatch"
+    },
+    {
+      "BatchName": "JraAllocationBatch",
+      "ExistingLocation": "/u01/DevOps/javabatch",
+      "UpdatedLocation": "/u01/DevOps/selfcontainedbatches_17/JraAllocationBatch"
+    },
+    {
+      "BatchName": "ClaimFileLoadBatch",
+      "ExistingLocation": "/u01/DevOps/javabatch",
+      "UpdatedLocation": "/u01/DevOps/selfcontainedbatches_17/ClaimFileLoadBatch"
+    },
+    {
+      "BatchName": "PolicyReimburseFileLoadBatch",
+      "ExistingLocation": "/u01/DevOps/selfcontainedbatches/PolicyReimburseFileLoadBatch",
+      "UpdatedLocation": "/u01/DevOps/selfcontainedbatches_17/PolicyReimburseFileLoadBatch"
+    },
+    {
+      "BatchName": "BAMLFreezeRequestBatch",
+      "ExistingLocation": "/u01/DevOps/selfcontainedbatches/BAMLFreezeRequestBatch",
+      "UpdatedLocation": null
+    },
+    {
+      "BatchName": "BAMLFreezeResponseProcessingBatch",
+      "ExistingLocation": "/u01/DevOps/selfcontainedbatches/BAMLFreezeResponseProcessingBatch",
+      "UpdatedLocation": null
+    },
+    {
+      "BatchName": "BamlClaimResponseProcessingBatch",
+      "ExistingLocation": "/u01/DevOps/selfcontainedbatches/BAMLClaimResponseProcessingBatch",
+      "UpdatedLocation": "/u01/DevOps/selfcontainedbatches_17/BAMLClaimResponseProcessingBatch"
+    },
+    {
+      "BatchName": "MailProcessingBatch",
+      "ExistingLocation": "/u01/DevOps/selfcontainedbatches/MailProcessingBatch",
+      "UpdatedLocation": "/u01/DevOps/selfcontainedbatches_17/MailProcessingBatch"
+    },
+    {
+      "BatchName": "MailWriterBatch",
+      "ExistingLocation": "/u01/DevOps/selfcontainedbatches/MailWriterBatch",
+      "UpdatedLocation": "/u01/DevOps/selfcontainedbatches_17/MailWriterBatch"
+    },
+    {
+      "BatchName": "NotionalWelcomeKitBatch",
+      "ExistingLocation": "/u01/DevOps/selfcontainedbatches/NotionalWelcomeKitBatch",
+      "UpdatedLocation": "/u01/DevOps/selfcontainedbatches_17/NotionalWelcomeKitBatch"
+    },
+    {
+      "BatchName": "NotificationBatchProcess",
+      "ExistingLocation": "/u01/DevOps/newjavabatch",
+      "UpdatedLocation": "/u01/DevOps/selfcontainedbatches_17/NotificationBatchProcess"
+    },
+    {
+      "BatchName": "MatchPlanDepositCreationBatch",
+      "ExistingLocation": "/u01/DevOps/selfcontainedbatches/MatchPlanDepositCreationBatch",
+      "UpdatedLocation": null
+    },
+    {
+      "BatchName": "BCPayrollInfoBatch",
+      "ExistingLocation": "/u01/DevOps/selfcontainedbatches/BCPayrollInfoBatch",
+      "UpdatedLocation": "/u01/DevOps/selfcontainedbatches_17/BCPayrollInfoBatch"
+    },
+    {
+      "BatchName": "HSAAddBeneficiaryBatch",
+      "ExistingLocation": "/u01/DevOps/selfcontainedbatches/HSAAddBeneficiaryBatch",
+      "UpdatedLocation": "/u01/DevOps/selfcontainedbatches_17/HSAAddBeneficiaryBatch"
+    },
+    {
+      "BatchName": "CCSPoolingBatch",
+      "ExistingLocation": "/u01/DevOps/selfcontainedbatches_17/CCSPoolingBatch",
+      "UpdatedLocation": null
+    },
+    {
+      "BatchName": "CCSMatchingBatch",
+      "ExistingLocation": "/u01/DevOps/selfcontainedbatches_17/CCSMatchingBatch",
+      "UpdatedLocation": null
+    },
+    {
+      "BatchName": "AdminFeeIdentificationBatch",
+      "ExistingLocation": "/u01/DevOps/javabatch",
+      "UpdatedLocation": "/u01/DevOps/selfcontainedbatches_17/AdminFeeBatch"
+    },
+    {
+      "BatchName": "AdminFeeProcessingBatch",
+      "ExistingLocation": "/u01/DevOps/javabatch",
+      "UpdatedLocation": "/u01/DevOps/selfcontainedbatches_17/AdminFeeBatch"
+    },
+    {
+      "BatchName": "JRAMarkClmPostPayFundedBatch",
+      "ExistingLocation": "/u01/DevOps/selfcontainedbatches/JRAMarkClmPostPayFundedBatch",
+      "UpdatedLocation": "/u01/DevOps/selfcontainedbatches_17/JRAMarkClmPostPayFundedBatch"
+    },
+    {
+      "BatchName": "PostRunOffApprovedToDeniedClaimBatch",
+      "ExistingLocation": "/u01/DevOps/selfcontainedbatches_17/PostRunOffApprovedToDeniedClaimBatch",
+      "UpdatedLocation": null
+    },
+    {
+      "BatchName": "ReconToolPostRunActivityBatch",
+      "ExistingLocation": "/u01/DevOps/selfcontainedbatches_17/ReconToolPostRunActivityBatch",
+      "UpdatedLocation": null
+    }
+  ]
+}

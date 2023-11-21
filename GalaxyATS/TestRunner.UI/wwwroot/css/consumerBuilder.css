@@ -1,0 +1,23 @@
+﻿#scenarioForm {
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+    margin: 10px 0px 10px 10px;
+}
+
+    #scenarioForm label {
+        margin-top: 10px;
+    }
+
+#createConsumer {
+    margin-top: 25px;
+    width: 100px;
+}
+
+#scenarioResults {
+    list-style: none;
+}
+
+    #scenarioResults li {
+        margin-top: 10px;
+    }

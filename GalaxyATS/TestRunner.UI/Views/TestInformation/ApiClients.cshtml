@@ -1,0 +1,79 @@
+﻿@{
+    ViewData["Title"] = "Api Clients";
+}
+
+@model ApiClientsVM
+
+@section AddedStyles
+    {
+    <link rel="stylesheet" type="text/css" href="~/css/site.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/vanilla-dataTables.min.css" />
+    <script type="text/javascript" src="~/js/vanilla-dataTables.min.js"></script>
+}
+
+<div class="seGrid sidebar2">
+    <div id="breadCrumbNav">
+        <div id="breadCrumbContainer">
+            <ul class="breadcrumb">
+                <li><a href="/TestInformation">Test Inventory</a></li>
+                <li>Api Clients</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="seGrid content" style="display:flex">
+    <div id="leftContainer" style="width:50%">
+        <table id="uiTable" class="stripe hover row-border">
+            <thead>
+                <tr>
+                    <th>UI Methods</th>
+                    <th>UI Methods - Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var reference in Model.UiReferences)
+                {
+                    <tr>
+                        <td>@reference.Method</td>
+                        <td>@reference.Count</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div id="rightContainer" style="width:50%">
+        <table id="apiTable" class="stripe hover row-border">
+            <thead>
+                <tr>
+                    <th>API Methods</th>
+                    <th>API Methods - Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var _reference in Model.ApiReferences)
+                {
+                    <tr>
+                        <td>@_reference.Method</td>
+                        <td>@_reference.Count</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts
+    {
+    <script>
+        var uiActionDataTable = new DataTable("#uiTable", {
+            perPage: 25,
+            perPageSelect: [10, 25, 50, 150]
+        });
+    </script>
+    <script>
+        var apiActionDataTable = new DataTable("#apiTable", {
+            perPage: 25,
+            perPageSelect: [10, 25, 50, 150]
+        });
+    </script>
+}

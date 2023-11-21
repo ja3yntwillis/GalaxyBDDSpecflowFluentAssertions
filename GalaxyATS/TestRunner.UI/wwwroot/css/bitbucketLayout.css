@@ -1,0 +1,148 @@
+@charset "utf-8";
+/* CSS Document */
+
+#leftContainer
+{
+	width:25%;
+	display:block;
+	float:left;
+	margin:0px 0px 55px 22px;
+}
+
+#centerContainer
+{
+	width:58%;
+	float:left;
+	display:block;
+	margin:0px 22px 55px 0px;
+}
+
+#rightContainer
+{
+	width:12%;
+	float:right;
+	display:block;
+	margin:auto;
+	border: none;
+}
+
+#bitbucketWrapper label {
+    width: 200px;
+    display: inline-block;
+}
+
+#bitbucketWrapper .text {
+    width: 200px;
+}
+
+#bitbucketWrapper .number {
+    width: 50px;
+}
+
+.companyPicture
+{
+    width:125px;
+	height:125px;
+	float: center;
+}
+
+.testButtons
+{
+	width:180px;
+	height:30px;
+	font-size: 15px;
+	font-variant: small-caps;
+	letter-spacing: 3px;
+}
+
+.blockSetup
+{
+	width:100%;
+	height:125px;
+	display:block;
+	box-sizing:border-box;
+    min-width: 0px;
+}
+
+@media only screen and (min-width: 300px)
+{
+    #leftContainer
+    {
+        width:92%;
+        margin:0px 0px 55px 2px;
+        float:none;
+    }
+
+    #centerContainer
+    {
+        width:92%;
+        margin:0px 2px 55px 0px;
+        float:none;
+    }
+    
+    #rightContainer
+    {
+        width:63%;
+        float:right;
+    }
+}
+
+@media only screen and (min-width: 950px)
+{
+	#rightContainer
+    {
+        width:60%;
+        float:right;
+    }
+}
+
+@media only screen and (min-width: 1500px)
+{
+	#leftContainer
+	{
+		width:83%;
+		margin:0px 0px 55px 12px;
+		float:none;
+	}
+
+	#centerContainer
+	{
+		width:84%;
+		margin:0px 12px 55px 0px;
+		float:none;
+	}
+	
+	#rightContainer
+	{
+		width:12%;
+		float:none;
+	}
+}
+
+@media only screen and (min-width: 1650px)
+{
+	#leftContainer
+	{
+		width:25%;
+		display:block;
+		float:left;
+		margin:0px 0px 55px 22px;
+	}
+
+	#centerContainer
+	{
+		width:58%;
+		float:left;
+		display:block;
+		margin:0px 22px 55px 0px;
+	}
+	
+	#rightContainer
+	{
+		width:12%;
+		float:right;
+		display:block;
+		margin:auto;
+		border: none;
+	}
+}

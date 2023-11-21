@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "Environment List";
+}
+
+@using TestRunner.UI.ViewModels
+@model EnvironmentListVM
+
+@section AddedStyles
+{
+    <link rel="stylesheet" type="text/css" href="~/css/site.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/vanilla-dataTables.min.css" />
+    <script type="text/javascript" src="~/js/vanilla-dataTables.min.js"></script>
+}
+
+<div class="seGrid sidebar2">
+    <div id="breadCrumbNav">
+        <div id="breadCrumbContainer">
+            <ul class="breadcrumb">
+                <li><a href="/Home">Home</a></li>
+                <li>Run Results</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="seGrid content">
+    <div id="runs">
+        <table id="urlsTable" class="urlsTable stripe hover row-border">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Url</th>
+                    <th>Report Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var env in Model.Environments)
+                {
+                <tr>
+                    <td><a href="?url=@env.Url">@env.RowKey </a></td>
+                    <td>@env.Url</td>
+                    @if (env.RowKey.Contains("1"))
+                    {
+                        <td>@Html.ActionLink("Report", "TableReport", "Report", new { url = @env.Url })</td>
+                    }
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts
+    {
+    <script>
+        var dataTable = new DataTable("#urlsTable", {
+            columns: [
+                { select: 1, sort: "asc" },
+            ],
+            perPage: 20,
+        });
+    </script>
+}
